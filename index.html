@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="id" class="h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I-EKG Smart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .ekg-grid {
+            background-image: url("data:image/svg+xml,%3csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3e%3cdefs%3e%3cpattern id='grid' width='20' height='20' patternUnits='userSpaceOnUse'%3e%3cpath d='M 20 0 L 0 0 0 20' fill='none' stroke='%23ff9999' stroke-width='0.5'/%3e%3c/pattern%3e%3c/defs%3e%3crect width='100%25' height='100%25' fill='url(%23grid)' /%3e%3c/svg%3e");
+        }
+    </style>
+</head>
+
+<body class="h-full bg-slate-100 font-sans">
+
+    <!-- Page Container -->
+    <div id="app" class="max-w-sm mx-auto bg-white min-h-screen relative overflow-hidden">
+
+        <!-- Login Page -->
+        <div id="login-page" class="h-screen flex flex-col bg-gradient-to-b from-slate-50 to-slate-100 p-6">
+            <div class="flex-1 flex flex-col justify-center">
+                <!-- Logo -->
+                <div class="w-32 h-32 rounded-2xl mx-auto mb-8 flex items-center justify-center">
+                    <img src="assets/logo_ekg.png" alt="Logo EKG" class="object-contain" />
+                </div>
+
+                <!-- Title -->
+                <h1 class="text-2xl font-bold text-gray-800 text-center mb-2">I-EKG<span
+                        class="text-blue-500">SMART</span></h1>
+                <p class="text-gray-600 text-center mb-8">Silakan login untuk melanjutkan</p>
+
+                <!-- Login Form -->
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <div class="space-y-4">
+                        <input type="email" placeholder="Email"
+                            class="w-full p-4 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500">
+                        <input type="password" placeholder="Password"
+                            class="w-full p-4 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500">
+
+                        <div class="flex items-center justify-between text-sm">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2">
+                                <span class="text-gray-600">Ingat saya</span>
+                            </label>
+                            <a href="#" class="text-blue-500">Lupa Password?</a>
+                        </div>
+
+                        <button onclick="showPage('menu-page')"
+                            class="w-full bg-blue-500 text-white py-4 rounded-lg font-medium">Login</button>
+                    </div>
+                </div>
+
+                <p class="text-center text-gray-600 mt-6">Belum punya akun? <a href="#"
+                        onclick="showPage('register-page')" class="text-blue-500">Daftar</a></p>
+            </div>
+        </div>
+
+        <!-- Register Page -->
+        <div id="register-page" class="h-screen flex flex-col bg-gradient-to-b from-slate-50 to-slate-100 p-6 hidden">
+            <div class="flex-1 flex flex-col justify-center">
+                <!-- Logo -->
+                <div class="w-32 h-32 rounded-2xl mx-auto mb-8 flex items-center justify-center">
+                    <img src="assets/logo_ekg.png" alt="Logo EKG" class="object-contain" />
+                </div>
+
+                <!-- Title -->
+                <h1 class="text-2xl font-bold text-gray-800 text-center mb-2">I-EKG<span
+                        class="text-blue-500">SMART</span></h1>
+                <p class="text-gray-600 text-center mb-8">Silakan isi data untuk membuat akun baru</p>
+
+                <!-- Register Form -->
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <div class="space-y-4">
+                        <input type="text" placeholder="Nama Lengkap"
+                            class="w-full p-4 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500">
+                        <input type="email" placeholder="Email"
+                            class="w-full p-4 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500">
+                        <input type="password" placeholder="Password"
+                            class="w-full p-4 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500">
+                        <input type="password" placeholder="Konfirmasi Password"
+                            class="w-full p-4 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500">
+
+                        <button onclick="showPage('menu-page')"
+                            class="w-full bg-blue-500 text-white py-4 rounded-lg font-medium">Daftar</button>
+                    </div>
+                </div>
+
+                <p class="text-center text-gray-600 mt-6">Sudah punya akun? <a href="#" onclick="showPage('login-page')"
+                        class="text-blue-500">Login</a></p>
+            </div>
+        </div>
+
+        <!-- Menu Page -->
+        <div id="menu-page" class="min-h-screen bg-slate-100 p-4 hidden">
+            <!-- Header -->
+            <div class="text-center mb-6 pt-4">
+                <div class="text-2xl font-bold text-gray-800 mb-2">📊 Menu <span class="text-blue-500">EKG</span></div>
+                <p class="text-gray-600">Pilih materi untuk mulai belajar</p>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="grid grid-cols-2 gap-4">
+                <!-- Definisi EKG -->
+                <div onclick="showPage('ekg-normal-page')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                    <div class="w-full h-24 bg-pink-100 rounded-lg mb-3 ekg-grid"></div>
+                    <h3 class="font-semibold text-gray-800 text-sm text-center">Definisi EKG</h3>
+                </div>
+
+                <!-- Interpretasi Gambaran EKG -->
+                <div onclick="showPage('interpretasi-page')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                    <div class="w-full h-24 bg-pink-100 rounded-lg mb-3 ekg-grid"></div>
+                    <h3 class="font-semibold text-gray-800 text-sm text-center">Interpretasi Gambaran EKG</h3>
+                </div>
+
+                <!-- Aritmia -->
+                <div onclick="showPage('aritmia-page')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                    <div class="w-full h-24 bg-pink-100 rounded-lg mb-3 ekg-grid"></div>
+                    <h3 class="font-semibold text-gray-800 text-sm text-center">Aritmia</h3>
+                </div>
+
+                <!-- Latihan -->
+                <div onclick="showPage('latihan-page')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                    <div class="w-full h-24 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
+                        <span class="text-blue-600 text-2xl">📝</span>
+                    </div>
+                    <h3 class="font-semibold text-gray-800 text-sm text-center">Latihan</h3>
+                </div>
+
+                <!-- Simulasi -->
+                <div onclick="showPage('simulasi-page')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                    <div class="w-full h-24 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
+                        <span class="text-blue-600 text-2xl">🖥️</span>
+                    </div>
+                    <h3 class="font-semibold text-gray-800 text-sm text-center">Simulasi</h3>
+                </div>
+
+                <!-- Profil Progres -->
+                <div onclick="showPage('profil-page')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                    <div class="w-full h-24 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
+                        <span class="text-blue-600 text-2xl">👤</span>
+                    </div>
+                    <h3 class="font-semibold text-gray-800 text-sm text-center">Profil Progres</h3>
+                </div>
+            </div>
+
+            <!-- Logout Button -->
+            <div class="mt-8 flex justify-center">
+                <button onclick="showPage('login-page')"
+                    class="bg-red-500 text-white px-8 py-3 rounded-full font-medium">Log out</button>
+            </div>
+        </div>
+
+        <!-- EKG Normal Page -->
+        <div id="ekg-normal-page" class="min-h-screen bg-slate-100 hidden">
+            <!-- Header -->
+            <div class="bg-white px-4 py-3 flex items-center">
+                <button onclick="showPage('menu-page')"
+                    class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm flex items-center">
+                    ← Kembali
+                </button>
+            </div>
+
+            <div class="p-4">
+                <div class="text-center mb-6">
+                    <h1 class="text-2xl font-bold text-gray-800">EKG <span class="text-blue-500">Normal</span></h1>
+                    <p class="text-gray-600">Pilih materi untuk mulai belajar</p>
+                </div>
+
+                <!-- EKG Grid -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-20 bg-pink-100 rounded-lg mb-3 ekg-grid"></div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">Pengantar EKG</h3>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-20 bg-pink-100 rounded-lg mb-3 ekg-grid"></div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">Anatomi & Fisiologi Jantung</h3>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-20 bg-pink-100 rounded-lg mb-3 ekg-grid"></div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">Sadapan EKG</h3>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-20 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-blue-600 text-xl">📚</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">Sistem Konduksi</h3>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-20 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-blue-600 text-xl">📄</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">Kertas EKG</h3>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-20 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-blue-600 text-xl">📈</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">Kurva EKG</h3>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-20 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-blue-600 text-xl">🌊</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">Gelombang P</h3>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-20 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-blue-600 text-xl">⏱️</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">PR Interval</h3>
+                    </div>
+                </div>
+
+                <!-- Sample EKG -->
+                <div onclick="showPage('ekg-sample-page')"
+                    class="mt-6 bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                    <div class="w-full h-24 bg-pink-100 rounded-lg mb-3 ekg-grid"></div>
+                    <h3 class="font-semibold text-gray-800 text-center">EKG Normal</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- EKG Sample Page -->
+        <div id="ekg-sample-page" class="min-h-screen bg-slate-100 hidden">
+            <div class="bg-white px-4 py-3 flex items-center">
+                <button onclick="showPage('ekg-normal-page')"
+                    class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm flex items-center">
+                    ← Kembali
+                </button>
+            </div>
+
+            <div class="p-4">
+                <div class="text-center mb-6">
+                    <h1 class="text-2xl font-bold text-gray-800">EKG <span class="text-blue-500">NORMAL</span></h1>
+                    <p class="text-gray-600">Pilih materi untuk mulai belajar</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-4 shadow-sm">
+                    <div class="w-full h-32 bg-pink-100 rounded-lg ekg-grid mb-4"></div>
+                    <h3 class="font-semibold text-gray-800 text-center">EKG Normal</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Aritmia Page -->
+        <div id="aritmia-page" class="min-h-screen bg-slate-100 hidden">
+            <div class="bg-white px-4 py-3 flex items-center">
+                <button onclick="showPage('menu-page')"
+                    class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm flex items-center">
+                    ← Kembali
+                </button>
+            </div>
+
+            <div class="p-4">
+                <div class="text-center mb-6">
+                    <h1 class="text-2xl font-bold text-gray-800">Aritmia</h1>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-20 bg-pink-100 rounded-lg mb-3 ekg-grid"></div>
+                        <h3 class="font-semibold text-gray-800 text-xs text-center">Pengantar Aritmia</h3>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-20 bg-pink-100 rounded-lg mb-3 ekg-grid"></div>
+                        <h3 class="font-semibold text-gray-800 text-xs text-center">Penyebab Aritmia</h3>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-20 bg-pink-100 rounded-lg mb-3 ekg-grid"></div>
+                        <h3 class="font-semibold text-gray-800 text-xs text-center">Takiaritmia</h3>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-20 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-blue-600 text-xl">📚</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-xs text-center">Sinus Takiaritmia / Takikardi</h3>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-20 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-blue-600 text-xl">💓</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-xs text-center">Ventrikel Takiaritmia / Takikardi
+                        </h3>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-20 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-blue-600 text-xl">🫀</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-xs text-center">Ventrikel Fibrilasi</h3>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-20 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-blue-600 text-xl">🔄</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-xs text-center">Bradiaritmia / Bradikardi</h3>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-20 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-blue-600 text-xl">🔗</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-xs text-center">Irama Junctional</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interpretasi Page -->
+        <div id="interpretasi-page" class="min-h-screen bg-slate-100 hidden">
+            <div class="bg-white px-4 py-3 flex items-center">
+                <button onclick="showPage('menu-page')"
+                    class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm flex items-center">
+                    ← Kembali
+                </button>
+            </div>
+
+            <div class="p-4">
+                <div class="text-center mb-6">
+                    <h1 class="text-2xl font-bold text-gray-800">Interpretasi Gambaran <span
+                            class="text-blue-500">EKG</span></h1>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-20 bg-pink-100 rounded-lg mb-3 ekg-grid"></div>
+                        <h3 class="font-semibold text-gray-800 text-xs text-center">Irama</h3>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-20 bg-pink-100 rounded-lg mb-3 ekg-grid"></div>
+                        <h3 class="font-semibold text-gray-800 text-xs text-center">Heart Rate (HR)</h3>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-20 bg-pink-100 rounded-lg mb-3 ekg-grid"></div>
+                        <h3 class="font-semibold text-gray-800 text-xs text-center">Gel P</h3>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-20 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-blue-600 text-xl">📚</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-xs text-center">PR Interval</h3>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-20 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-blue-600 text-xl">📄</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-xs text-center">Gel QRS</h3>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-20 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-blue-600 text-xl">📈</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-xs text-center">Segmen ST</h3>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-20 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-blue-600 text-xl">🫀</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-xs text-center">Aksis Jantung</h3>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-20 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-blue-600 text-xl">📖</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-xs text-center">Contoh Interpretasi EKG</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Latihan Page -->
+        <div id="latihan-page" class="min-h-screen bg-slate-100 hidden">
+            <div class="bg-white px-4 py-3 flex items-center">
+                <button onclick="showPage('menu-page')"
+                    class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm flex items-center">
+                    ← Kembali
+                </button>
+            </div>
+
+            <div class="p-4">
+                <div class="text-center mb-6">
+                    <h1 class="text-2xl font-bold text-gray-800">Latihan</h1>
+                </div>
+
+                <div class="grid grid-cols-1 gap-4">
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-20 bg-pink-100 rounded-lg mb-3 ekg-grid"></div>
+                        <h3 class="font-semibold text-gray-800 text-center">Progres belajar (modul yang selesai)</h3>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-20 bg-pink-100 rounded-lg mb-3 ekg-grid"></div>
+                        <h3 class="font-semibold text-gray-800 text-center">Nilai kuis</h3>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-20 bg-pink-100 rounded-lg mb-3 ekg-grid"></div>
+                        <h3 class="font-semibold text-gray-800 text-center">Download catatan pengguna</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Simulasi Page -->
+        <div id="simulasi-page" class="min-h-screen bg-slate-100 hidden">
+            <div class="bg-white px-4 py-3 flex items-center">
+                <button onclick="showPage('menu-page')"
+                    class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm flex items-center">
+                    ← Kembali
+                </button>
+            </div>
+
+            <div class="p-4">
+                <div class="text-center mb-6">
+                    <h1 class="text-2xl font-bold text-gray-800">Simulasi</h1>
+                </div>
+
+                <div class="grid grid-cols-1 gap-4">
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-20 bg-pink-100 rounded-lg mb-3 ekg-grid"></div>
+                        <h3 class="font-semibold text-gray-800 text-center">Animasi sistem konduksi jantung</h3>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-20 bg-pink-100 rounded-lg mb-3 ekg-grid"></div>
+                        <h3 class="font-semibold text-gray-800 text-center">Interaksi : memilih lead, melihat hasil
+                            EKG-nya</h3>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-20 bg-pink-100 rounded-lg mb-3 ekg-grid"></div>
+                        <h3 class="font-semibold text-gray-800 text-center">Bandingkan EKG dalam berbagai kondisi
+                            (istirahat, stres ringan)</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profil Page -->
+        <div id="profil-page" class="min-h-screen bg-slate-100 hidden">
+            <div class="bg-white px-4 py-3 flex items-center">
+                <button onclick="showPage('menu-page')"
+                    class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm flex items-center">
+                    ← Kembali
+                </button>
+            </div>
+
+            <div class="p-4">
+                <div class="text-center mb-6">
+                    <h1 class="text-2xl font-bold text-gray-800">Profil</h1>
+                </div>
+
+                <div class="grid grid-cols-1 gap-4">
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-20 bg-pink-100 rounded-lg mb-3 ekg-grid"></div>
+                        <h3 class="font-semibold text-gray-800 text-center">Animasi sistem konduksi jantung</h3>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-20 bg-pink-100 rounded-lg mb-3 ekg-grid"></div>
+                        <h3 class="font-semibold text-gray-800 text-center">Interaksi : memilih lead, melihat hasil
+                            EKG-nya</h3>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-20 bg-pink-100 rounded-lg mb-3 ekg-grid"></div>
+                        <h3 class="font-semibold text-gray-800 text-center">Bandingkan EKG dalam berbagai kondisi
+                            (istirahat, stres ringan)</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = ['login-page', 'register-page', 'menu-page', 'ekg-normal-page', 'ekg-sample-page', 'aritmia-page', 'interpretasi-page', 'latihan-page', 'simulasi-page', 'profil-page'];
+
+            pages.forEach(page => {
+                document.getElementById(page).classList.add('hidden');
+            });
+
+            // Show selected page
+            document.getElementById(pageId).classList.remove('hidden');
+        }
+
+        // Initialize with login page
+        showPage('register-page');
+    </script>
+</body>
+
+</html>
