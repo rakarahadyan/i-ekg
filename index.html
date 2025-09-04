@@ -27,8 +27,8 @@
                 </div>
 
                 <!-- Title -->
-                <h1 class="text-2xl font-bold text-gray-800 text-center mb-2">I-EKG<span
-                        class="text-blue-500">SMART</span></h1>
+                <h1 class="text-2xl font-bold text-gray-800 text-center mb-2">I-EKG <span
+                        class="text-blue-500 italic">SMART</span></h1>
                 <p class="text-gray-600 text-center mb-8">Silakan login untuk melanjutkan</p>
 
                 <!-- Login Form -->
@@ -58,7 +58,7 @@
         </div>
 
         <!-- Register Page -->
-        <div id="register-page" class="h-screen flex flex-col bg-gradient-to-b from-slate-50 to-slate-100 p-6 hidden">
+        <div id="register-page" class="min-h-screen flex flex-col bg-gradient-to-b from-slate-50 to-slate-100 p-6">
             <div class="flex-1 flex flex-col justify-center">
                 <!-- Logo -->
                 <div class="w-32 h-32 rounded-2xl mx-auto mb-8 flex items-center justify-center">
@@ -66,8 +66,8 @@
                 </div>
 
                 <!-- Title -->
-                <h1 class="text-2xl font-bold text-gray-800 text-center mb-2">I-EKG<span
-                        class="text-blue-500">SMART</span></h1>
+                <h1 class="text-2xl font-bold text-gray-800 text-center mb-2">I-EKG <span
+                        class="text-blue-500 italic">SMART</span></h1>
                 <p class="text-gray-600 text-center mb-8">Silakan isi data untuk membuat akun baru</p>
 
                 <!-- Register Form -->
@@ -155,7 +155,7 @@
         <!-- EKG Normal Page -->
         <div id="ekg-normal-page" class="min-h-screen bg-slate-100 hidden">
             <!-- Header -->
-            <div class="bg-white px-4 py-3 flex items-center">
+            <div class="px-4 py-3 flex items-center">
                 <button onclick="showPage('menu-page')"
                     class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm flex items-center">
                     ← Kembali
@@ -164,8 +164,15 @@
 
             <div class="p-4">
                 <div class="text-center mb-6">
-                    <h1 class="text-2xl font-bold text-gray-800">EKG <span class="text-blue-500">Normal</span></h1>
+                    <h1 class="text-2xl font-bold text-gray-800">EKG <span class="text-blue-500 italic">Normal</span></h1>
                     <p class="text-gray-600">Pilih materi untuk mulai belajar</p>
+                </div>
+
+                <!-- Sample EKG -->
+                <div onclick="showPage('ekg-sample-page')"
+                    class="mt-6 bg-white rounded-xl p-4 shadow-sm cursor-pointer mb-3">
+                    <div class="w-full h-24 bg-pink-100 rounded-lg mb-3 ekg-grid"></div>
+                    <h3 class="font-semibold text-gray-800 text-center">EKG Normal</h3>
                 </div>
 
                 <!-- EKG Grid -->
@@ -221,12 +228,6 @@
                     </div>
                 </div>
 
-                <!-- Sample EKG -->
-                <div onclick="showPage('ekg-sample-page')"
-                    class="mt-6 bg-white rounded-xl p-4 shadow-sm cursor-pointer">
-                    <div class="w-full h-24 bg-pink-100 rounded-lg mb-3 ekg-grid"></div>
-                    <h3 class="font-semibold text-gray-800 text-center">EKG Normal</h3>
-                </div>
             </div>
         </div>
 
@@ -241,7 +242,7 @@
 
             <div class="p-4">
                 <div class="text-center mb-6">
-                    <h1 class="text-2xl font-bold text-gray-800">EKG <span class="text-blue-500">NORMAL</span></h1>
+                    <h1 class="text-2xl font-bold text-gray-800">EKG <span class="text-blue-500 italic">NORMAL</span></h1>
                     <p class="text-gray-600">Pilih materi untuk mulai belajar</p>
                 </div>
 
@@ -254,7 +255,7 @@
 
         <!-- Aritmia Page -->
         <div id="aritmia-page" class="min-h-screen bg-slate-100 hidden">
-            <div class="bg-white px-4 py-3 flex items-center">
+            <div class="px-4 py-3 flex items-center">
                 <button onclick="showPage('menu-page')"
                     class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm flex items-center">
                     ← Kembali
@@ -323,7 +324,7 @@
 
         <!-- Interpretasi Page -->
         <div id="interpretasi-page" class="min-h-screen bg-slate-100 hidden">
-            <div class="bg-white px-4 py-3 flex items-center">
+            <div class="px-4 py-3 flex items-center">
                 <button onclick="showPage('menu-page')"
                     class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm flex items-center">
                     ← Kembali
@@ -392,7 +393,7 @@
 
         <!-- Latihan Page -->
         <div id="latihan-page" class="min-h-screen bg-slate-100 hidden">
-            <div class="bg-white px-4 py-3 flex items-center">
+            <div class="px-4 py-3 flex items-center">
                 <button onclick="showPage('menu-page')"
                     class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm flex items-center">
                     ← Kembali
@@ -425,7 +426,7 @@
 
         <!-- Simulasi Page -->
         <div id="simulasi-page" class="min-h-screen bg-slate-100 hidden">
-            <div class="bg-white px-4 py-3 flex items-center">
+            <div class="px-4 py-3 flex items-center">
                 <button onclick="showPage('menu-page')"
                     class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm flex items-center">
                     ← Kembali
@@ -460,7 +461,7 @@
 
         <!-- Profil Page -->
         <div id="profil-page" class="min-h-screen bg-slate-100 hidden">
-            <div class="bg-white px-4 py-3 flex items-center">
+            <div class="px-4 py-3 flex items-center">
                 <button onclick="showPage('menu-page')"
                     class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm flex items-center">
                     ← Kembali
@@ -475,19 +476,17 @@
                 <div class="grid grid-cols-1 gap-4">
                     <div class="bg-white rounded-xl p-4 shadow-sm">
                         <div class="w-full h-20 bg-pink-100 rounded-lg mb-3 ekg-grid"></div>
-                        <h3 class="font-semibold text-gray-800 text-center">Animasi sistem konduksi jantung</h3>
+                        <h3 class="font-semibold text-gray-800 text-center">Progres belajar (modul yang selesai)</h3>
                     </div>
 
                     <div class="bg-white rounded-xl p-4 shadow-sm">
                         <div class="w-full h-20 bg-pink-100 rounded-lg mb-3 ekg-grid"></div>
-                        <h3 class="font-semibold text-gray-800 text-center">Interaksi : memilih lead, melihat hasil
-                            EKG-nya</h3>
+                        <h3 class="font-semibold text-gray-800 text-center">Nilai kuis</h3>
                     </div>
 
                     <div class="bg-white rounded-xl p-4 shadow-sm">
                         <div class="w-full h-20 bg-pink-100 rounded-lg mb-3 ekg-grid"></div>
-                        <h3 class="font-semibold text-gray-800 text-center">Bandingkan EKG dalam berbagai kondisi
-                            (istirahat, stres ringan)</h3>
+                        <h3 class="font-semibold text-gray-800 text-center">Download catatan pengguna</h3>
                     </div>
                 </div>
             </div>
@@ -508,7 +507,7 @@
         }
 
         // Initialize with login page
-        showPage('register-page');
+        showPage('login-page');
     </script>
 </body>
 
