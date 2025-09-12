@@ -39,7 +39,7 @@
                     </h1>
                 </div>
 
-                <div class="bg-white rounded-xl shadow-sm overflow-hidden cursor-pointer mb-6">
+                <!-- <div class="bg-white rounded-xl shadow-sm overflow-hidden cursor-pointer mb-6">
                     <div class="p-4 text-justify text-gray-700">
                         <p class="text-paragraf">
                             Kertas EKG merupakan media tempat gelombang listrik jantung direkam. Kertas ini memiliki
@@ -47,47 +47,69 @@
                             menginterpretasi aktivitas listrik jantung. (Nazmah, 2015).
                         </p>
                     </div>
-                </div>
+                </div> -->
 
-                <div id="accordion" class="space-y-4">
-
-                    <!-- a.	Gelombang P -->
-                    <div class="border rounded-lg overflow-hidden">
-                        <button onclick="toggleAccordion('sa-node')"
-                            class="w-full bg-blue-500 text-white font-semibold px-4 py-2 text-left">
-                            a. Komponen Dasar Kertas EKG
-                        </button>
-                        <div id="sa-node" class="p-4 text-justify text-gray-700 bg-white">
-                            <p>
-                                1) Kotak Kecil: Setiap kotak kecil berukuran 1 mm x 1 mm.<br>
-                                2) Kotak Besar: Setiap kotak besar berukuran 5 mm x 5 mm, yang terdiri dari 25 kotak
-                                kecil.
-                            </p>
+                <!-- Grid Section -->
+                <div id="grid-section" class="grid grid-cols-2 gap-4">
+                    <!-- a. Komponen Dasar Kertas EKG -->
+                    <div onclick="showDetail('komponen-ekg')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-24 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-blue-600 text-2xl">📏</span>
                         </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">a. Komponen Dasar Kertas EKG</h3>
                     </div>
 
-                    <!-- b.	Gelombang QRS -->
-                    <div class="border rounded-lg overflow-hidden">
-                        <button onclick="toggleAccordion('internodal')"
-                            class="w-full bg-green-500 text-white font-semibold px-4 py-2 text-left">
-                            b. Pengukuran pada Kertas EKG
-                        </button>
-                        <div id="internodal" class="hidden p-4 text-justify text-gray-700 bg-white">
-                            <p>
-                                Pengukuran pada kertas EKG didasarkan pada dua sumbu utama:<br>
-                                1) Sumbu Horizontal (Waktu): Mengukur durasi atau interval. Setiap kotak kecil mewakili
-                                0,04 detik, dan setiap kotak besar mewakili 0,20 detik (5 x 0,04 detik). Sumbu ini
-                                digunakan untuk menghitung laju denyut jantung, interval PR, durasi QRS, dan interval
-                                QT.<br>
-                                2) Sumbu Vertikal (Amplitudo/Voltase): Mengukur kekuatan atau tinggi gelombang listrik.
-                                Setiap kotak kecil mewakili 0,1 mV, dan setiap kotak besar mewakili 0,5 mV (5 x 0,1 mV).
-                                Sumbu ini digunakan untuk mengukur tinggi Gelombang P, tinggi kompleks QRS, dan tinggi
-                                Gelombang T.
-                            </p>
+                    <!-- b. Pengukuran pada Kertas EKG -->
+                    <div onclick="showDetail('pengukuran-ekg')"
+                        class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-24 bg-green-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-green-600 text-2xl">📐</span>
                         </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">b. Pengukuran pada Kertas EKG</h3>
                     </div>
-
                 </div>
+
+                <!-- Detail Section -->
+                <div id="detail-section" class="hidden bg-white rounded-xl p-6 shadow-sm cursor-pointer">
+                    <div id="detail-content" class="text-gray-700 text-justify"></div>
+                </div>
+
+                <script>
+                    const details = {
+                        "komponen-ekg": `
+            <h3 class="text-lg font-semibold mb-2">📏 Komponen Dasar Kertas EKG</h3>
+            <p>
+                1) Kotak Kecil: Setiap kotak kecil berukuran 1 mm x 1 mm.<br>
+                2) Kotak Besar: Setiap kotak besar berukuran 5 mm x 5 mm, terdiri dari 25 kotak kecil.
+            </p>
+        `,
+                        "pengukuran-ekg": `
+            <h3 class="text-lg font-semibold mb-2">📐 Pengukuran pada Kertas EKG</h3>
+            <p>
+                Pengukuran pada kertas EKG didasarkan pada dua sumbu utama:<br><br>
+                1) <b>Sumbu Horizontal (Waktu)</b>: Mengukur durasi atau interval. 
+                Setiap kotak kecil = 0,04 detik, setiap kotak besar = 0,20 detik (5 × 0,04 detik). 
+                Digunakan untuk menghitung laju denyut jantung, interval PR, durasi QRS, dan interval QT.<br><br>
+                2) <b>Sumbu Vertikal (Amplitudo/Voltase)</b>: Mengukur tinggi gelombang listrik. 
+                Setiap kotak kecil = 0,1 mV, setiap kotak besar = 0,5 mV (5 × 0,1 mV). 
+                Digunakan untuk mengukur tinggi Gelombang P, QRS, dan Gelombang T.
+            </p>
+        `
+                    };
+
+                    function showDetail(key) {
+                        document.getElementById('grid-section').classList.add('hidden');
+                        document.getElementById('detail-content').innerHTML = details[key];
+                        document.getElementById('detail-section').classList.remove('hidden');
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+
+                    // Klik detail untuk kembali ke grid
+                    document.getElementById('detail-section').addEventListener('click', function () {
+                        this.classList.add('hidden');
+                        document.getElementById('grid-section').classList.remove('hidden');
+                    });
+                </script>
 
                 <script>
                     function toggleAccordion(id) {

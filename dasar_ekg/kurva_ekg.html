@@ -20,12 +20,9 @@
 
 <body class="h-full bg-slate-100 font-sans">
 
-    <!-- Page Container -->
     <div id="app" class="max-w-sm mx-auto bg-white min-h-screen relative overflow-hidden">
 
-        <!-- EKG Normal Page -->
         <div id="ekg-normal-page" class="min-h-screen bg-slate-100">
-            <!-- Header -->
             <div class="px-4 py-3 flex items-center">
                 <button onclick="history.back();"
                     class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm flex items-center">
@@ -39,7 +36,7 @@
                     </h1>
                 </div>
 
-                <div class="bg-white rounded-xl shadow-sm overflow-hidden cursor-pointer mb-6">
+                <!-- <div class="bg-white rounded-xl shadow-sm overflow-hidden cursor-pointer mb-6">
                     <div class="p-4 text-justify text-gray-700">
                         <p class="text-paragraf">
                             Kurva EKG menggambarkan proses listrik yang terjadi pada atrium dan ventrikel, EKG normal
@@ -47,90 +44,113 @@
                             ada beberapa interval dan segmen EKG.
                         </p>
                     </div>
-                </div>
+                </div> -->
 
-                <div id="accordion" class="space-y-4">
-
-                    <!-- a.	Gelombang P -->
-                    <div class="border rounded-lg overflow-hidden">
-                        <button onclick="toggleAccordion('sa-node')"
-                            class="w-full bg-blue-500 text-white font-semibold px-4 py-2 text-left">
-                            a. Gelombang P
-                        </button>
-                        <div id="sa-node" class="p-4 text-justify text-gray-700 bg-white">
-                            <p>
-                                Gelombang P merupakan depolarisasi atrium, normal gelombang P :<br>
-                                • Lebar < 0,12 detik<br>
-                                • Tinggi < 0,3 mv<br>
-                                • Selalu positif di lead II<br>
-                                • Negatif di aVR
-                            </p>
+                <div id="grid-section" class="grid grid-cols-2 gap-4">
+                    <!-- a. Gelombang P -->
+                    <div onclick="showDetail('gelombang-p')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-24 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-blue-600 text-2xl">🔵</span>
                         </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">a. Gelombang P</h3>
                     </div>
 
-                    <!-- b.	Gelombang QRS -->
-                    <div class="border rounded-lg overflow-hidden">
-                        <button onclick="toggleAccordion('internodal')"
-                            class="w-full bg-green-500 text-white font-semibold px-4 py-2 text-left">
-                            b. Gelombang QRS
-                        </button>
-                        <div id="internodal" class="hidden p-4 text-justify text-gray-700 bg-white">
-                            <p>
-                                Gelombang QRS merupakan depolarisasi dari ventrikel,
-                                normal gelombang QRS :<br>
-                                • Lebar 0,06 - 0,12 detik<br>
-                                • Tinggi tergantung lead<br>
-                                • Gelombang QRS terdiri dari gelombang Q, gelombang R
-                                Dan gelombang S
-
-                            </p>
+                    <!-- b. Gelombang QRS -->
+                    <div onclick="showDetail('gelombang-qrs')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-24 bg-green-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-green-600 text-2xl">📉</span>
                         </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">b. Gelombang QRS</h3>
                     </div>
 
-                    <!-- c.	Gelombang Q -->
-                    <div class="border rounded-lg overflow-hidden">
-                        <button onclick="toggleAccordion('av-node')"
-                            class="w-full bg-yellow-500 text-white font-semibold px-4 py-2 text-left">
-                            c. Gelombang Q
-                        </button>
-                        <div id="av-node" class="hidden p-4 text-justify text-gray-700 bg-white">
-                            <p>
-                                Adalah defleksi negatif pertama pada gelombang QRS,
-                                normalnya :<br>
-                                • Lebar < 0,04 detik <br>
-                                • Tinggi (dalamnya) kurang dari 1/3 tinggi </p>
+                    <!-- c. Gelombang Q -->
+                    <div onclick="showDetail('gelombang-q')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-24 bg-yellow-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-yellow-600 text-2xl">⬇️</span>
                         </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">c. Gelombang Q</h3>
                     </div>
 
                     <!-- d. Gelombang R -->
-                    <div class="border rounded-lg overflow-hidden">
-                        <button onclick="toggleAccordion('his-bundle')"
-                            class="w-full bg-red-500 text-white font-semibold px-4 py-2 text-left">
-                            d. Gelombang R
-                        </button>
-                        <div id="his-bundle" class="hidden p-4 text-justify text-gray-700 bg-white">
-                            <p class="text-paragraf">
-                                Adalah defleksi positif pertama pada gelombang QRS, gelombang R umumnya positif di lead
-                                I, II, V5 dan V6. Di aVR, V1 dan V2 biasanya hanya kecil atau tidak ada sama sekali.
-                            </p>
+                    <div onclick="showDetail('gelombang-r')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-24 bg-red-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-red-600 text-2xl">⬆️</span>
                         </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">d. Gelombang R</h3>
                     </div>
 
-                    <!-- e.	Gelombang S -->
-                    <div class="border rounded-lg overflow-hidden">
-                        <button onclick="toggleAccordion('purkinje')"
-                            class="w-full bg-purple-500 text-white font-semibold px-4 py-2 text-left">
-                            e. Gelombang S
-                        </button>
-                        <div id="purkinje" class="hidden p-4 text-justify text-gray-700 bg-white">
-                            <p class="text-paragraf">
-                                Adalah defleksi negatif setelah gelombang R, di lead aVR dan V1 gelombang S terlihat
-                                lebih dalam, dari V2 sampai V6 terlihat makin lama makin kecil atau menghilang .
-                            </p>
+                    <!-- e. Gelombang S -->
+                    <div onclick="showDetail('gelombang-s')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-24 bg-purple-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-purple-600 text-2xl">📉</span>
                         </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">e. Gelombang S</h3>
                     </div>
-
                 </div>
+
+                <!-- Detail Section -->
+                <div id="detail-section" class="hidden bg-white rounded-xl p-6 shadow-sm cursor-pointer">
+                    <div id="detail-content" class="text-gray-700 text-justify"></div>
+                </div>
+
+                <script>
+                    const details = {
+                        "gelombang-p": `
+            <h3 class="text-lg font-semibold mb-2">🔵 Gelombang P</h3>
+            <p>
+                Gelombang P merupakan depolarisasi atrium, normal gelombang P:<br>
+                • Lebar &lt; 0,12 detik<br>
+                • Tinggi &lt; 0,3 mv<br>
+                • Selalu positif di lead II<br>
+                • Negatif di aVR
+            </p>
+        `,
+                        "gelombang-qrs": `
+            <h3 class="text-lg font-semibold mb-2">📉 Gelombang QRS</h3>
+            <p>
+                Gelombang QRS merupakan depolarisasi ventrikel. Normal:<br>
+                • Lebar 0,06 - 0,12 detik<br>
+                • Tinggi tergantung lead<br>
+                • Terdiri dari gelombang Q, R, dan S
+            </p>
+        `,
+                        "gelombang-q": `
+            <h3 class="text-lg font-semibold mb-2">⬇️ Gelombang Q</h3>
+            <p>
+                Defleksi negatif pertama pada QRS. Normal:<br>
+                • Lebar &lt; 0,04 detik<br>
+                • Dalamnya &lt; 1/3 tinggi gelombang R
+            </p>
+        `,
+                        "gelombang-r": `
+            <h3 class="text-lg font-semibold mb-2">⬆️ Gelombang R</h3>
+            <p>
+                Defleksi positif pertama pada QRS. Biasanya positif di lead I, II, V5, V6.
+                Di aVR, V1, V2 kecil atau tidak ada sama sekali.
+            </p>
+        `,
+                        "gelombang-s": `
+            <h3 class="text-lg font-semibold mb-2">📉 Gelombang S</h3>
+            <p>
+                Defleksi negatif setelah gelombang R. Di lead aVR dan V1 biasanya dalam.
+                Dari V2 sampai V6 makin lama makin kecil atau hilang.
+            </p>
+        `
+                    };
+
+                    function showDetail(key) {
+                        document.getElementById('grid-section').classList.add('hidden');
+                        document.getElementById('detail-content').innerHTML = details[key];
+                        document.getElementById('detail-section').classList.remove('hidden');
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+
+                    // Klik detail → kembali ke grid
+                    document.getElementById('detail-section').addEventListener('click', function () {
+                        this.classList.add('hidden');
+                        document.getElementById('grid-section').classList.remove('hidden');
+                    });
+                </script>
 
                 <script>
                     function toggleAccordion(id) {

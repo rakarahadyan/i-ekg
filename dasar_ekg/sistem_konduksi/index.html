@@ -39,7 +39,7 @@
                     </h1>
                 </div>
 
-                <div class="bg-white rounded-xl shadow-sm overflow-hidden cursor-pointer mb-6">
+                <!-- <div class="bg-white rounded-xl shadow-sm overflow-hidden cursor-pointer mb-6">
                     <div class="p-4 text-justify text-gray-700">
                         <p class="text-paragraf">
                             Sistem konduksi jantung adalah serangkaian sel-sel otot jantung khusus yang menghasilkan dan
@@ -49,86 +49,110 @@
                             sistem konduksi ini meliputi:
                         </p>
                     </div>
-                </div>
+                </div> -->
 
-                <div id="accordion" class="space-y-4">
-
+                <div id="grid-section" class="grid grid-cols-2 gap-4">
                     <!-- a. Sinoatrial (SA) Node -->
-                    <div class="border rounded-lg overflow-hidden">
-                        <button onclick="toggleAccordion('sa-node')"
-                            class="w-full bg-blue-500 text-white font-semibold px-4 py-2 text-left">
-                            a. Sinoatrial (SA) Node
-                        </button>
-                        <div id="sa-node" class="p-4 text-justify text-gray-700 bg-white">
-                            <p class="text-paragraf">
-                                Dikenal sebagai "pemacu jantung" (pacemaker) utama, SA Node adalah sekelompok sel yang
-                                terletak di atrium kanan. Sel-sel ini secara spontan menghasilkan impuls listrik dengan
-                                frekuensi 60-100 kali per menit. Impuls dari SA Node menyebar ke seluruh atrium,
-                                menyebabkan atrium berkontraksi.
-                            </p>
+                    <div onclick="showDetail('sa-node')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-24 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-blue-600 text-2xl">⚡</span>
                         </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">a. Sinoatrial (SA) Node</h3>
                     </div>
 
                     <!-- b. Jalur Internodal -->
-                    <div class="border rounded-lg overflow-hidden">
-                        <button onclick="toggleAccordion('internodal')"
-                            class="w-full bg-green-500 text-white font-semibold px-4 py-2 text-left">
-                            b. Jalur Internodal
-                        </button>
-                        <div id="internodal" class="hidden p-4 text-justify text-gray-700 bg-white">
-                            <p class="text-paragraf">
-                                Impuls dari SA Node dihantarkan melalui jalur-jalur konduksi di dalam atrium ke
-                                Atrioventricular (AV) Node.
-                            </p>
+                    <div onclick="showDetail('internodal')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-24 bg-green-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-green-600 text-2xl">➡️</span>
                         </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">b. Jalur Internodal</h3>
                     </div>
 
                     <!-- c. Atrioventricular (AV) Node -->
-                    <div class="border rounded-lg overflow-hidden">
-                        <button onclick="toggleAccordion('av-node')"
-                            class="w-full bg-yellow-500 text-white font-semibold px-4 py-2 text-left">
-                            c. Atrioventricular (AV) Node
-                        </button>
-                        <div id="av-node" class="hidden p-4 text-justify text-gray-700 bg-white">
-                            <p class="text-paragraf">
-                                Terletak di perbatasan antara atrium dan ventrikel, AV Node berfungsi sebagai "gerbang"
-                                yang memperlambat impuls sesaat sebelum diteruskan ke ventrikel. Keterlambatan ini
-                                penting untuk memastikan atrium selesai berkontraksi dan memompa darah ke ventrikel
-                                sebelum ventrikel mulai berkontraksi.
-                            </p>
+                    <div onclick="showDetail('av-node')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-24 bg-yellow-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-yellow-600 text-2xl">🚪</span>
                         </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">c. Atrioventricular (AV) Node</h3>
                     </div>
 
                     <!-- d. Bundle of His -->
-                    <div class="border rounded-lg overflow-hidden">
-                        <button onclick="toggleAccordion('his-bundle')"
-                            class="w-full bg-red-500 text-white font-semibold px-4 py-2 text-left">
-                            d. Bundle of His
-                        </button>
-                        <div id="his-bundle" class="hidden p-4 text-justify text-gray-700 bg-white">
-                            <p class="text-paragraf">
-                                Setelah melewati AV Node, impuls bergerak ke Bundle of His, yang membagi menjadi dua
-                                cabang utama: Serabut Kanan (Right Bundle Branch) dan Serabut Kiri (Left Bundle Branch).
-                            </p>
+                    <div onclick="showDetail('his-bundle')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-24 bg-red-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-red-600 text-2xl">🧵</span>
                         </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">d. Bundle of His</h3>
                     </div>
 
                     <!-- e. Serabut Purkinje -->
-                    <div class="border rounded-lg overflow-hidden">
-                        <button onclick="toggleAccordion('purkinje')"
-                            class="w-full bg-purple-500 text-white font-semibold px-4 py-2 text-left">
-                            e. Serabut Purkinje
-                        </button>
-                        <div id="purkinje" class="hidden p-4 text-justify text-gray-700 bg-white">
-                            <p class="text-paragraf">
-                                bergerak dengan sangat cepat melalui Serabut Purkinje, yang menyebar ke seluruh dinding
-                                ventrikel. Hantaran yang cepat ini memastikan kedua ventrikel berkontraksi hampir
-                                bersamaan dan secara kuat untuk memompa darah keluar dari jantung.
-                            </p>
+                    <div onclick="showDetail('purkinje')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-24 bg-purple-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-purple-600 text-2xl">🌐</span>
                         </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">e. Serabut Purkinje</h3>
                     </div>
-
                 </div>
+
+                <!-- Detail Section -->
+                <div id="detail-section" class="hidden bg-white rounded-xl p-6 shadow-sm cursor-pointer">
+                    <div id="detail-content" class="text-gray-700 text-justify"></div>
+                </div>
+
+                <script>
+                    const details = {
+                        "sa-node": `
+            <h3 class="text-lg font-semibold mb-2">⚡ Sinoatrial (SA) Node</h3>
+            <p>
+                Dikenal sebagai "pemacu jantung" utama, SA Node adalah sekelompok sel
+                di atrium kanan yang menghasilkan impuls listrik 60-100 kali per menit.
+                Impuls ini menyebar ke seluruh atrium dan menyebabkan kontraksi.
+            </p>
+        `,
+                        "internodal": `
+            <h3 class="text-lg font-semibold mb-2">➡️ Jalur Internodal</h3>
+            <p>
+                Impuls dari SA Node dihantarkan melalui jalur konduksi internodal
+                menuju Atrioventricular (AV) Node.
+            </p>
+        `,
+                        "av-node": `
+            <h3 class="text-lg font-semibold mb-2">🚪 Atrioventricular (AV) Node</h3>
+            <p>
+                AV Node terletak di perbatasan atrium dan ventrikel, berfungsi sebagai "gerbang"
+                yang memperlambat impuls sebelum diteruskan ke ventrikel.
+                Hal ini penting agar atrium selesai berkontraksi terlebih dahulu.
+            </p>
+        `,
+                        "his-bundle": `
+            <h3 class="text-lg font-semibold mb-2">🧵 Bundle of His</h3>
+            <p>
+                Setelah AV Node, impuls bergerak ke Bundle of His,
+                yang terbagi menjadi cabang kanan dan kiri.
+            </p>
+        `,
+                        "purkinje": `
+            <h3 class="text-lg font-semibold mb-2">🌐 Serabut Purkinje</h3>
+            <p>
+                Impuls menyebar cepat melalui Serabut Purkinje ke seluruh dinding ventrikel,
+                memastikan kontraksi kuat dan hampir bersamaan untuk memompa darah keluar jantung.
+            </p>
+        `
+                    };
+
+                    function showDetail(key) {
+                        document.getElementById('grid-section').classList.add('hidden');
+                        document.getElementById('detail-content').innerHTML = details[key];
+                        document.getElementById('detail-section').classList.remove('hidden');
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+
+                    // Klik kotak detail untuk kembali ke grid
+                    document.getElementById('detail-section').addEventListener('click', function () {
+                        this.classList.add('hidden');
+                        document.getElementById('grid-section').classList.remove('hidden');
+                    });
+                </script>
+
 
                 <script>
                     function toggleAccordion(id) {

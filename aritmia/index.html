@@ -1,351 +1,400 @@
 <!DOCTYPE html>
-<html lang="id" class="h-full">
-
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I-EKG Smart</title>
+    <title>Struktur Aritmia - Interactive Learning</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .ekg-grid {
-            background-image: url("data:image/svg+xml,%3csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3e%3cdefs%3e%3cpattern id='grid' width='20' height='20' patternUnits='userSpaceOnUse'%3e%3cpath d='M 20 0 L 0 0 0 20' fill='none' stroke='%23ff9999' stroke-width='0.5'/%3e%3c/pattern%3e%3c/defs%3e%3crect width='100%25' height='100%25' fill='url(%23grid)' /%3e%3c/svg%3e");
-        }
-
-        .text-paragraf {
-            text-indent: 1.5rem;
-            margin-bottom: 1rem;
+        .card-hover:hover {
+            transform: translateY(-2px);
+            transition: transform 0.2s ease-in-out;
         }
     </style>
 </head>
-
-<body class="h-full bg-slate-100 font-sans">
-
-    <div id="app" class="max-w-sm mx-auto bg-white min-h-screen relative overflow-hidden">
-
-        <div id="ekg-normal-page" class="min-h-screen bg-slate-100">
-            <div class="px-4 py-3 flex items-center">
+<body class="bg-gray-50 min-h-screen p-4">
+    <div class="max-w-6xl mx-auto">
+        
+        <div class="px-4 py-3 flex items-center">
                 <button onclick="history.back();"
                     class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm flex items-center">
                     ← Kembali
                 </button>
             </div>
-
-            <div class="p-4">
-                <div class="text-center mb-6">
-                    <h1 class="text-2xl font-bold text-gray-800">Aritmia
-                    </h1>
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">Aritmia</h1>
+        
+        <!-- Main Container -->
+        <div id="main-level" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- 1. Pengantar Aritmia -->
+            <div class="bg-white rounded-xl p-4 shadow-sm">
+                <div class="w-full h-24 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
+                    <span class="text-blue-600 text-2xl">📚</span>
                 </div>
+                <h3 class="font-semibold text-gray-800 text-sm text-center">1. Pengantar Aritmia</h3>
+            </div>
 
-                <div id="accordion" class="space-y-4">
-
-                    <div class="border rounded-lg overflow-hidden">
-                        <button onclick="toggleAccordion('sa-node')"
-                            class="w-full bg-blue-500 text-white font-semibold px-4 py-2 text-left">
-                            1. Pengantar Aritmia
-                        </button>
-                        <div id="sa-node" class="p-4 text-justify text-gray-700 bg-white">
-                            <p class="text-paragraf">
-                                Aritmia merupakan gangguan irama jantung yang terjadi akibat kelainan dalam pembentukan
-                                atau penghantaran impuls listrik di jantung. Dalam keadaan normal, impuls listrik
-                                berasal dari nodus sinoatrial (SA) yang berfungsi sebagai pacemaker alami. Impuls ini
-                                kemudian diteruskan melalui jalur konduksi ke atrium, nodus atrioventrikular (AV), dan
-                                ventrikel untuk menghasilkan kontraksi terkoordinasi. Bila terjadi gangguan pada
-                                mekanisme ini, baik karena pembentukan impuls yang abnormal atau hambatan konduksi, akan
-                                timbul aritmia (Nazmah, 2015; Surawicz & Knilans, 2019).</p>
-                        </div>
-                    </div>
-
-                    <div class="border rounded-lg overflow-hidden">
-                        <button onclick="toggleAccordion('internodal')"
-                            class="w-full bg-green-500 text-white font-semibold px-4 py-2 text-left">
-                            2. Penyebab Aritmia
-                        </button>
-                        <div id="internodal" class="hidden p-4 text-justify text-gray-700 bg-white">
-                            <p class="text-paragraf">A. Aritmia karena Gangguan pembentukan impuls</p>
-
-                            <p class="text-paragraf">a) Nodus SA</p>
-
-                            <p class="text-paragraf">I. Takikardi sinus (ST)</p>
-                            • Irama : Teratur <br>
-                            • Frekuensi (HR) : &gt; 100 - 150 kali/menit <br>
-                            • Gelombang P : Normal, setiap gelombang P diikuti gelombang QRS, dan T <br>
-                            • Interval PR : Normal <br>
-                            • Gelombang QRS : Normal <br>
-                            <br>
-                            <!-- Gambar 3.1 Takhikardi Sinus (ST) <br><br> -->
-
-                            <p class="text-paragraf">II. Bradikardi Sinus (SB)</p>
-                            • Irama : Teratur <br>
-                            • Frekuensi (HR) : &lt; 60 kali/menit <br>
-                            • Gelombang P : Normal, setiap gelombang diikuti Gelombang QRS, T <br>
-                            • Interval PR : Normal <br>
-                            • Gelombang QRS : Normal <br>
-                            <br>
-                            <!-- Gambar 3.2 Bradikardi Sinus (SB) <br><br> -->
-
-                            <p class="text-paragraf">III. Aritmia Sinus</p>
-                            • Irama : Tidak teratur <br>
-                            • Frekuensi (HR) : Biasanya antara 60 - 100 kali/menit <br>
-                            • Gelombang P : Normal, setiap gelombang <br>
-                            • Interval PR : Normal <br>
-                            • Gelombang QRS : Normal <br>
-                            Semua gelombang sama <br>
-                            <br>
-                            <!-- Gambar 3.3 Aritmia Sinus <br><br> -->
-
-                            <p class="text-paragraf">IV. Sinus Arest</p>
-                            • Irama : Teratur, kecuali pada yang hilang <br>
-                            • Frekuensi (HR) : Biasanya &lt; 60 kali/menit <br>
-                            • Gelombang P : Normal, setiap gelombang P diikuti gelombang QRS <br>
-                            • Interval PR : Normal <br>
-                            • Gelombang QRS : Normal <br>
-                            • Hilangnya gelombang P, QRS dan gelombang T tidak menyebabkan jarak antara R–R <br>
-                            <br>
-                            <!-- Gambar 3.4 Sinus Arest <br><br> -->
-
-                            <p class="text-paragraf">b) Atrium</p>
-
-                            <p class="text-paragraf">I. Ekstrasistol atrial</p>
-                            • Irama : Tidak teratur karena ada irama yang timbul lebih awal <br>
-                            • Frekuensi (HR) : Tergantung irama dasarnya <br>
-                            • Gelombang P : Bentuknya berbeda dari irama dasarnya <br>
-                            • Interval PR : Normal atau memendek <br>
-                            <br>
-                            <!-- Gambar 3.5 Ekstrasistol Atrial (AES/PAB/PAC) <br><br> -->
-
-                            <p class="text-paragraf">II. Takikardi Supraventrikel</p>
-                            • Irama : Teratur <br>
-                            • Frekuensi (HR) : 150 - 250 kali/menit <br>
-                            • Gelombang P : Sukar dilihat, kadang terlihat tetapi kecil <br>
-                            • Interval PR : Tidak dapat dihitung atau memendek <br>
-                            • Gelombang QRS : Normal <br>
-                            <br>
-                            <!-- Gambar 3.6 Takhikardi Supraventrikel <br><br> -->
-
-                            <p class="text-paragraf">III. Flutter atrial</p>
-                            • Irama : Biasanya teratur, bisa juga tidak teratur <br>
-                            • Frekuensi (HR) : Bervariasi, bisa normal, lambat atau cepat <br>
-                            • Gelombang P : Tidak normal, seperti gigi gergaji, teratur dan dapat dihitung (mis:
-                            P:QRS=2:1, 3:1 atau 4:1) <br>
-                            • Interval PR : Tidak dapat dihitung <br>
-                            • Gelombang QRS : Normal <br>
-                            <br>
-                            <!-- Gambar 3.7 Flutter Atrial (AFL) <br><br> -->
-
-                            <p class="text-paragraf">IV. Fibrilasi atrial</p>
-                            • Irama : Tidak teratur <br>
-                            • Frekuensi (HR) : Bervariasi (normal, lambat atau cepat) <br>
-                            - Rapid Respon : HR ≥ 100 x/menit <br>
-                            - Normo respon : HR 60 - 100 x/menit <br>
-                            - Slow Respon : HR ≤ 60 x/menit <br>
-                            • Gelombang P : Tidak dapat diidentifikasi, sering terlihat keriting <br>
-                            • Interval PR : Tidak dapat dihitung <br>
-                            • Gelombang QRS : Normal <br>
-                            <br>
-                            <!-- Gambar 3.8 Fibrilasi Atrial <br><br> -->
-
-                            <p class="text-paragraf">c) Nodus AV</p>
-
-                            <p class="text-paragraf">I. Irama Junctional (JR)</p>
-                            • Irama : Teratur <br>
-                            • Frekuensi (HR) : 40 - 60 kali/menit <br>
-                            • Gelombang P : Terbalik di depan atau di belakang gelombang QRS <br>
-                            • Interval PR : &lt; 0,12 detik atau tidak dapat dihitung <br>
-                            • Gelombang QRS : Normal <br>
-                            <br>
-                            <!-- Gambar 3.9 Irama Junctional (JR) <br><br> -->
-
-                            <p class="text-paragraf">II. Ekstrasistol Junctional</p>
-                            • Irama : Tidak teratur, karena ada gelombang yang muncul lebih awal <br>
-                            • Frekuensi (HR) : Tergantung irama dasarnya <br>
-                            • Gelombang P : Tidak ada atau tidak normal, sesuai dengan letak impuls <br>
-                            • Interval PR : Tidak dapat dihitung atau memendek <br>
-                            • Gelombang QRS : Normal <br>
-                            <br>
-                            <!-- Gambar 3.10 Ekstrasistol Junctional (JES) <br><br> -->
-
-                            <p class="text-paragraf">III. Takikardi Junctional</p>
-                            • Irama : Teratur <br>
-                            • Frekuensi (HR) : &gt; 100 kali/menit <br>
-                            • Gelombang P : Tidak ada atau terbalik di depan/belakang QRS <br>
-                            • Interval PR : Tidak dapat dihitung atau memendek <br>
-                            • Gelombang QRS : Normal <br>
-                            <br>
-                            <!-- Gambar 3.11 Takhikardi Junctional (JT) <br><br> -->
-
-                            <p class="text-paragraf">d) Supraventrikel</p>
-
-                            <p class="text-paragraf">I. Ekstrasistol Supraventrikel (Ekstrasistol Atrial)</p>
-                            • Irama : Tidak teratur karena ada irama yang timbul lebih awal <br>
-                            • Frekuensi (HR) : Tergantung irama dasarnya <br>
-                            • Gelombang P : Bentuknya berbeda dari irama dasarnya <br>
-                            • Interval PR : Normal atau memendek <br>
-                            <br>
-                            <!-- Gambar 3.12 Ekstrasistol Supraventrikel <br><br> -->
-
-                            <p class="text-paragraf">II. Takikardi Supraventrikel</p>
-                            • Irama : Teratur <br>
-                            • Frekuensi (HR) : 150 - 250 kali/menit <br>
-                            • Gelombang P : Sukar dilihat, kadang terlihat tetapi kecil <br>
-                            • Interval PR : Tidak dapat dihitung atau memendek <br>
-                            • Gelombang QRS : Normal <br>
-                            <br>
-                            <!-- Gambar 3.13 Takikardi Supraventrikel <br><br> -->
-
-                            <p class="text-paragraf">e) Ventrikel</p>
-
-                            <p class="text-paragraf">I. Irama Idioventrikuler</p>
-                            • Irama : Teratur <br>
-                            • Frekuensi (HR) : 20 - 40 kali/menit <br>
-                            • Gelombang P : Tidak terlihat <br>
-                            • Interval PR : Tidak ada <br>
-                            • Gelombang QRS : Lebar (&gt; 0,12 detik) <br>
-                            <br>
-                            <!-- Gambar 3.14 Irama Idioventrikuler <br><br> -->
-
-                            <p class="text-paragraf">II. Ekstrasistol Ventrikuler</p>
-                            • Irama : Tidak teratur, karena ada gelombang yang timbul lebih awal <br>
-                            • Frekuensi (HR) : Tergantung irama dasarnya <br>
-                            • Gelombang P : Tidak ada <br>
-                            • Interval PR : Tidak ada <br>
-                            • Gelombang QRS : Lebar (&gt; 0,12 detik) <br>
-                            <br>
-                            <!-- Gambar 3.15 Ekstrasistol Ventrikel <br><br> -->
-
-                            <p class="text-paragraf">III. Takikardi Ventrikel</p>
-                            • Irama : Teratur <br>
-                            • Frekuensi (HR) : &gt; 100 kali/menit <br>
-                            • Gelombang P : Tidak terlihat <br>
-                            • Interval PR : Tidak ada <br>
-                            • Gelombang QRS : Lebar (&gt; 0,12 detik) <br>
-                            <br>
-                            <!-- Gambar 3.16 Takhikardi Ventrikel (VT) <br><br> -->
-
-                            <p class="text-paragraf">IV. Fibrilasi Ventrikel</p>
-                            a. Fibrilasi Ventrikel (VF) <br>
-                            • Irama : Tidak teratur <br>
-                            • Frekuensi (HR) : Tidak dapat dihitung <br>
-                            • Gelombang P : Tidak ada <br>
-                            • Gelombang QRS : Tidak dapat dihitung, bergelombang dan tidak teratur <br>
-                            <br>
-                            2 (dua) macam VF : <br>
-                            b. Fibrilasi Ventrikel Kasar (Coarse) <br>
-                            <br>
-                            <!-- Gambar 3.17 Fibrilasi Ventrikel Kasar (Coarse) <br><br> -->
-                            c. Fibrilasi Ventrikel halus (Fine) <br>
-                            <br>
-                            <!-- Gambar 3.18 Fibrilasi Ventrikel Halus (Fine) <br><br> -->
-
-                            <p class="text-paragraf">B. Aritmia karena Gangguan penghantaran impuls</p>
-
-                            <p class="text-paragraf">a) Nodus SA</p>
-
-                            <p class="text-paragraf">I. Blok sinoatrial (SA Block)</p>
-                            Terdapat episode hilangnya satu atau lebih gelombang P, QRS, T menyebabkan kelipatan jarak
-                            antara R-R <br>
-                            • Irama : Teratur, kecuali pada yang hilang <br>
-                            • Frekuensi (HR) : Biasanya &lt; 60 kali/menit <br>
-                            • Gelombang P : Normal, selalu diikuti gelombang QRS <br>
-                            • Interval PR : Normal <br>
-                            • Gelombang QRS : Normal <br>
-                            <br>
-                            <!-- Gambar 3.19 Blok sinoatrial (SA Block) <br><br> -->
-
-                            <p class="text-paragraf">b) Nodus AV</p>
-
-                            <p class="text-paragraf">I. Blok AV derajat I (First degree AV block)</p>
-                            • Irama : Teratur <br>
-                            • Frekuensi (HR) : Biasanya antara 60 - 100 kali/menit <br>
-                            • Gelombang P : Normal, selalu diikuti gelombang QRS <br>
-                            • Interval PR : Memanjang &gt; 0,20 detik <br>
-                            • Gelombang QRS : Normal <br>
-                            <br>
-                            <!-- Gambar 3.20 (AV Block) Derajat I <br><br> -->
-
-                            <p class="text-paragraf">II. Blok AV derajat II Mobitz I (Wenckebach)</p>
-                            • Irama : Tidak teratur <br>
-                            • Frekuensi : 60 - 100 kali/menit atau &lt; 60 kali/menit <br>
-                            • Gelombang P : Normal, tetapi ada satu gelombang P yang tidak diikuti Gelombang QRS <br>
-                            • Interval PR : Makin lama makin panjang sampai ada gelombang P yang tidak diikuti gelombang
-                            QRS, kemudian siklus makin panjang diulang <br>
-                            • Gelombang QRS : Normal <br>
-                            <br>
-                            <!-- Gambar 3.21 (AV Block) Derajat II Mobitz 1 <br><br> -->
-
-                            <p class="text-paragraf">III. Blok AV derajat II Mobitz II</p>
-                            • Irama : Umumnya tidak teratur, kadang bisa teratur <br>
-                            • Frekuensi (HR) : Biasanya lambat, &lt; 60 kali/menit <br>
-                            • Gelombang P : Normal, ada satu atau lebih gelombang P yang tidak diikuti gelombang QRS
-                            <br>
-                            • Interval PR : Normal / memanjang secara konstan kemudian ada blok <br>
-                            • Gelombang QRS : Normal <br>
-                            <br>
-                            <!-- Gambar 3.22 (AV Block) Derajat II Mobitz 2 <br><br> -->
-
-                            <p class="text-paragraf">IV. Blok AV derajat III (Total AV Block)</p>
-                            • Irama : Teratur <br>
-                            • Frekuensi (HR) : &lt; 60 kali/menit <br>
-                            • Gelombang P : Normal, tetapi P dan QRS berdiri sendiri-sendiri. Kadang diikuti QRS, kadang
-                            tidak <br>
-                            • Interval PR : Berubah-ubah <br>
-                            • Gelombang QRS : Normal atau &gt; 0,12 detik <br>
-                            <br>
-                            <!-- Gambar 3.23 AV Block Derajat III <br><br> -->
-
-                            <p class="text-paragraf">c) Interventrikuler</p>
-
-                            <p class="text-paragraf">I. Right bundle branch block (RBBB)</p>
-                            • Irama : Teratur <br>
-                            • Frekuensi (HR) : Umumnya normal (60-100 x/menit) <br>
-                            • Gelombang P : Normal, setiap gelombang P selalu diikuti gelombang QRS dan T <br>
-                            • Interval PR : Normal <br>
-                            • Gelombang QRS : Lebar (&gt; 0,12 detik) <br>
-                            • Catatan : Ada bentuk rsR’ (M shape) di V1 dan V2. Gel S yang lebar dan dalam di lead I,
-                            II, aVL, dan V6. Perubahan ST segmen dan gel T di V1 dan V2 <br>
-                            <br>
-                            <!-- Gambar 3.24 RBBB <br><br> -->
-
-                            • Irama : Teratur <br>
-                            • Frekuensi (HR) : Umumnya normal (60-100 x/menit) <br>
-                            • Gelombang P : Normal <br>
-                            • Interval PR : Normal <br>
-                            • Gelombang QRS : Lebar (&gt; 0,12 detik) <br>
-                            • Catatan : Ada bentuk rsR’ (M shape) di V5 dan V6. Gel Q yang lebar dan dalam di V1 dan V2.
-                            ST segmen dan gel T di V5 dan V6. <br>
-                        </div>
-
-                    </div>
-
-
-
+            <!-- 2. Penyebab Aritmia -->
+            <div onclick="showLevel('penyebab-aritmia')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
+                <div class="w-full h-24 bg-red-100 rounded-lg mb-3 flex items-center justify-center">
+                    <span class="text-red-600 text-2xl">⚡</span>
                 </div>
-
-                <script>
-                    function toggleAccordion(id) {
-                        const content = document.getElementById(id);
-                        const allContents = document.querySelectorAll("#accordion > div > div");
-
-                        // Tutup semua panel lain
-                        allContents.forEach(el => {
-                            if (el.id !== id) el.classList.add("hidden");
-                        });
-
-                        // Toggle panel yang diklik
-                        content.classList.toggle("hidden");
-                    }
-                </script>
-
-
+                <h3 class="font-semibold text-gray-800 text-sm text-center">2. Penyebab Aritmia</h3>
             </div>
         </div>
 
+        <!-- Level 2: Penyebab Aritmia -->
+        <div id="penyebab-aritmia" class="hidden mt-6">
+            
+            <div class="nested-container">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- a. Gangguan pembentukan impuls -->
+                    <div onclick="showLevel('gangguan-pembentukan')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
+                        <div class="w-full h-24 bg-green-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-green-600 text-2xl">🔄</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">a. Gangguan pembentukan impuls</h3>
+                    </div>
+
+                    <!-- b. Gangguan Hantaran impuls -->
+                    <div onclick="showLevel('gangguan-hantaran')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
+                        <div class="w-full h-24 bg-orange-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-orange-600 text-2xl">🚫</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">b. Gangguan Hantaran impuls</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Level 3: Gangguan Pembentukan Impuls -->
+        <div id="gangguan-pembentukan" class="hidden mt-6">
+            
+            <div class="nested-container">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!-- 1) Nodus SA -->
+                    <div onclick="showLevel('nodus-sa')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
+                        <div class="w-full h-24 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-blue-600 text-2xl">🔵</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">1) Nodus SA</h3>
+                    </div>
+
+                    <!-- 2) Atrium -->
+                    <div onclick="showLevel('atrium')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
+                        <div class="w-full h-24 bg-purple-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-purple-600 text-2xl">💜</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">2) Atrium</h3>
+                    </div>
+
+                    <!-- 3) Nodus AV -->
+                    <div onclick="showLevel('nodus-av')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
+                        <div class="w-full h-24 bg-teal-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-teal-600 text-2xl">🟢</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">3) Nodus AV</h3>
+                    </div>
+
+                    <!-- 2) Supraventrikel -->
+                    <div onclick="showLevel('supraventrikel')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
+                        <div class="w-full h-24 bg-indigo-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-indigo-600 text-2xl">🔷</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">4) Supraventrikel</h3>
+                    </div>
+
+                    <!-- 3) Ventrikel -->
+                    <div onclick="showLevel('ventrikel')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
+                        <div class="w-full h-24 bg-red-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-red-600 text-2xl">❤️</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">5) Ventrikel</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Level 4: Nodus SA -->
+        <div id="nodus-sa" class="hidden mt-6">
+            
+            <div class="nested-container">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-24 bg-green-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-green-600 text-2xl">⚡</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">a) Takikardi sinus (ST)</h3>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-24 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-blue-600 text-2xl">🐌</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">b) Bradikardi Sinus (SB)</h3>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-24 bg-yellow-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-yellow-600 text-2xl">📊</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">c) Aritmia Sinus</h3>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-24 bg-red-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-red-600 text-2xl">⏸️</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">d) Sinus Arest</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Level 4: Atrium -->
+        <div id="atrium" class="hidden mt-6">
+            
+            <div class="nested-container">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-24 bg-purple-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-purple-600 text-2xl">⚡</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">a) Ekstrasistol atrial</h3>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-24 bg-pink-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-pink-600 text-2xl">🏃‍♂️</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">b) Takikardi Supraventrikel</h3>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-24 bg-indigo-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-indigo-600 text-2xl">🌊</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">c) Flutter atrial</h3>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-24 bg-orange-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-orange-600 text-2xl">💥</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">d) Fibrilasi atrial</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Level 4: Nodus AV -->
+        <div id="nodus-av" class="hidden mt-6">
+            
+            <div class="nested-container">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-24 bg-teal-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-teal-600 text-2xl">🎵</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">a) Irama Junctional (JR)</h3>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-24 bg-cyan-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-cyan-600 text-2xl">⚡</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">b) Ekstrasistol Junctional</h3>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-24 bg-emerald-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-emerald-600 text-2xl">🏃‍♂️</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">c) Takikardi Junctional</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Level 4: Supraventrikel -->
+        <div id="supraventrikel" class="hidden mt-6">
+            
+            <div class="nested-container">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-24 bg-indigo-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-indigo-600 text-2xl">⚡</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">a) Ekstrasistol Supraventrikel (Ektrasistol Atrial)</h3>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-24 bg-violet-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-violet-600 text-2xl">🏃‍♂️</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">b) Takikardi supraventrikel</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Level 4: Ventrikel -->
+        <div id="ventrikel" class="hidden mt-6">
+            
+            <div class="nested-container">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-24 bg-red-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-red-600 text-2xl">🎵</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">a) Irama Idioventrikuler</h3>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-24 bg-rose-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-rose-600 text-2xl">⚡</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">b) Ekstrasistol Ventrikuler</h3>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-24 bg-pink-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-pink-600 text-2xl">🏃‍♂️</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">c) Takikardi Ventrikel</h3>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-24 bg-red-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-red-600 text-2xl">💥</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">d) Fibrilasi Ventrikel</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Level 3: Gangguan Hantaran Impuls -->
+        <div id="gangguan-hantaran" class="hidden mt-6">
+            
+            <div class="nested-container">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <!-- 1) Nodus SA -->
+                    <div onclick="showLevel('sa-blok')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
+                        <div class="w-full h-24 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-blue-600 text-2xl">🔵</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">1) Nodus SA</h3>
+                    </div>
+
+                    <!-- 2) Nodus AV -->
+                    <div onclick="showLevel('av-blok')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
+                        <div class="w-full h-24 bg-teal-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-teal-600 text-2xl">🟢</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">2) Nodus AV</h3>
+                    </div>
+
+                    <!-- 3) Interventrikuler -->
+                    <div onclick="showLevel('interventrikuler')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
+                        <div class="w-full h-24 bg-orange-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-orange-600 text-2xl">🔶</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">3) Interventrikuler</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Level 4: SA Blok -->
+        <div id="sa-blok" class="hidden mt-6">
+            
+            <div class="nested-container">
+                <div class="grid grid-cols-1 gap-4">
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-24 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-blue-600 text-2xl">🚫</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">a) Blok sinoatrial (SA Blok)</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Level 4: AV Blok -->
+        <div id="av-blok" class="hidden mt-6">
+            
+            <div class="nested-container">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-24 bg-yellow-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-yellow-600 text-2xl">1️⃣</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">a) Blok AV derajat I</h3>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-24 bg-orange-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-orange-600 text-2xl">2️⃣</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">b) Blok AV derajat 2 mobitz I (Wenckebach)</h3>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-24 bg-red-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-red-600 text-2xl">2️⃣</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">c) Blok AV derajat 2 mobitz II</h3>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-24 bg-gray-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-gray-600 text-2xl">3️⃣</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">d) Blok AV derajat 3 (Total AV blok)</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Level 4: Interventrikuler -->
+        <div id="interventrikuler" class="hidden mt-6">
+            
+            <div class="nested-container">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-24 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-blue-600 text-2xl">➡️</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">a) Right bundle branch block (RBBB)</h3>
+                    </div>
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="w-full h-24 bg-red-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-red-600 text-2xl">⬅️</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">b) Left bundle branch block (LBBB)</h3>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
 
     <script>
         function redirectPage(route) {
             window.location.href = route;
         }
+
+        function showLevel(levelId) {
+            // Hide all sections
+            const allSections = document.querySelectorAll('[id]');
+            allSections.forEach(section => {
+                if (section.id !== levelId) {
+                    section.classList.add('hidden');
+                }
+            });
+            
+            // Show the requested level
+            document.getElementById(levelId).classList.remove('hidden');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        function goBack(levelId) {
+            showLevel(levelId);
+        }
+
+        // Initialize - show only main level
+        document.addEventListener('DOMContentLoaded', function() {
+            showLevel('main-level');
+        });
     </script>
 </body>
-
 </html>

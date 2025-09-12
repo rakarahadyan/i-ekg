@@ -39,7 +39,7 @@
                     </h1>
                 </div>
 
-                <div class="bg-white rounded-xl shadow-sm overflow-hidden cursor-pointer mb-6">
+                <!-- <div class="bg-white rounded-xl shadow-sm overflow-hidden cursor-pointer mb-6">
                     <div class="p-4 text-justify text-gray-700">
                         <p class="text-paragraf">
                             Untuk memperoleh rekaman EKG, dipasang elektroda-elektroda di kulit pada tempat-tempat
@@ -50,83 +50,165 @@
                             b. Sadapan Unipolar
                         </p>
                     </div>
-                </div>
+                </div> -->
 
-                <div id="accordion" class="space-y-4">
+                <div id="grid-container" class="grid grid-cols-2 gap-4">
 
-                    <!-- a.	Sadapan Bipolar -->
-                    <div class="border rounded-lg overflow-hidden">
-                        <button onclick="toggleAccordion('sa-node')"
-                            class="w-full bg-blue-500 text-white font-semibold px-4 py-2 text-left">
-                            a. Sadapan Bipolar
-                        </button>
-                        <div id="sa-node" class="p-4 text-justify text-gray-700 bg-white">
-                            <p class="text-paragraf">
-                                Pada sadapan ini hanya merekam perbedaan potensial dari dua (2) elektroda, dan
-                                sandapan ini ditandai dengan angka romawi I, II, dan III<br>
-                                1) Sadapan I<br>
-                                Merekam beda potensial antara lengan kanan (RA) dengan lengan kiri (LA),Dimana lengan
-                                kanan bermuatan negatif (-) dan lengan kiri bermuatan positif (+).<br>
-                                2) Sadapan II<br>
-                                Merekam beda potensial antara tangan kanan (RA) dengan kaki kiri (LF)Dimana lengan kanan
-                                bermuatan negative (-) dan kaki kiri bermuatan positif (+).<br>
-                                3) Sadapan III<br>
-                                Merekam beda potensial antara lengan kiri (LA) dengan kaki kiri (LF), dimana lengan kiri
-                                bermuatan negatif (-), dan kaki kiri bermuatan positif (+)
+    <!-- a. Sadapan Bipolar -->
+    <div onclick="showDetail('sadapan-bipolar', 'grid-container')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+        <div class="w-full h-24 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
+            <span class="text-blue-600 text-2xl">🩺</span>
+        </div>
+        <h3 class="font-semibold text-gray-800 text-sm text-center">a. Sadapan Bipolar</h3>
+    </div>
 
-                            </p>
-                        </div>
-                    </div>
+    <!-- b. Sadapan Unipolar -->
+    <div onclick="showDetail('sadapan-unipolar', 'grid-container')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+        <div class="w-full h-24 bg-green-100 rounded-lg mb-3 flex items-center justify-center">
+            <span class="text-green-600 text-2xl">⚡</span>
+        </div>
+        <h3 class="font-semibold text-gray-800 text-sm text-center">b. Sadapan Unipolar</h3>
+    </div>
 
-                    <!-- b.	Gelombang QRS -->
-                    <div class="border rounded-lg overflow-hidden">
-                        <button onclick="toggleAccordion('internodal')"
-                            class="w-full bg-green-500 text-white font-semibold px-4 py-2 text-left">
-                            b. Sadapan Unipolar
-                        </button>
-                        <div id="internodal" class="hidden p-4 text-justify text-gray-700 bg-white">
-                            <p class="text-paragraf" >
-                                Sandapan unipolar terbagi 2 yaitu, sadapan unipolar ekstermitas dan sadapan unipolar
-                                precordial.<br>
-                                1) Sadapan Unipolar Ekstermitas<br>
-                                Merekam besar potensial listrik pada satu ekstermitas, elektroda ekplorasi diletakkan
-                                pada ekstermitas yang akan diukur, gabungan elektroda-elektroda pada ekstermitas yang
-                                lain membentuk elektroda indeferen (Potensial 0), sadapan ini ditulis aVR, aVL dan aVF
-                                Merekam potensial listrik pada lengan kanan (RA) dimana lengan kanan bermuatan positif
-                                <p class="pl-3 pb-3" > a) Sadapan aVR<br>
-                                (+), lengan kiri dan kaki kiri membentuk elektroda indefern.<br>
-                                b) Sadapan aVL<br>
-                                Merekam potensial listrik pada lengan kiri (LA), dimana lengan kiri bermuatan positif
-                                (+), lengan kiri dan kaki kiri membentuk elektroda indeferen.<br>
-                                c) Sadapan aVF<br>
-                                Merekam potensial listrik pada kaki kiri (LF), dimana kaki kiri bermuatan positif
-                                (+),lengan kanan dan lengan kiri membentuk elektroda indeferen.
-                                Gambar 1.4 Sadapan Unipolar Ektremitas<br></p>
+</div>
 
-                                2) Sadapan Unipolar Prekordial<br>
-                                Merekam besar potensial listrik jantung dengan bantuan elektroda ekplorasi yang
-                                ditempatkan di beberapa dinding dada. Elektroda indifferen diperoleh dengan
-                                menggabungkan ketiga elektroda ektremitas, standart yang direkam Adalah V1 sampai V6
-                                dalam keadaan tertentu sadapan unipolar precordial dapat direkam V3R, V4R, V7, V8, dan
-                                V9
-                                Sadapan Unipolar Prekordial adalah rekaman potensial titik di permukaan dada :<br>
-                                <p class="pl-3" >
-                                a) Sadapan V1: Ruang Intercosta 4, garis sternal kanan.<br>
-                                b) Sadapan V2: Ruang interkosta 4, garis sternal kiri<br>
-                                c) Sadapan V3: Antara V2 dan V4<br>
-                                d) Sadapan V4: Ruang interkosta 5, garis midklavikula kiri<br>
-                                e) Sadapan V5: Sejajar dengan V4 pada garis aksila anterior kiri<br>
-                                f) Sadapan V6: Sejajar dengan V5 garis aksila tengah<br>
-                                g) Sadapan V7: Sejajar dengan V5 pada garis aksila posterior kiri<br>
-                                h) Sadapan V8: Sejajar dengan V5 pada garis scapula kiri<br>
-                                i) Sadapan V9: Sejajar dengan V5 pada batas kiri kolumna Vetebralis<br>
-                                j) Sadapan V3R: Lokasi sama dengan V3,tetapi pada dada sebelah kanan<br>
-                                k) Sadapan V4R: Lokasi sama dengan V4,tetapi pada dada sebelah kanan.</p>
-                            </p>
-                        </div>
-                    </div>
+<!-- Level 2: Subheader dari Sadapan Bipolar -->
+<div id="sadapan-bipolar" class="hidden grid grid-cols-2 gap-4">
+    <div onclick="showDetail('grid-container', 'sadapan-bipolar')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+        <div class="w-full h-16 bg-blue-50 rounded-lg mb-2 flex items-center justify-center">
+            <span class="text-blue-500 text-lg">①</span>
+        </div>
+        <h3 class="font-semibold text-gray-800 text-sm text-center">1) Sadapan I</h3>
+    </div>
+    <div onclick="showDetail('grid-container', 'sadapan-bipolar')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+        <div class="w-full h-16 bg-blue-50 rounded-lg mb-2 flex items-center justify-center">
+            <span class="text-blue-500 text-lg">②</span>
+        </div>
+        <h3 class="font-semibold text-gray-800 text-sm text-center">2) Sadapan II</h3>
+    </div>
+    <div onclick="showDetail('grid-container', 'sadapan-bipolar')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+        <div class="w-full h-16 bg-blue-50 rounded-lg mb-2 flex items-center justify-center">
+            <span class="text-blue-500 text-lg">③</span>
+        </div>
+        <h3 class="font-semibold text-gray-800 text-sm text-center">3) Sadapan III</h3>
+    </div>
+</div>
 
-                </div>
+<!-- Level 2: Subheader dari Sadapan Unipolar -->
+<div id="sadapan-unipolar" class="hidden grid grid-cols-2 gap-4">
+    <div onclick="showDetail('unipolar-ekstremitas', 'sadapan-unipolar')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+        <div class="w-full h-16 bg-green-50 rounded-lg mb-2 flex items-center justify-center">
+            <span class="text-green-500 text-lg">🖐️</span>
+        </div>
+        <h3 class="font-semibold text-gray-800 text-sm text-center">1) Unipolar Ekstremitas</h3>
+    </div>
+    <div onclick="showDetail('unipolar-precordial', 'sadapan-unipolar')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+        <div class="w-full h-16 bg-green-50 rounded-lg mb-2 flex items-center justify-center">
+            <span class="text-green-500 text-lg">❤️</span>
+        </div>
+        <h3 class="font-semibold text-gray-800 text-sm text-center">2) Unipolar Precordial</h3>
+    </div>
+</div>
+
+<!-- Level 3: Sub dari Unipolar Ekstremitas -->
+<div id="unipolar-ekstremitas" class="hidden grid grid-cols-2 gap-4">
+    <div onclick="showDetail('sadapan-unipolar', 'unipolar-ekstremitas')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+        <div class="w-full h-16 bg-purple-50 rounded-lg mb-2 flex items-center justify-center">
+            <span class="text-purple-500 text-lg">A</span>
+        </div>
+        <h3 class="font-semibold text-gray-800 text-sm text-center">a) aVR</h3>
+    </div>
+    <div onclick="showDetail('sadapan-unipolar', 'unipolar-ekstremitas')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+        <div class="w-full h-16 bg-purple-50 rounded-lg mb-2 flex items-center justify-center">
+            <span class="text-purple-500 text-lg">B</span>
+        </div>
+        <h3 class="font-semibold text-gray-800 text-sm text-center">b) aVL</h3>
+    </div>
+    <div onclick="showDetail('sadapan-unipolar', 'unipolar-ekstremitas')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+        <div class="w-full h-16 bg-purple-50 rounded-lg mb-2 flex items-center justify-center">
+            <span class="text-purple-500 text-lg">C</span>
+        </div>
+        <h3 class="font-semibold text-gray-800 text-sm text-center">c) aVF</h3>
+    </div>
+</div>
+
+<!-- Level 3: Sub dari Unipolar Precordial -->
+<div id="unipolar-precordial" class="hidden grid grid-cols-2 gap-4">
+    <div onclick="showDetail('sadapan-unipolar', 'unipolar-precordial')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+        <div class="w-full h-16 bg-red-50 rounded-lg mb-2 flex items-center justify-center">
+            <span class="text-red-500 text-lg">V1</span>
+        </div>
+        <h3 class="text-sm text-center">a) V1</h3>
+    </div>
+    <div onclick="showDetail('sadapan-unipolar', 'unipolar-precordial')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+        <div class="w-full h-16 bg-red-50 rounded-lg mb-2 flex items-center justify-center">
+            <span class="text-red-500 text-lg">V2</span>
+        </div>
+        <h3 class="text-sm text-center">b) V2</h3>
+    </div>
+    <div onclick="showDetail('sadapan-unipolar', 'unipolar-precordial')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+        <div class="w-full h-16 bg-red-50 rounded-lg mb-2 flex items-center justify-center">
+            <span class="text-red-500 text-lg">V3</span>
+        </div>
+        <h3 class="text-sm text-center">c) V3</h3>
+    </div>
+    <div onclick="showDetail('sadapan-unipolar', 'unipolar-precordial')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+        <div class="w-full h-16 bg-red-50 rounded-lg mb-2 flex items-center justify-center">
+            <span class="text-red-500 text-lg">V4</span>
+        </div>
+        <h3 class="text-sm text-center">d) V4</h3>
+    </div>
+    <div onclick="showDetail('sadapan-unipolar', 'unipolar-precordial')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+        <div class="w-full h-16 bg-red-50 rounded-lg mb-2 flex items-center justify-center">
+            <span class="text-red-500 text-lg">V5</span>
+        </div>
+        <h3 class="text-sm text-center">e) V5</h3>
+    </div>
+    <div onclick="showDetail('sadapan-unipolar', 'unipolar-precordial')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+        <div class="w-full h-16 bg-red-50 rounded-lg mb-2 flex items-center justify-center">
+            <span class="text-red-500 text-lg">V6</span>
+        </div>
+        <h3 class="text-sm text-center">f) V6</h3>
+    </div>
+    <div onclick="showDetail('sadapan-unipolar', 'unipolar-precordial')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+        <div class="w-full h-16 bg-red-50 rounded-lg mb-2 flex items-center justify-center">
+            <span class="text-red-500 text-lg">V7</span>
+        </div>
+        <h3 class="text-sm text-center">g) V7</h3>
+    </div>
+    <div onclick="showDetail('sadapan-unipolar', 'unipolar-precordial')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+        <div class="w-full h-16 bg-red-50 rounded-lg mb-2 flex items-center justify-center">
+            <span class="text-red-500 text-lg">V8</span>
+        </div>
+        <h3 class="text-sm text-center">h) V8</h3>
+    </div>
+    <div onclick="showDetail('sadapan-unipolar', 'unipolar-precordial')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+        <div class="w-full h-16 bg-red-50 rounded-lg mb-2 flex items-center justify-center">
+            <span class="text-red-500 text-lg">V9</span>
+        </div>
+        <h3 class="text-sm text-center">i) V9</h3>
+    </div>
+    <div onclick="showDetail('sadapan-unipolar', 'unipolar-precordial')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+        <div class="w-full h-16 bg-red-50 rounded-lg mb-2 flex items-center justify-center">
+            <span class="text-red-500 text-lg">V3R</span>
+        </div>
+        <h3 class="text-sm text-center">j) V3R</h3>
+    </div>
+    <div onclick="showDetail('sadapan-unipolar', 'unipolar-precordial')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+        <div class="w-full h-16 bg-red-50 rounded-lg mb-2 flex items-center justify-center">
+            <span class="text-red-500 text-lg">V4R</span>
+        </div>
+        <h3 class="text-sm text-center">k) V4R</h3>
+    </div>
+</div>
+
+<script>
+function showDetail(showId, hideId) {
+    document.getElementById(hideId).classList.add('hidden');
+    document.getElementById(showId).classList.remove('hidden');
+}
+</script>
+
 
                 <script>
                     function toggleAccordion(id) {

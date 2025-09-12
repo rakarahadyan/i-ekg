@@ -36,221 +36,134 @@
                     </h1>
                 </div>
 
-                <div id="accordion" class="space-y-4">
+                <!-- Grid Section -->
+                <div id="grid-section" class="grid grid-cols-2 gap-4">
 
-                    <div class="border rounded-lg overflow-hidden">
-                        <button onclick="toggleAccordion('sa-node')"
-                            class="w-full bg-blue-500 text-white font-semibold px-4 py-2 text-left">
-                            1. Irama
-                        </button>
-                        <div id="sa-node" class="p-4 text-justify text-gray-700 bg-white">
-                            <p class="text-paragraf">
-                                Untuk menilai keteraturan irama, periksa interval RR pada beberapa siklus. Jika jarak RR
-                                konsisten, maka irama dikatakan reguler. Sebaliknya, jika variasi signifikan terjadi,
-                                maka irama ireguler. Irama ireguler bisa bersifat teratur ireguler (misalnya Atrial
-                                Flutter dengan blok AV konstan) atau sangat tidak teratur (misalnya Atrial Fibrilasi)
-                                (Surawicz & Knilans, 2019).</p>
-                            <p class="text-paragraf">Selain itu, perhatikan asal irama. Jika gelombang P terlihat
-                                sebelum setiap kompleks QRS
-                                dan bentuknya konsisten, kemungkinan besar irama berasal dari nodus sinus. Jika tidak
-                                ada gelombang P, atau terdapat gelombang P abnormal, maka irama bisa berasal dari
-                                atrium, junctional, atau ventrikular (Wagner, 2016).</p>
-                            <p class="text-paragraf">Keteraturan irama penting karena dapat memberikan petunjuk
-                                diagnostik. Misalnya, irama
-                                ireguler tanpa pola yang jelas sering mengarah pada Atrial Fibrilasi, sedangkan irama
-                                reguler dengan takikardia mungkin menandakan Tachycardia Sinus atau AVNRT (Wellens et
-                                al., 2019).</p>
+                    <!-- 1. Irama -->
+                    <div onclick="showDetail('irama')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-24 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-blue-600 text-2xl">1️⃣</span>
                         </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">1. Irama</h3>
                     </div>
 
-                    <div class="border rounded-lg overflow-hidden">
-                        <button onclick="toggleAccordion('internodal')"
-                            class="w-full bg-green-500 text-white font-semibold px-4 py-2 text-left">
-                            2. Heart Rate
-                        </button>
-                        <div id="internodal" class="hidden p-4 text-justify text-gray-700 bg-white">
-                            <p class="text-paragraf">
-                                Menghitung frekuensi jantung (heart rate) adalah langkah kedua setelah menentukan irama.
-                                Pada irama reguler, cara tercepat adalah dengan aturan 300: bagi 300 dengan jumlah kotak
-                                besar antara dua gelombang R. Contohnya, jika ada 4 kotak besar, maka heart rate adalah
-                                75 bpm. Untuk irama ireguler, gunakan metode hitung 6 detik dengan menghitung jumlah QRS
-                                dalam 30 kotak besar (6 detik) dan kalikan dengan 10 (Goldberger, 2017).
-                            </p>
-                            <p class="text-paragraf">Heart rate normal pada orang dewasa berkisar antara 60–100 bpm.
-                                Jika < 60 bpm disebut bradikardia, sedangkan> 100 bpm disebut takikardia. Penghitungan
-                                    ini penting karena
-                                    frekuensi jantung memengaruhi hemodinamik pasien dan membantu diagnosis (Surawicz &
-                                    Knilans, 2019).</p>
-                            <p class="text-paragraf">Pada kondisi tertentu, metode penghitungan harus disesuaikan.
-                                Misalnya pada blok AV
-                                lengkap atau fibrilasi atrium, irama sangat ireguler sehingga metode rata-rata lebih
-                                akurat. Selain itu, pada pasien dengan pacemaker, heart rate dihitung berdasarkan
-                                spike pacing dan respon QRS (Wagner, 2016).</p>
-                            <p class="text-paragraf">Heart rate juga penting dalam evaluasi terapi. Misalnya, pada
-                                pasien takikardia
-                                supraventrikular, penurunan heart rate setelah manuver vagal atau obat dapat
-                                mengonfirmasi diagnosis. Sebaliknya, bradikardia simptomatik dapat menjadi indikasi
-                                pemasangan pacemaker (Wellens et al., 2019).</p>
+                    <!-- 2. Heart Rate -->
+                    <div onclick="showDetail('heart-rate')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-24 bg-green-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-green-600 text-2xl">2️⃣</span>
                         </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">2. Heart Rate</h3>
                     </div>
 
-                    <div class="border rounded-lg overflow-hidden">
-                        <button onclick="toggleAccordion('av-node')"
-                            class="w-full bg-yellow-500 text-white font-semibold px-4 py-2 text-left">
-                            3. Gelombang P
-                        </button>
-                        <div id="av-node" class="hidden p-4 text-justify text-gray-700 bg-white">
-                            <p class="text-paragraf">
-                                Gelombang P merepresentasikan depolarisasi atrium. Dalam irama sinus normal, gelombang P
-                                harus positif di lead II, negatif di aVR, dan memiliki morfologi yang seragam. Panjang
-                                gelombang P normal adalah ≤0,12 detik dan tinggi ≤2,5 mm di lead II (Surawicz & Knilans,
-                                2019).</p>
-                            <p class="text-paragraf">Perubahan bentuk gelombang P dapat menandakan kelainan atrium. P
-                                mitrale (P melebar
-                                >0,12 detik, bifid) menunjukkan hipertrofi atrium kiri, sedangkan P pulmonale (P tinggi
-                                >2,5 mm) menunjukkan hipertrofi atrium kanan. P inverted dapat terjadi pada irama
-                                junctional (Goldberger, 2017).</p>
-                            <p class="text-paragraf">Selain morfologi, keteraturan gelombang P juga penting. Jika tidak
-                                ada gelombang P,
-                                pertimbangkan fibrilasi atrium atau flutter atrium (gelombang f atau F). Jika ada
-                                gelombang P abnormal diikuti QRS lebar, curigai ekstrasistol atrial (Wagner, 2016).</p>
-                            <p class="text-paragraf"></p>Analisis gelombang P juga membantu menentukan asal pacemaker
-                            alami jantung. Irama sinus
-                            normal memiliki gelombang P yang konsisten dan diikuti QRS dengan interval PR normal.
-                            Sebaliknya, irama atrial ektopik atau junctional akan menunjukkan gelombang P abnormal
-                            atau tidak ada sama sekali (Wellens et al., 2019).</p>
-                            </p>
-
+                    <!-- 3. Gelombang P -->
+                    <div onclick="showDetail('gelombang-p')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-24 bg-yellow-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-yellow-600 text-2xl">3️⃣</span>
                         </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">3. Gelombang P</h3>
                     </div>
 
-                    <div class="border rounded-lg overflow-hidden">
-                        <button onclick="toggleAccordion('his-bundle')"
-                            class="w-full bg-red-500 text-white font-semibold px-4 py-2 text-left">
-                            4. Interval PR
-                        </button>
-                        <div id="his-bundle" class="hidden p-4 text-justify text-gray-700 bg-white">
-                            <p class="text-paragraf">
-                                Interval PR adalah jarak dari awal gelombang P hingga awal kompleks QRS, mencerminkan
-                                konduksi dari atrium ke ventrikel melalui AV node. Normalnya interval PR adalah
-                                0,12–0,20 detik. Jika < 0,12 detik, curigai pre-excitation (misalnya WPW), sedangkan
-                                    jika> 0,20 detik, curigai blok AV derajat pertama (Goldberger, 2017).</p>
-                            <p class="text-paragraf">Blok AV derajat pertama ditandai dengan pemanjangan PR yang
-                                konsisten. Blok AV
-                                derajat kedua dibagi menjadi Mobitz I (Wenckebach), yang ditandai PR semakin
-                                memanjang sebelum QRS hilang, dan Mobitz II, PR tetap namun ada QRS yang hilang.
-                                Blok AV derajat ketiga (total) menunjukkan disosiasi AV total (Surawicz & Knilans,
-                                2019).</p>
-                            <p class="text-paragraf">Interval PR juga dapat dipengaruhi oleh tonus vagal, obat
-                                (beta-blocker, digoksin),
-                                atau kondisi patologis seperti miokarditis dan iskemia miokard. Pada WPW syndrome,
-                                interval PR sangat pendek karena adanya jalur aksesori (bundel Kent) (Wagner, 2016).</p>
-                            <p class="text-paragraf">Pemahaman interval PR penting karena gangguan konduksi AV dapat
-                                menyebabkan gejala
-                                serius seperti sinkop atau bradiaritmia yang memerlukan pacemaker. Interpretasi yang
-                                tepat membantu menentukan indikasi terapi (Wellens et al., 2019).</p>
-
+                    <!-- 4. Interval PR -->
+                    <div onclick="showDetail('interval-pr')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-24 bg-red-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-red-600 text-2xl">4️⃣</span>
                         </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">4. Interval PR</h3>
                     </div>
 
-                    <div class="border rounded-lg overflow-hidden">
-                        <button onclick="toggleAccordion('purkinje')"
-                            class="w-full bg-purple-500 text-white font-semibold px-4 py-2 text-left">
-                            5. Kompleks QRS
-                        </button>
-                        <div id="purkinje" class="hidden p-4 text-justify text-gray-700 bg-white">
-                            <p class="text-paragraf">
-                                Kompleks QRS menggambarkan depolarisasi ventrikel. Normalnya durasi QRS adalah ≤0,12
-                                detik. Jika >0,12 detik, ada indikasi delay konduksi intraventrikular seperti blok
-                                cabang (LBBB/RBBB) atau ritme ventrikular (Goldberger, 2017).</p>
-                            <p class="text-paragraf">Selain durasi, morfologi QRS juga penting. QRS yang lebar dengan
-                                pola khas V1-V6
-                                membantu membedakan LBBB (broad, notched R di V6) dan RBBB (rsR’ di V1). Kompleks QRS
-                                dengan defleksi abnormal juga bisa menandakan hipertrofi ventrikel atau infark miokard
-                                lama (Surawicz & Knilans, 2019).</p>
-                            <p class="text-paragraf">Amplitudo QRS dapat meningkat pada hipertrofi ventrikel kiri,
-                                sedangkan menurun pada
-                                efusi perikard atau obesitas. Selain itu, perhatikan adanya gelombang patologis Q (>0,04
-                                detik dan >25% dari R) yang menandakan infark miokard lama (Wagner, 2016).</p>
-                            <p class="text-paragraf">Analisis QRS juga membantu mendeteksi aritmia. Misalnya, QRS lebar
-                                pada takikardia dapat
-                                menunjukkan VT (Ventricular Tachycardia), sedangkan QRS sempit biasanya berasal dari
-                                supraventrikular (Wellens et al., 2019).</p>
+                    <!-- 5. Kompleks QRS -->
+                    <div onclick="showDetail('qrs')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-24 bg-purple-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-purple-600 text-2xl">5️⃣</span>
                         </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">5. Kompleks QRS</h3>
                     </div>
 
-                    <div class="border rounded-lg overflow-hidden">
-                        <button onclick="toggleAccordion('segmen-st')"
-                            class="w-full bg-gray-500 text-white font-semibold px-4 py-2 text-left">
-                            6. Segmen ST
-                        </button>
-                        <div id="segmen-st" class="hidden p-4 text-justify text-gray-700 bg-white">
-                            <p class="text-paragraf">
-                                Segmen ST merepresentasikan periode antara depolarisasi dan repolarisasi ventrikel.
-                                Segmen ini normalnya isoelektrik. Elevasi atau depresi ST dapat menunjukkan iskemia
-                                miokard, infark, atau perikarditis. Elevasi ST ≥1 mm di dua lead yang berdekatan
-                                menandakan STEMI, sedangkan depresi ST menandakan iskemia subendokardial (Surawicz &
-                                Knilans, 2019).</p>
-                            <p class="text-paragraf">Bentuk elevasi ST juga penting. Elevasi ST dengan bentuk cembung ke
-                                atas (convex) lebih khas untuk infark, sedangkan bentuk cekung (concave) sering terlihat
-                                pada perikarditis. Selain itu, perhatikan adanya reciprocal changes di lead berlawanan
-                                (Goldberger, 2017).</p>
-                            <p class="text-paragraf">Segmen ST juga dipengaruhi oleh elektrolit dan obat. Hiperkalemia
-                                dapat menyebabkan elevasi ST semu, sedangkan digitalis menyebabkan depresi ST yang khas
-                                (Wagner, 2016).</p>
-                            <p class="text-paragraf">Analisis segmen ST harus dikombinasikan dengan pemeriksaan klinis
-                                dan biomarker. Kesalahan interpretasi dapat berakibat fatal, misalnya salah diagnosis
-                                STEMI atau perikarditis (Wellens et al., 2019).</p>
+                    <!-- 6. Segmen ST -->
+                    <div onclick="showDetail('segmen-st')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-24 bg-gray-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-gray-600 text-2xl">6️⃣</span>
                         </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">6. Segmen ST</h3>
                     </div>
 
-                    <div class="border rounded-lg overflow-hidden">
-                        <button onclick="toggleAccordion('gelombang-t')"
-                            class="w-full bg-black text-white font-semibold px-4 py-2 text-left">
-                            6. Gelombang T
-                        </button>
-                        <div id="gelombang-t" class="hidden p-4 text-justify text-gray-700 bg-white">
-                            <p class="text-paragraf">
-                                Gelombang T menggambarkan repolarisasi otot ventrikel. Saat mengevaluasi gelombang T,
-                                lihat amplitude, konfigurasi dan defleksi. Gelombang T normal memiliki karakteristik
-                                berikut : (Wolters Kluwer, 2011).<br>
-                                a) Lokasi mengikuti gelombang S<br>
-                                b) Amplitudo 0,5 mm pada lead I, II, dan III dan sampai 10 mm pada lead precordial<br>
-                                c) Konfigurasi biasanya bulat<br>
-                                d) Defleksi biasanya tegak lurus pada lead I, II dan V3 sampai V6; terbalik pada lead
-                                aVR.
-                            </p>
+                    <!-- 7. Gelombang T -->
+                    <div onclick="showDetail('gelombang-t')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-24 bg-black/10 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-black text-2xl">7️⃣</span>
                         </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">7. Gelombang T</h3>
                     </div>
+                </div>
 
+                <!-- Detail Section -->
+                <div id="detail-section" class="hidden bg-white rounded-xl p-6 shadow-sm cursor-pointer">
+                    <div id="detail-content" class="text-gray-700 text-justify"></div>
                 </div>
 
                 <script>
-                    function toggleAccordion(id) {
-                        const content = document.getElementById(id);
-                        const allContents = document.querySelectorAll("#accordion > div > div");
+                    const details = {
+                        "irama": `
+            <h3 class="text-lg font-semibold mb-2">1️⃣ Irama</h3>
+            <p>Untuk menilai keteraturan irama, periksa interval RR pada beberapa siklus. Jika jarak RR konsisten, maka irama reguler. Jika bervariasi signifikan → irama ireguler (misalnya Atrial Fibrilasi atau Flutter dengan blok AV).</p>
+            <p>Jika gelombang P terlihat sebelum setiap QRS dan bentuknya konsisten → irama sinus. Jika tidak ada P, atau abnormal → bisa berasal dari atrium, junctional, atau ventrikular.</p>
+            <p>Contoh: Irama ireguler tanpa pola → Atrial Fibrilasi. Irama reguler cepat → bisa Tachycardia Sinus atau AVNRT.</p>
+        `,
+                        "heart-rate": `
+            <h3 class="text-lg font-semibold mb-2">2️⃣ Heart Rate</h3>
+            <p>Hitung heart rate setelah menentukan irama. Untuk irama reguler gunakan aturan 300: bagi 300 dengan jumlah kotak besar antara dua R. Untuk ireguler, hitung jumlah QRS dalam 6 detik (30 kotak besar) lalu kalikan 10.</p>
+            <p>Normal: 60–100 bpm. <60 = bradikardia, >100 = takikardia.</p>
+            <p>Metode lain diperlukan untuk blok AV atau fibrilasi atrium. Pada pacemaker, hitung berdasarkan spike pacing.</p>
+        `,
+                        "gelombang-p": `
+            <h3 class="text-lg font-semibold mb-2">3️⃣ Gelombang P</h3>
+            <p>Gelombang P = depolarisasi atrium. Normal: positif di lead II, negatif di aVR, durasi ≤0,12 detik, tinggi ≤2,5 mm.</p>
+            <p>P mitrale (melebar) → hipertrofi atrium kiri. P pulmonale (tinggi >2,5 mm) → hipertrofi atrium kanan. P inverted → irama junctional.</p>
+            <p>Tidak ada P → fibrilasi atrium. Gelombang P abnormal diikuti QRS lebar → ekstrasistol atrial.</p>
+        `,
+                        "interval-pr": `
+            <h3 class="text-lg font-semibold mb-2">4️⃣ Interval PR</h3>
+            <p>Normal: 0,12–0,20 detik. Jika <0,12 → pre-excitation (WPW). Jika >0,20 → blok AV derajat 1.</p>
+            <p>Mobitz I: PR makin panjang lalu QRS hilang. Mobitz II: PR tetap, QRS hilang tiba-tiba. Blok total: tidak ada hubungan P-QRS.</p>
+            <p>Panjang PR bisa dipengaruhi obat (beta-blocker, digoksin), vagal tone, atau penyakit (miokarditis).</p>
+        `,
+                        "qrs": `
+            <h3 class="text-lg font-semibold mb-2">5️⃣ Kompleks QRS</h3>
+            <p>Durasi normal ≤0,12 detik. Jika lebar → delay konduksi intraventrikular (LBBB, RBBB) atau ritme ventrikular.</p>
+            <p>Morfologi: LBBB → broad R di V6, RBBB → rsR’ di V1. Q patologis (>0,04 detik, >25% R) → infark lama.</p>
+            <p>Amplitudo tinggi → hipertrofi ventrikel kiri. Amplitudo rendah → efusi perikard/obesitas.</p>
+        `,
+                        "segmen-st": `
+            <h3 class="text-lg font-semibold mb-2">6️⃣ Segmen ST</h3>
+            <p>Segmen ST normal isoelektrik. Elevasi ≥1 mm di ≥2 lead berdekatan → STEMI. Depresi → iskemia.</p>
+            <p>Bentuk convex → khas infark. Bentuk concave → sering perikarditis.</p>
+            <p>Hiperkalemia bisa bikin elevasi ST semu, digitalis → depresi ST khas.</p>
+        `,
+                        "gelombang-t": `
+            <h3 class="text-lg font-semibold mb-2">7️⃣ Gelombang T</h3>
+            <p>Gelombang T = repolarisasi ventrikel. Normal: bulat, tegak di I, II, V3–V6, terbalik di aVR.</p>
+            <p>Amplitudo: ≥0,5 mm (I, II, III), ≤10 mm (precordial).</p>
+            <p>Bentuk abnormal → bisa tanda iskemia, elektrolit abnormal, atau efek obat.</p>
+        `
+                    };
 
-                        // Tutup semua panel lain
-                        allContents.forEach(el => {
-                            if (el.id !== id) el.classList.add("hidden");
-                        });
-
-                        // Toggle panel yang diklik
-                        content.classList.toggle("hidden");
+                    function showDetail(key) {
+                        document.getElementById('grid-section').classList.add('hidden');
+                        document.getElementById('detail-content').innerHTML = details[key];
+                        document.getElementById('detail-section').classList.remove('hidden');
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
                     }
+
+                    // Klik detail untuk kembali ke grid
+                    document.getElementById('detail-section').addEventListener('click', function () {
+                        this.classList.add('hidden');
+                        document.getElementById('grid-section').classList.remove('hidden');
+                    });
                 </script>
-
-
             </div>
         </div>
 
     </div>
-
-    <script>
-        function redirectPage(route) {
-            window.location.href = route;
-        }
-    </script>
 </body>
 
 </html>
