@@ -35,95 +35,97 @@
 
             <div class="p-4">
                 <div class="text-center mb-6">
-                    <h1 class="text-2xl font-bold text-gray-800">Sistem konduksi</span>
+                    <h1 class="text-2xl font-bold text-gray-800">Kurva EKG</span>
                     </h1>
                 </div>
 
                 <div class="bg-white rounded-xl shadow-sm overflow-hidden cursor-pointer mb-6">
                     <div class="p-4 text-justify text-gray-700">
                         <p class="text-paragraf">
-                            Sistem konduksi jantung adalah serangkaian sel-sel otot jantung khusus yang menghasilkan dan
-                            menghantarkan impuls listrik ke seluruh miokardium, memungkinkan jantung berkontraksi secara
-                            terkoordinasi dan efisien. Sistem ini berperan sebagai "jalur listrik" alami yang memastikan
-                            setiap denyut jantung terjadi secara ritmis dan teratur. (Nazmah, 2015). Komponen utama dari
-                            sistem konduksi ini meliputi:
+                            Kurva EKG menggambarkan proses listrik yang terjadi pada atrium dan ventrikel, EKG normal
+                            terdiri dari gelombang P, Q, R, S dan gelombang T, kadang terlihat gelombang U, selain itu
+                            ada beberapa interval dan segmen EKG.
                         </p>
                     </div>
                 </div>
 
                 <div id="accordion" class="space-y-4">
 
-                    <!-- a. Sinoatrial (SA) Node -->
+                    <!-- a.	Gelombang P -->
                     <div class="border rounded-lg overflow-hidden">
                         <button onclick="toggleAccordion('sa-node')"
                             class="w-full bg-blue-500 text-white font-semibold px-4 py-2 text-left">
-                            a. Sinoatrial (SA) Node
+                            a. Gelombang P
                         </button>
                         <div id="sa-node" class="p-4 text-justify text-gray-700 bg-white">
-                            <p class="text-paragraf">
-                                Dikenal sebagai "pemacu jantung" (pacemaker) utama, SA Node adalah sekelompok sel yang
-                                terletak di atrium kanan. Sel-sel ini secara spontan menghasilkan impuls listrik dengan
-                                frekuensi 60-100 kali per menit. Impuls dari SA Node menyebar ke seluruh atrium,
-                                menyebabkan atrium berkontraksi.
+                            <p>
+                                Gelombang P merupakan depolarisasi atrium, normal gelombang P :<br>
+                                • Lebar < 0,12 detik<br>
+                                • Tinggi < 0,3 mv<br>
+                                • Selalu positif di lead II<br>
+                                • Negatif di aVR
                             </p>
                         </div>
                     </div>
 
-                    <!-- b. Jalur Internodal -->
+                    <!-- b.	Gelombang QRS -->
                     <div class="border rounded-lg overflow-hidden">
                         <button onclick="toggleAccordion('internodal')"
                             class="w-full bg-green-500 text-white font-semibold px-4 py-2 text-left">
-                            b. Jalur Internodal
+                            b. Gelombang QRS
                         </button>
                         <div id="internodal" class="hidden p-4 text-justify text-gray-700 bg-white">
-                            <p class="text-paragraf">
-                                Impuls dari SA Node dihantarkan melalui jalur-jalur konduksi di dalam atrium ke
-                                Atrioventricular (AV) Node.
+                            <p>
+                                Gelombang QRS merupakan depolarisasi dari ventrikel,
+                                normal gelombang QRS :<br>
+                                • Lebar 0,06 - 0,12 detik<br>
+                                • Tinggi tergantung lead<br>
+                                • Gelombang QRS terdiri dari gelombang Q, gelombang R
+                                Dan gelombang S
+
                             </p>
                         </div>
                     </div>
 
-                    <!-- c. Atrioventricular (AV) Node -->
+                    <!-- c.	Gelombang Q -->
                     <div class="border rounded-lg overflow-hidden">
                         <button onclick="toggleAccordion('av-node')"
                             class="w-full bg-yellow-500 text-white font-semibold px-4 py-2 text-left">
-                            c. Atrioventricular (AV) Node
+                            c. Gelombang Q
                         </button>
                         <div id="av-node" class="hidden p-4 text-justify text-gray-700 bg-white">
-                            <p class="text-paragraf">
-                                Terletak di perbatasan antara atrium dan ventrikel, AV Node berfungsi sebagai "gerbang"
-                                yang memperlambat impuls sesaat sebelum diteruskan ke ventrikel. Keterlambatan ini
-                                penting untuk memastikan atrium selesai berkontraksi dan memompa darah ke ventrikel
-                                sebelum ventrikel mulai berkontraksi.
-                            </p>
+                            <p>
+                                Adalah defleksi negatif pertama pada gelombang QRS,
+                                normalnya :<br>
+                                • Lebar < 0,04 detik <br>
+                                • Tinggi (dalamnya) kurang dari 1/3 tinggi </p>
                         </div>
                     </div>
 
-                    <!-- d. Bundle of His -->
+                    <!-- d. Gelombang R -->
                     <div class="border rounded-lg overflow-hidden">
                         <button onclick="toggleAccordion('his-bundle')"
                             class="w-full bg-red-500 text-white font-semibold px-4 py-2 text-left">
-                            d. Bundle of His
+                            d. Gelombang R
                         </button>
                         <div id="his-bundle" class="hidden p-4 text-justify text-gray-700 bg-white">
                             <p class="text-paragraf">
-                                Setelah melewati AV Node, impuls bergerak ke Bundle of His, yang membagi menjadi dua
-                                cabang utama: Serabut Kanan (Right Bundle Branch) dan Serabut Kiri (Left Bundle Branch).
+                                Adalah defleksi positif pertama pada gelombang QRS, gelombang R umumnya positif di lead
+                                I, II, V5 dan V6. Di aVR, V1 dan V2 biasanya hanya kecil atau tidak ada sama sekali.
                             </p>
                         </div>
                     </div>
 
-                    <!-- e. Serabut Purkinje -->
+                    <!-- e.	Gelombang S -->
                     <div class="border rounded-lg overflow-hidden">
                         <button onclick="toggleAccordion('purkinje')"
                             class="w-full bg-purple-500 text-white font-semibold px-4 py-2 text-left">
-                            e. Serabut Purkinje
+                            e. Gelombang S
                         </button>
                         <div id="purkinje" class="hidden p-4 text-justify text-gray-700 bg-white">
                             <p class="text-paragraf">
-                                bergerak dengan sangat cepat melalui Serabut Purkinje, yang menyebar ke seluruh dinding
-                                ventrikel. Hantaran yang cepat ini memastikan kedua ventrikel berkontraksi hampir
-                                bersamaan dan secara kuat untuk memompa darah keluar dari jantung.
+                                Adalah defleksi negatif setelah gelombang R, di lead aVR dan V1 gelombang S terlihat
+                                lebih dalam, dari V2 sampai V6 terlihat makin lama makin kecil atau menghilang .
                             </p>
                         </div>
                     </div>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id" class="h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I-EKG Smart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .ekg-grid {
+            background-image: url("data:image/svg+xml,%3csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3e%3cdefs%3e%3cpattern id='grid' width='20' height='20' patternUnits='userSpaceOnUse'%3e%3cpath d='M 20 0 L 0 0 0 20' fill='none' stroke='%23ff9999' stroke-width='0.5'/%3e%3c/pattern%3e%3c/defs%3e%3crect width='100%25' height='100%25' fill='url(%23grid)' /%3e%3c/svg%3e");
+        }
+
+        .text-paragraf {
+            text-indent: 1.5rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body class="h-full bg-slate-100 font-sans">
+
+    <!-- Page Container -->
+    <div id="app" class="max-w-sm mx-auto bg-white min-h-screen relative overflow-hidden">
+
+        <!-- EKG Normal Page -->
+        <div id="ekg-normal-page" class="min-h-screen bg-slate-100">
+            <!-- Header -->
+            <div class="px-4 py-3 flex items-center">
+                <button onclick="history.back();"
+                    class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm flex items-center">
+                    ← Kembali
+                </button>
+            </div>
+
+            <div class="p-4">
+                <div class="text-center mb-6">
+                    <h1 class="text-2xl font-bold text-gray-800">Kertas EKG</span>
+                    </h1>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden cursor-pointer mb-6">
+                    <div class="p-4 text-justify text-gray-700">
+                        <p class="text-paragraf">
+                            Kertas EKG merupakan media tempat gelombang listrik jantung direkam. Kertas ini memiliki
+                            pola kotak-kotak kecil dan besar yang berfungsi sebagai panduan untuk mengukur dan
+                            menginterpretasi aktivitas listrik jantung. (Nazmah, 2015).
+                        </p>
+                    </div>
+                </div>
+
+                <div id="accordion" class="space-y-4">
+
+                    <!-- a.	Gelombang P -->
+                    <div class="border rounded-lg overflow-hidden">
+                        <button onclick="toggleAccordion('sa-node')"
+                            class="w-full bg-blue-500 text-white font-semibold px-4 py-2 text-left">
+                            a. Komponen Dasar Kertas EKG
+                        </button>
+                        <div id="sa-node" class="p-4 text-justify text-gray-700 bg-white">
+                            <p>
+                                1) Kotak Kecil: Setiap kotak kecil berukuran 1 mm x 1 mm.<br>
+                                2) Kotak Besar: Setiap kotak besar berukuran 5 mm x 5 mm, yang terdiri dari 25 kotak
+                                kecil.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- b.	Gelombang QRS -->
+                    <div class="border rounded-lg overflow-hidden">
+                        <button onclick="toggleAccordion('internodal')"
+                            class="w-full bg-green-500 text-white font-semibold px-4 py-2 text-left">
+                            b. Pengukuran pada Kertas EKG
+                        </button>
+                        <div id="internodal" class="hidden p-4 text-justify text-gray-700 bg-white">
+                            <p>
+                                Pengukuran pada kertas EKG didasarkan pada dua sumbu utama:<br>
+                                1) Sumbu Horizontal (Waktu): Mengukur durasi atau interval. Setiap kotak kecil mewakili
+                                0,04 detik, dan setiap kotak besar mewakili 0,20 detik (5 x 0,04 detik). Sumbu ini
+                                digunakan untuk menghitung laju denyut jantung, interval PR, durasi QRS, dan interval
+                                QT.<br>
+                                2) Sumbu Vertikal (Amplitudo/Voltase): Mengukur kekuatan atau tinggi gelombang listrik.
+                                Setiap kotak kecil mewakili 0,1 mV, dan setiap kotak besar mewakili 0,5 mV (5 x 0,1 mV).
+                                Sumbu ini digunakan untuk mengukur tinggi Gelombang P, tinggi kompleks QRS, dan tinggi
+                                Gelombang T.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <script>
+                    function toggleAccordion(id) {
+                        const content = document.getElementById(id);
+                        const allContents = document.querySelectorAll("#accordion > div > div");
+
+                        // Tutup semua panel lain
+                        allContents.forEach(el => {
+                            if (el.id !== id) el.classList.add("hidden");
+                        });
+
+                        // Toggle panel yang diklik
+                        content.classList.toggle("hidden");
+                    }
+                </script>
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function redirectPage(route) {
+            window.location.href = route;
+        }
+    </script>
+</body>
+
+</html>
