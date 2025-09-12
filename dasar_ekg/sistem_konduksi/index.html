@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id" class="h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I-EKG Smart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .ekg-grid {
+            background-image: url("data:image/svg+xml,%3csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3e%3cdefs%3e%3cpattern id='grid' width='20' height='20' patternUnits='userSpaceOnUse'%3e%3cpath d='M 20 0 L 0 0 0 20' fill='none' stroke='%23ff9999' stroke-width='0.5'/%3e%3c/pattern%3e%3c/defs%3e%3crect width='100%25' height='100%25' fill='url(%23grid)' /%3e%3c/svg%3e");
+        }
+    </style>
+</head>
+
+<body class="h-full bg-slate-100 font-sans">
+
+    <!-- Page Container -->
+    <div id="app" class="max-w-sm mx-auto bg-white min-h-screen relative overflow-hidden">
+
+        <!-- EKG Normal Page -->
+        <div id="ekg-normal-page" class="min-h-screen bg-slate-100">
+            <!-- Header -->
+            <div class="px-4 py-3 flex items-center">
+                <button onclick="history.back();"
+                    class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm flex items-center">
+                    ← Kembali
+                </button>
+            </div>
+
+            <div class="p-4">
+                <div class="text-center mb-6">
+                    <h1 class="text-2xl font-bold text-gray-800">Dasar Dasar EKG</span>
+                    </h1>
+                </div>
+
+                <!-- EKG Grid -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer" onclick="redirectPage('pengertian_ekg.html')" >
+                        <div class="w-full h-20 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-blue-600 text-xl">📖</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">Pengertian EKG</h3>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer" onclick="redirectPage('anatomi_fisiologi_jantung.html')">
+                        <div class="w-full h-20 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-red-500 text-xl">❤️</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">Anatomi & Fisiologi Jantung</h3>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer" onclick="redirectPage('sistem_konduksi/index.html')">
+                        <div class="w-full h-20 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-blue-600 text-xl">📚</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">Sistem Konduksi</h3>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer" onclick="redirectPage('kertas_ekg/index.html')">
+                        <div class="w-full h-20 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-blue-600 text-xl">📄</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">Kertas EKG</h3>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer" onclick="redirectPage('kurva_ekg/index.html')">
+                        <div class="w-full h-20 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-blue-600 text-xl">📈</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">Kurva EKG</h3>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer" onclick="redirectPage('sadapan_ekg/index.html')">
+                        <div class="w-full h-20 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-blue-600 text-xl">🩺</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">Sadapan EKG</h3>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function redirectPage(route) {
+            window.location.href = route;
+        }
+    </script>
+</body>
+
+</html>
