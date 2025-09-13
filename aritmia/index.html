@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,17 +13,18 @@
         }
     </style>
 </head>
+
 <body class="bg-gray-50 min-h-screen p-4">
     <div class="max-w-6xl mx-auto">
-        
+
         <div class="px-4 py-3 flex items-center">
-                <button onclick="history.back();"
-                    class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm flex items-center">
-                    ← Kembali
-                </button>
-            </div>
+            <button onclick="history.back();"
+                class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm flex items-center">
+                ← Kembali
+            </button>
+        </div>
         <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">Aritmia</h1>
-        
+
         <!-- Main Container -->
         <div id="main-level" class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <!-- 1. Pengantar Aritmia -->
@@ -34,7 +36,8 @@
             </div>
 
             <!-- 2. Penyebab Aritmia -->
-            <div onclick="showLevel('penyebab-aritmia')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
+            <div onclick="showLevel('penyebab-aritmia')"
+                class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
                 <div class="w-full h-24 bg-red-100 rounded-lg mb-3 flex items-center justify-center">
                     <span class="text-red-600 text-2xl">⚡</span>
                 </div>
@@ -44,11 +47,12 @@
 
         <!-- Level 2: Penyebab Aritmia -->
         <div id="penyebab-aritmia" class="hidden mt-6">
-            
+
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <!-- a. Gangguan pembentukan impuls -->
-                    <div onclick="showLevel('gangguan-pembentukan')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
+                    <div onclick="showLevel('gangguan-pembentukan')"
+                        class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
                         <div class="w-full h-24 bg-green-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-green-600 text-2xl">🔄</span>
                         </div>
@@ -56,7 +60,8 @@
                     </div>
 
                     <!-- b. Gangguan Hantaran impuls -->
-                    <div onclick="showLevel('gangguan-hantaran')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
+                    <div onclick="showLevel('gangguan-hantaran')"
+                        class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
                         <div class="w-full h-24 bg-orange-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-orange-600 text-2xl">🚫</span>
                         </div>
@@ -68,11 +73,12 @@
 
         <!-- Level 3: Gangguan Pembentukan Impuls -->
         <div id="gangguan-pembentukan" class="hidden mt-6">
-            
+
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     <!-- 1) Nodus SA -->
-                    <div onclick="showLevel('nodus-sa')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
+                    <div onclick="showLevel('nodus-sa')"
+                        class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
                         <div class="w-full h-24 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-blue-600 text-2xl">🔵</span>
                         </div>
@@ -80,7 +86,8 @@
                     </div>
 
                     <!-- 2) Atrium -->
-                    <div onclick="showLevel('atrium')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
+                    <div onclick="showLevel('atrium')"
+                        class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
                         <div class="w-full h-24 bg-purple-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-purple-600 text-2xl">💜</span>
                         </div>
@@ -88,7 +95,8 @@
                     </div>
 
                     <!-- 3) Nodus AV -->
-                    <div onclick="showLevel('nodus-av')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
+                    <div onclick="showLevel('nodus-av')"
+                        class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
                         <div class="w-full h-24 bg-teal-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-teal-600 text-2xl">🟢</span>
                         </div>
@@ -96,7 +104,8 @@
                     </div>
 
                     <!-- 2) Supraventrikel -->
-                    <div onclick="showLevel('supraventrikel')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
+                    <div onclick="showLevel('supraventrikel')"
+                        class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
                         <div class="w-full h-24 bg-indigo-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-indigo-600 text-2xl">🔷</span>
                         </div>
@@ -104,7 +113,8 @@
                     </div>
 
                     <!-- 3) Ventrikel -->
-                    <div onclick="showLevel('ventrikel')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
+                    <div onclick="showLevel('ventrikel')"
+                        class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
                         <div class="w-full h-24 bg-red-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-red-600 text-2xl">❤️</span>
                         </div>
@@ -116,7 +126,7 @@
 
         <!-- Level 4: Nodus SA -->
         <div id="nodus-sa" class="hidden mt-6">
-            
+
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="bg-white rounded-xl p-4 shadow-sm">
@@ -149,7 +159,7 @@
 
         <!-- Level 4: Atrium -->
         <div id="atrium" class="hidden mt-6">
-            
+
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="bg-white rounded-xl p-4 shadow-sm">
@@ -182,7 +192,7 @@
 
         <!-- Level 4: Nodus AV -->
         <div id="nodus-av" class="hidden mt-6">
-            
+
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div class="bg-white rounded-xl p-4 shadow-sm">
@@ -209,14 +219,15 @@
 
         <!-- Level 4: Supraventrikel -->
         <div id="supraventrikel" class="hidden mt-6">
-            
+
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="bg-white rounded-xl p-4 shadow-sm">
                         <div class="w-full h-24 bg-indigo-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-indigo-600 text-2xl">⚡</span>
                         </div>
-                        <h3 class="font-semibold text-gray-800 text-sm text-center">a) Ekstrasistol Supraventrikel (Ektrasistol Atrial)</h3>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">a) Ekstrasistol Supraventrikel
+                            (Ektrasistol Atrial)</h3>
                     </div>
                     <div class="bg-white rounded-xl p-4 shadow-sm">
                         <div class="w-full h-24 bg-violet-100 rounded-lg mb-3 flex items-center justify-center">
@@ -230,7 +241,7 @@
 
         <!-- Level 4: Ventrikel -->
         <div id="ventrikel" class="hidden mt-6">
-            
+
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="bg-white rounded-xl p-4 shadow-sm">
@@ -263,11 +274,12 @@
 
         <!-- Level 3: Gangguan Hantaran Impuls -->
         <div id="gangguan-hantaran" class="hidden mt-6">
-            
+
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <!-- 1) Nodus SA -->
-                    <div onclick="showLevel('sa-blok')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
+                    <div onclick="showLevel('sa-blok')"
+                        class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
                         <div class="w-full h-24 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-blue-600 text-2xl">🔵</span>
                         </div>
@@ -275,7 +287,8 @@
                     </div>
 
                     <!-- 2) Nodus AV -->
-                    <div onclick="showLevel('av-blok')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
+                    <div onclick="showLevel('av-blok')"
+                        class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
                         <div class="w-full h-24 bg-teal-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-teal-600 text-2xl">🟢</span>
                         </div>
@@ -283,7 +296,8 @@
                     </div>
 
                     <!-- 3) Interventrikuler -->
-                    <div onclick="showLevel('interventrikuler')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
+                    <div onclick="showLevel('interventrikuler')"
+                        class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
                         <div class="w-full h-24 bg-orange-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-orange-600 text-2xl">🔶</span>
                         </div>
@@ -295,7 +309,7 @@
 
         <!-- Level 4: SA Blok -->
         <div id="sa-blok" class="hidden mt-6">
-            
+
             <div class="nested-container">
                 <div class="grid grid-cols-1 gap-4">
                     <div class="bg-white rounded-xl p-4 shadow-sm">
@@ -310,7 +324,7 @@
 
         <!-- Level 4: AV Blok -->
         <div id="av-blok" class="hidden mt-6">
-            
+
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="bg-white rounded-xl p-4 shadow-sm">
@@ -323,7 +337,8 @@
                         <div class="w-full h-24 bg-orange-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-orange-600 text-2xl">2️⃣</span>
                         </div>
-                        <h3 class="font-semibold text-gray-800 text-sm text-center">b) Blok AV derajat 2 mobitz I (Wenckebach)</h3>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">b) Blok AV derajat 2 mobitz I
+                            (Wenckebach)</h3>
                     </div>
                     <div class="bg-white rounded-xl p-4 shadow-sm">
                         <div class="w-full h-24 bg-red-100 rounded-lg mb-3 flex items-center justify-center">
@@ -335,7 +350,8 @@
                         <div class="w-full h-24 bg-gray-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-gray-600 text-2xl">3️⃣</span>
                         </div>
-                        <h3 class="font-semibold text-gray-800 text-sm text-center">d) Blok AV derajat 3 (Total AV blok)</h3>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">d) Blok AV derajat 3 (Total AV blok)
+                        </h3>
                     </div>
                 </div>
             </div>
@@ -343,27 +359,29 @@
 
         <!-- Level 4: Interventrikuler -->
         <div id="interventrikuler" class="hidden mt-6">
-            
+
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="bg-white rounded-xl p-4 shadow-sm">
                         <div class="w-full h-24 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-blue-600 text-2xl">➡️</span>
                         </div>
-                        <h3 class="font-semibold text-gray-800 text-sm text-center">a) Right bundle branch block (RBBB)</h3>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">a) Right bundle branch block (RBBB)
+                        </h3>
                     </div>
                     <div class="bg-white rounded-xl p-4 shadow-sm">
                         <div class="w-full h-24 bg-red-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-red-600 text-2xl">⬅️</span>
                         </div>
-                        <h3 class="font-semibold text-gray-800 text-sm text-center">b) Left bundle branch block (LBBB)</h3>
-                    </div>
-                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">b) Left bundle branch block (LBBB)
+                        </h3>
                     </div>
                 </div>
-
             </div>
         </div>
+
+    </div>
+    </div>
     </div>
 
     <script>
@@ -379,10 +397,10 @@
                     section.classList.add('hidden');
                 }
             });
-            
+
             // Show the requested level
             document.getElementById(levelId).classList.remove('hidden');
-            
+
             // Scroll to top
             window.scrollTo(0, 0);
         }
@@ -392,9 +410,10 @@
         }
 
         // Initialize - show only main level
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             showLevel('main-level');
         });
     </script>
 </body>
+
 </html>

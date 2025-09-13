@@ -54,177 +54,181 @@
 
                 <div id="grid-container" class="grid grid-cols-2 gap-4">
 
-    <!-- a. Sadapan Bipolar -->
-    <div onclick="showDetail('sadapan-bipolar', 'grid-container')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
-        <div class="w-full h-24 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
-            <span class="text-blue-600 text-2xl">🩺</span>
-        </div>
-        <h3 class="font-semibold text-gray-800 text-sm text-center">a. Sadapan Bipolar</h3>
-    </div>
+                    <!-- a. Sadapan Bipolar -->
+                    <div onclick="showDetail('sadapan-bipolar', 'grid-container')"
+                        class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-24 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-blue-600 text-2xl">🩺</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">a. Sadapan Bipolar</h3>
+                    </div>
 
-    <!-- b. Sadapan Unipolar -->
-    <div onclick="showDetail('sadapan-unipolar', 'grid-container')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
-        <div class="w-full h-24 bg-green-100 rounded-lg mb-3 flex items-center justify-center">
-            <span class="text-green-600 text-2xl">⚡</span>
-        </div>
-        <h3 class="font-semibold text-gray-800 text-sm text-center">b. Sadapan Unipolar</h3>
-    </div>
+                    <!-- b. Sadapan Unipolar -->
+                    <div onclick="showDetail('sadapan-unipolar', 'grid-container')"
+                        class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-24 bg-green-100 rounded-lg mb-3 flex items-center justify-center">
+                            <span class="text-green-600 text-2xl">⚡</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">b. Sadapan Unipolar</h3>
+                    </div>
 
-</div>
+                </div>
 
-<!-- Level 2: Subheader dari Sadapan Bipolar -->
-<div id="sadapan-bipolar" class="hidden grid grid-cols-2 gap-4">
-    <div onclick="showDetail('grid-container', 'sadapan-bipolar')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
-        <div class="w-full h-16 bg-blue-50 rounded-lg mb-2 flex items-center justify-center">
-            <span class="text-blue-500 text-lg">①</span>
-        </div>
-        <h3 class="font-semibold text-gray-800 text-sm text-center">1) Sadapan I</h3>
-    </div>
-    <div onclick="showDetail('grid-container', 'sadapan-bipolar')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
-        <div class="w-full h-16 bg-blue-50 rounded-lg mb-2 flex items-center justify-center">
-            <span class="text-blue-500 text-lg">②</span>
-        </div>
-        <h3 class="font-semibold text-gray-800 text-sm text-center">2) Sadapan II</h3>
-    </div>
-    <div onclick="showDetail('grid-container', 'sadapan-bipolar')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
-        <div class="w-full h-16 bg-blue-50 rounded-lg mb-2 flex items-center justify-center">
-            <span class="text-blue-500 text-lg">③</span>
-        </div>
-        <h3 class="font-semibold text-gray-800 text-sm text-center">3) Sadapan III</h3>
-    </div>
-</div>
+                <!-- Level 2: Subheader dari Sadapan Bipolar -->
+                <div id="sadapan-bipolar" class="hidden grid grid-cols-2 gap-4">
+                    <div onclick="showDetail('grid-container', 'sadapan-bipolar')"
+                        class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-16 bg-blue-50 rounded-lg mb-2 flex items-center justify-center">
+                            <span class="text-blue-500 text-lg">①</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">1) Sadapan I</h3>
+                    </div>
+                    <div onclick="showDetail('grid-container', 'sadapan-bipolar')"
+                        class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-16 bg-blue-50 rounded-lg mb-2 flex items-center justify-center">
+                            <span class="text-blue-500 text-lg">②</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">2) Sadapan II</h3>
+                    </div>
+                    <div onclick="showDetail('grid-container', 'sadapan-bipolar')"
+                        class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-16 bg-blue-50 rounded-lg mb-2 flex items-center justify-center">
+                            <span class="text-blue-500 text-lg">③</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">3) Sadapan III</h3>
+                    </div>
+                </div>
 
-<!-- Level 2: Subheader dari Sadapan Unipolar -->
-<div id="sadapan-unipolar" class="hidden grid grid-cols-2 gap-4">
-    <div onclick="showDetail('unipolar-ekstremitas', 'sadapan-unipolar')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
-        <div class="w-full h-16 bg-green-50 rounded-lg mb-2 flex items-center justify-center">
-            <span class="text-green-500 text-lg">🖐️</span>
-        </div>
-        <h3 class="font-semibold text-gray-800 text-sm text-center">1) Unipolar Ekstremitas</h3>
-    </div>
-    <div onclick="showDetail('unipolar-precordial', 'sadapan-unipolar')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
-        <div class="w-full h-16 bg-green-50 rounded-lg mb-2 flex items-center justify-center">
-            <span class="text-green-500 text-lg">❤️</span>
-        </div>
-        <h3 class="font-semibold text-gray-800 text-sm text-center">2) Unipolar Precordial</h3>
-    </div>
-</div>
+                <!-- Level 2: Subheader dari Sadapan Unipolar -->
+                <div id="sadapan-unipolar" class="hidden grid grid-cols-2 gap-4">
+                    <div onclick="showDetail('unipolar-ekstremitas', 'sadapan-unipolar')"
+                        class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-16 bg-green-50 rounded-lg mb-2 flex items-center justify-center">
+                            <span class="text-green-500 text-lg">🖐️</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">1) Unipolar Ekstremitas</h3>
+                    </div>
+                    <div onclick="showDetail('unipolar-precordial', 'sadapan-unipolar')"
+                        class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-16 bg-green-50 rounded-lg mb-2 flex items-center justify-center">
+                            <span class="text-green-500 text-lg">❤️</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">2) Unipolar Precordial</h3>
+                    </div>
+                </div>
 
-<!-- Level 3: Sub dari Unipolar Ekstremitas -->
-<div id="unipolar-ekstremitas" class="hidden grid grid-cols-2 gap-4">
-    <div onclick="showDetail('sadapan-unipolar', 'unipolar-ekstremitas')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
-        <div class="w-full h-16 bg-purple-50 rounded-lg mb-2 flex items-center justify-center">
-            <span class="text-purple-500 text-lg">A</span>
-        </div>
-        <h3 class="font-semibold text-gray-800 text-sm text-center">a) aVR</h3>
-    </div>
-    <div onclick="showDetail('sadapan-unipolar', 'unipolar-ekstremitas')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
-        <div class="w-full h-16 bg-purple-50 rounded-lg mb-2 flex items-center justify-center">
-            <span class="text-purple-500 text-lg">B</span>
-        </div>
-        <h3 class="font-semibold text-gray-800 text-sm text-center">b) aVL</h3>
-    </div>
-    <div onclick="showDetail('sadapan-unipolar', 'unipolar-ekstremitas')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
-        <div class="w-full h-16 bg-purple-50 rounded-lg mb-2 flex items-center justify-center">
-            <span class="text-purple-500 text-lg">C</span>
-        </div>
-        <h3 class="font-semibold text-gray-800 text-sm text-center">c) aVF</h3>
-    </div>
-</div>
+                <!-- Level 3: Sub dari Unipolar Ekstremitas -->
+                <div id="unipolar-ekstremitas" class="hidden grid grid-cols-2 gap-4">
+                    <div onclick="showDetail('sadapan-unipolar', 'unipolar-ekstremitas')"
+                        class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-16 bg-purple-50 rounded-lg mb-2 flex items-center justify-center">
+                            <span class="text-purple-500 text-lg">A</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">a) aVR</h3>
+                    </div>
+                    <div onclick="showDetail('sadapan-unipolar', 'unipolar-ekstremitas')"
+                        class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-16 bg-purple-50 rounded-lg mb-2 flex items-center justify-center">
+                            <span class="text-purple-500 text-lg">B</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">b) aVL</h3>
+                    </div>
+                    <div onclick="showDetail('sadapan-unipolar', 'unipolar-ekstremitas')"
+                        class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-16 bg-purple-50 rounded-lg mb-2 flex items-center justify-center">
+                            <span class="text-purple-500 text-lg">C</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">c) aVF</h3>
+                    </div>
+                </div>
 
-<!-- Level 3: Sub dari Unipolar Precordial -->
-<div id="unipolar-precordial" class="hidden grid grid-cols-2 gap-4">
-    <div onclick="showDetail('sadapan-unipolar', 'unipolar-precordial')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
-        <div class="w-full h-16 bg-red-50 rounded-lg mb-2 flex items-center justify-center">
-            <span class="text-red-500 text-lg">V1</span>
-        </div>
-        <h3 class="text-sm text-center">a) V1</h3>
-    </div>
-    <div onclick="showDetail('sadapan-unipolar', 'unipolar-precordial')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
-        <div class="w-full h-16 bg-red-50 rounded-lg mb-2 flex items-center justify-center">
-            <span class="text-red-500 text-lg">V2</span>
-        </div>
-        <h3 class="text-sm text-center">b) V2</h3>
-    </div>
-    <div onclick="showDetail('sadapan-unipolar', 'unipolar-precordial')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
-        <div class="w-full h-16 bg-red-50 rounded-lg mb-2 flex items-center justify-center">
-            <span class="text-red-500 text-lg">V3</span>
-        </div>
-        <h3 class="text-sm text-center">c) V3</h3>
-    </div>
-    <div onclick="showDetail('sadapan-unipolar', 'unipolar-precordial')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
-        <div class="w-full h-16 bg-red-50 rounded-lg mb-2 flex items-center justify-center">
-            <span class="text-red-500 text-lg">V4</span>
-        </div>
-        <h3 class="text-sm text-center">d) V4</h3>
-    </div>
-    <div onclick="showDetail('sadapan-unipolar', 'unipolar-precordial')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
-        <div class="w-full h-16 bg-red-50 rounded-lg mb-2 flex items-center justify-center">
-            <span class="text-red-500 text-lg">V5</span>
-        </div>
-        <h3 class="text-sm text-center">e) V5</h3>
-    </div>
-    <div onclick="showDetail('sadapan-unipolar', 'unipolar-precordial')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
-        <div class="w-full h-16 bg-red-50 rounded-lg mb-2 flex items-center justify-center">
-            <span class="text-red-500 text-lg">V6</span>
-        </div>
-        <h3 class="text-sm text-center">f) V6</h3>
-    </div>
-    <div onclick="showDetail('sadapan-unipolar', 'unipolar-precordial')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
-        <div class="w-full h-16 bg-red-50 rounded-lg mb-2 flex items-center justify-center">
-            <span class="text-red-500 text-lg">V7</span>
-        </div>
-        <h3 class="text-sm text-center">g) V7</h3>
-    </div>
-    <div onclick="showDetail('sadapan-unipolar', 'unipolar-precordial')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
-        <div class="w-full h-16 bg-red-50 rounded-lg mb-2 flex items-center justify-center">
-            <span class="text-red-500 text-lg">V8</span>
-        </div>
-        <h3 class="text-sm text-center">h) V8</h3>
-    </div>
-    <div onclick="showDetail('sadapan-unipolar', 'unipolar-precordial')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
-        <div class="w-full h-16 bg-red-50 rounded-lg mb-2 flex items-center justify-center">
-            <span class="text-red-500 text-lg">V9</span>
-        </div>
-        <h3 class="text-sm text-center">i) V9</h3>
-    </div>
-    <div onclick="showDetail('sadapan-unipolar', 'unipolar-precordial')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
-        <div class="w-full h-16 bg-red-50 rounded-lg mb-2 flex items-center justify-center">
-            <span class="text-red-500 text-lg">V3R</span>
-        </div>
-        <h3 class="text-sm text-center">j) V3R</h3>
-    </div>
-    <div onclick="showDetail('sadapan-unipolar', 'unipolar-precordial')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
-        <div class="w-full h-16 bg-red-50 rounded-lg mb-2 flex items-center justify-center">
-            <span class="text-red-500 text-lg">V4R</span>
-        </div>
-        <h3 class="text-sm text-center">k) V4R</h3>
-    </div>
-</div>
-
-<script>
-function showDetail(showId, hideId) {
-    document.getElementById(hideId).classList.add('hidden');
-    document.getElementById(showId).classList.remove('hidden');
-}
-</script>
-
+                <!-- Level 3: Sub dari Unipolar Precordial -->
+                <div id="unipolar-precordial" class="hidden grid grid-cols-2 gap-4">
+                    <div onclick="showDetail('sadapan-unipolar', 'unipolar-precordial')"
+                        class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-16 bg-red-50 rounded-lg mb-2 flex items-center justify-center">
+                            <span class="text-red-500 text-lg">V1</span>
+                        </div>
+                        <h3 class="text-sm text-center">a) V1</h3>
+                    </div>
+                    <div onclick="showDetail('sadapan-unipolar', 'unipolar-precordial')"
+                        class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-16 bg-red-50 rounded-lg mb-2 flex items-center justify-center">
+                            <span class="text-red-500 text-lg">V2</span>
+                        </div>
+                        <h3 class="text-sm text-center">b) V2</h3>
+                    </div>
+                    <div onclick="showDetail('sadapan-unipolar', 'unipolar-precordial')"
+                        class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-16 bg-red-50 rounded-lg mb-2 flex items-center justify-center">
+                            <span class="text-red-500 text-lg">V3</span>
+                        </div>
+                        <h3 class="text-sm text-center">c) V3</h3>
+                    </div>
+                    <div onclick="showDetail('sadapan-unipolar', 'unipolar-precordial')"
+                        class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-16 bg-red-50 rounded-lg mb-2 flex items-center justify-center">
+                            <span class="text-red-500 text-lg">V4</span>
+                        </div>
+                        <h3 class="text-sm text-center">d) V4</h3>
+                    </div>
+                    <div onclick="showDetail('sadapan-unipolar', 'unipolar-precordial')"
+                        class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-16 bg-red-50 rounded-lg mb-2 flex items-center justify-center">
+                            <span class="text-red-500 text-lg">V5</span>
+                        </div>
+                        <h3 class="text-sm text-center">e) V5</h3>
+                    </div>
+                    <div onclick="showDetail('sadapan-unipolar', 'unipolar-precordial')"
+                        class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-16 bg-red-50 rounded-lg mb-2 flex items-center justify-center">
+                            <span class="text-red-500 text-lg">V6</span>
+                        </div>
+                        <h3 class="text-sm text-center">f) V6</h3>
+                    </div>
+                    <div onclick="showDetail('sadapan-unipolar', 'unipolar-precordial')"
+                        class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-16 bg-red-50 rounded-lg mb-2 flex items-center justify-center">
+                            <span class="text-red-500 text-lg">V7</span>
+                        </div>
+                        <h3 class="text-sm text-center">g) V7</h3>
+                    </div>
+                    <div onclick="showDetail('sadapan-unipolar', 'unipolar-precordial')"
+                        class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-16 bg-red-50 rounded-lg mb-2 flex items-center justify-center">
+                            <span class="text-red-500 text-lg">V8</span>
+                        </div>
+                        <h3 class="text-sm text-center">h) V8</h3>
+                    </div>
+                    <div onclick="showDetail('sadapan-unipolar', 'unipolar-precordial')"
+                        class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-16 bg-red-50 rounded-lg mb-2 flex items-center justify-center">
+                            <span class="text-red-500 text-lg">V9</span>
+                        </div>
+                        <h3 class="text-sm text-center">i) V9</h3>
+                    </div>
+                    <div onclick="showDetail('sadapan-unipolar', 'unipolar-precordial')"
+                        class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-16 bg-red-50 rounded-lg mb-2 flex items-center justify-center">
+                            <span class="text-red-500 text-lg">V3R</span>
+                        </div>
+                        <h3 class="text-sm text-center">j) V3R</h3>
+                    </div>
+                    <div onclick="showDetail('sadapan-unipolar', 'unipolar-precordial')"
+                        class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
+                        <div class="w-full h-16 bg-red-50 rounded-lg mb-2 flex items-center justify-center">
+                            <span class="text-red-500 text-lg">V4R</span>
+                        </div>
+                        <h3 class="text-sm text-center">k) V4R</h3>
+                    </div>
+                </div>
 
                 <script>
-                    function toggleAccordion(id) {
-                        const content = document.getElementById(id);
-                        const allContents = document.querySelectorAll("#accordion > div > div");
-
-                        // Tutup semua panel lain
-                        allContents.forEach(el => {
-                            if (el.id !== id) el.classList.add("hidden");
-                        });
-
-                        // Toggle panel yang diklik
-                        content.classList.toggle("hidden");
+                    function showDetail(showId, hideId) {
+                        document.getElementById(hideId).classList.add('hidden');
+                        document.getElementById(showId).classList.remove('hidden');
                     }
                 </script>
-
 
             </div>
         </div>

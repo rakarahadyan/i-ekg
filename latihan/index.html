@@ -1,62 +1,213 @@
 <!DOCTYPE html>
-<html lang="id" class="h-full">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I-EKG Smart</title>
+    <title>Kuis EKG</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .ekg-grid {
-            background-image: url("data:image/svg+xml,%3csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3e%3cdefs%3e%3cpattern id='grid' width='20' height='20' patternUnits='userSpaceOnUse'%3e%3cpath d='M 20 0 L 0 0 0 20' fill='none' stroke='%23ff9999' stroke-width='0.5'/%3e%3c/pattern%3e%3c/defs%3e%3crect width='100%25' height='100%25' fill='url(%23grid)' /%3e%3c/svg%3e");
-        }
-    </style>
 </head>
 
-<body class="h-full bg-slate-100 font-sans">
+<body class="bg-slate-100 min-h-screen flex flex-col items-center">
+    <!-- Tombol Kembali -->
+    <div class="w-full max-w-md px-4 py-3">
+        <button onclick="history.back();" class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm flex items-center">
+            ← Kembali
+        </button>
+    </div>
 
-    <!-- Page Container -->
-    <div id="app" class="max-w-sm mx-auto bg-white min-h-screen relative overflow-hidden">
+    <!-- Header -->
+    <div id="quiz-header" class="text-center my-4 px-4">
+        <h1 class="text-xl font-bold text-blue-600">📊 Latihan Kuis EKG</h1>
+        <p class="text-sm text-gray-500">Jawab semua soal dengan fokus</p>
+    </div>
 
-                <!-- Latihan Page -->
-        <div id="latihan-page" class="min-h-screen bg-slate-100">
-            <div class="px-4 py-3 flex items-center">
-                <button onclick="history.back();"
-                    class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm flex items-center">
-                    ← Kembali
-                </button>
-            </div>
-
-            <div class="p-4">
-                <div class="text-center mb-6">
-                    <h1 class="text-2xl font-bold text-gray-800">Latihan</h1>
-                </div>
-
-                <div class="grid grid-cols-1 gap-4">
-                    <div class="bg-white rounded-xl p-4 shadow-sm">
-                        <div class="w-full h-20 bg-pink-100 rounded-lg mb-3 ekg-grid"></div>
-                        <h3 class="font-semibold text-gray-800 text-center">Latihan identifikasi gelombang</h3>
-                    </div>
-
-                    <div class="bg-white rounded-xl p-4 shadow-sm">
-                        <div class="w-full h-20 bg-pink-100 rounded-lg mb-3 ekg-grid"></div>
-                        <h3 class="font-semibold text-gray-800 text-center">Kuis interaktif</h3>
-                    </div>
-
-                    <div class="bg-white rounded-xl p-4 shadow-sm">
-                        <div class="w-full h-20 bg-pink-100 rounded-lg mb-3 ekg-grid"></div>
-                        <h3 class="font-semibold text-gray-800 text-center">Studi kasus (Normal vs Tidak Normal)</h3>
-                    </div>
-                </div>
-            </div>
+    <!-- Progress -->
+    <div class="w-full max-w-md px-4 mt-4">
+        <div class="flex justify-between text-sm text-gray-600 mb-1">
+            <span id="progressText">Soal 1 / 1</span>
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-2">
+            <div id="progressBar" class="bg-blue-500 h-2 rounded-full" style="width: 0%;"></div>
         </div>
     </div>
 
-        <script>
-function redirectPage(route) {
-            window.location.href = route + ".html";
+    <!-- Container -->
+    <div class="w-full max-w-md bg-white rounded-2xl shadow-lg p-4 m-6">
+        <div id="quiz-container"></div>
+
+        <!-- Tombol -->
+        <div class="flex justify-between mt-6">
+            <button id="prevBtn"
+                class="bg-gray-300 text-gray-700 px-4 py-2 rounded-lg disabled:opacity-50">Back</button>
+            <button id="nextBtn" class="bg-blue-500 text-white px-4 py-2 rounded-lg">Next</button>
+        </div>
+
+        <!-- Hasil -->
+        <div id="result" class="hidden text-center mt-6">
+            <h2 class="text-lg font-bold text-green-600">🎉 Hasil Kuis</h2>
+            <p id="scoreText" class="text-gray-700 mt-2"></p>
+            <button onclick="restartQuiz()" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg">
+                Ulangi Kuis
+            </button>
+        </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script>
+        let currentQuestion = 0;
+        let userAnswers = [];
+
+        const quizContainer = document.getElementById("quiz-container");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+        const progressText = document.getElementById("progressText");
+        const progressBar = document.getElementById("progressBar");
+        const resultDiv = document.getElementById("result");
+        const scoreText = document.getElementById("scoreText");
+
+        // 🔹 Load progress dari localStorage (jika ada)
+        const savedProgress = JSON.parse(localStorage.getItem("quizProgress"));
+        if (savedProgress) {
+            currentQuestion = savedProgress.currentQuestion || 0;
+            userAnswers = savedProgress.userAnswers || [];
         }
-</script>
+
+        function saveProgress() {
+            localStorage.setItem("quizProgress", JSON.stringify({
+                currentQuestion,
+                userAnswers
+            }));
+        }
+
+        function loadQuestion(index) {
+            const q = questions[index];
+            quizContainer.innerHTML = `
+            <h2 class="text-lg font-semibold mb-4">${index + 1}. ${q.question}</h2>
+            <div class="space-y-3">
+            ${q.options.map((opt, i) => `
+                <div class="option border rounded-lg px-4 py-3 cursor-pointer hover:bg-gray-100" data-index="${i}">
+                    <div class="flex flex-col">
+                        <span>${String.fromCharCode(65 + i)}. ${opt}</span>
+                        <div class="feedback hidden mt-2 text-sm"></div>
+                    </div>
+                </div>
+            `).join("")}
+            </div>
+        `;
+
+            // Progress
+            progressText.textContent = `Soal ${index + 1} / ${questions.length}`;
+            progressBar.style.width = `${((index + 1) / questions.length) * 100}%`;
+
+            // Disable prev di soal pertama
+            prevBtn.disabled = index === 0;
+            nextBtn.textContent = (index === questions.length - 1) ? "Selesai" : "Next";
+
+            // Event klik jawaban
+            document.querySelectorAll(".option").forEach(el => {
+                el.addEventListener("click", () => checkAnswer(el, index));
+            });
+
+            // 🔹 Kalau sebelumnya sudah dijawab, tampilkan kembali state jawaban
+            if (userAnswers[index] !== undefined) {
+                const selected = userAnswers[index];
+                const selectedEl = document.querySelector(`.option[data-index="${selected}"]`);
+                checkAnswer(selectedEl, index, true);
+            }
+        }
+
+        function checkAnswer(el, index, isRestore = false) {
+            if (!el) return;
+            const selected = parseInt(el.dataset.index);
+            userAnswers[index] = selected;
+            const q = questions[index];
+
+            // Lock semua opsi
+            document.querySelectorAll(".option").forEach(opt => {
+                opt.classList.add("pointer-events-none");
+            });
+
+            const feedback = el.querySelector(".feedback");
+            feedback.classList.remove("hidden");
+
+            if (selected === q.answer) {
+                // ✅ jawaban benar
+                el.classList.add("bg-green-100", "border-green-500");
+                feedback.innerHTML = `<span class="text-green-600 font-semibold">${q.explanations[selected]}</span>`;
+            } else {
+                // ❌ jawaban salah
+                el.classList.add("bg-red-100", "border-red-500");
+                feedback.innerHTML = `<span class="text-red-600 font-semibold">${q.explanations[selected]}</span>`;
+
+                // tampilkan jawaban benar
+                const correctOpt = document.querySelector(`.option[data-index="${q.answer}"]`);
+                const correctFeedback = correctOpt.querySelector(".feedback");
+                correctOpt.classList.add("bg-green-100", "border-green-500");
+                correctFeedback.classList.remove("hidden");
+                correctFeedback.innerHTML = `<span class="text-green-600 font-semibold">${q.explanations[q.answer]}</span>`;
+            }
+
+            // 🔹 Simpan progres setelah menjawab
+            if (!isRestore) saveProgress();
+        }
+
+        function finishQuiz() {
+            let score = 0;
+            questions.forEach((q, i) => {
+                if (userAnswers[i] === q.answer) score++;
+            });
+
+            resultDiv.classList.remove("hidden");
+            quizContainer.classList.add("hidden");
+            prevBtn.classList.add("hidden");
+            nextBtn.classList.add("hidden");
+
+            scoreText.textContent = `Skor Anda: ${score} dari ${questions.length}`;
+
+            // 🔹 Simpan hasil akhir
+            localStorage.setItem("quizResult", JSON.stringify({
+                score: score,
+                total: questions.length,
+                answers: userAnswers
+            }));
+
+            // Hapus progress agar mulai ulang dari awal saat next buka
+            localStorage.removeItem("quizProgress");
+        }
+
+        function restartQuiz() {
+            currentQuestion = 0;
+            userAnswers = [];
+            resultDiv.classList.add("hidden");
+            quizContainer.classList.remove("hidden");
+            prevBtn.classList.remove("hidden");
+            nextBtn.classList.remove("hidden");
+            saveProgress();
+            loadQuestion(currentQuestion);
+        }
+
+        nextBtn.addEventListener("click", () => {
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                saveProgress();
+                loadQuestion(currentQuestion);
+            } else {
+                finishQuiz();
+            }
+        });
+
+        prevBtn.addEventListener("click", () => {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                saveProgress();
+                loadQuestion(currentQuestion);
+            }
+        });
+
+        loadQuestion(currentQuestion);
+    </script>
+
 </body>
 
 </html>
