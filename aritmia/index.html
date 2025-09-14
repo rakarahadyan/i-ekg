@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Struktur Aritmia - Interactive Learning</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <style>
         .card-hover:hover {
             transform: translateY(-2px);
@@ -28,7 +30,7 @@
         <!-- Main Container -->
         <div id="main-level" class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <!-- 1. Pengantar Aritmia -->
-            <div class="bg-white rounded-xl p-4 shadow-sm">
+            <div onclick="redirectPage('pengantar.html')" class="bg-white rounded-xl p-4 shadow-sm">
                 <div class="w-full h-24 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
                     <span class="text-blue-600 text-2xl">📚</span>
                 </div>
@@ -126,28 +128,29 @@
 
         <!-- Level 4: Nodus SA -->
         <div id="nodus-sa" class="hidden mt-6">
-
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer"
+                        onclick="showDetail('takikardi-sinus')">
                         <div class="w-full h-24 bg-green-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-green-600 text-2xl">⚡</span>
                         </div>
-                        <h3 class="font-semibold text-gray-800 text-sm text-center">a) Takikardi sinus (ST)</h3>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">a) Takikardi Sinus (ST)</h3>
                     </div>
-                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer"
+                        onclick="showDetail('bradikardi-sinus')">
                         <div class="w-full h-24 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-blue-600 text-2xl">🐌</span>
                         </div>
                         <h3 class="font-semibold text-gray-800 text-sm text-center">b) Bradikardi Sinus (SB)</h3>
                     </div>
-                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer" onclick="showDetail('aritmia-sinus')">
                         <div class="w-full h-24 bg-yellow-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-yellow-600 text-2xl">📊</span>
                         </div>
                         <h3 class="font-semibold text-gray-800 text-sm text-center">c) Aritmia Sinus</h3>
                     </div>
-                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer" onclick="showDetail('sinus-arest')">
                         <div class="w-full h-24 bg-red-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-red-600 text-2xl">⏸️</span>
                         </div>
@@ -159,28 +162,31 @@
 
         <!-- Level 4: Atrium -->
         <div id="atrium" class="hidden mt-6">
-
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer"
+                        onclick="showDetail('ekstrasistol-atrial')">
                         <div class="w-full h-24 bg-purple-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-purple-600 text-2xl">⚡</span>
                         </div>
                         <h3 class="font-semibold text-gray-800 text-sm text-center">a) Ekstrasistol atrial</h3>
                     </div>
-                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer"
+                        onclick="showDetail('takikardi-supraventrikel')">
                         <div class="w-full h-24 bg-pink-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-pink-600 text-2xl">🏃‍♂️</span>
                         </div>
                         <h3 class="font-semibold text-gray-800 text-sm text-center">b) Takikardi Supraventrikel</h3>
                     </div>
-                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer"
+                        onclick="showDetail('flutter-atrial')">
                         <div class="w-full h-24 bg-indigo-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-indigo-600 text-2xl">🌊</span>
                         </div>
                         <h3 class="font-semibold text-gray-800 text-sm text-center">c) Flutter atrial</h3>
                     </div>
-                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer"
+                        onclick="showDetail('fibrilasi-atrial')">
                         <div class="w-full h-24 bg-orange-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-orange-600 text-2xl">💥</span>
                         </div>
@@ -192,22 +198,24 @@
 
         <!-- Level 4: Nodus AV -->
         <div id="nodus-av" class="hidden mt-6">
-
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer"
+                        onclick="showDetail('irama-junctional')">
                         <div class="w-full h-24 bg-teal-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-teal-600 text-2xl">🎵</span>
                         </div>
                         <h3 class="font-semibold text-gray-800 text-sm text-center">a) Irama Junctional (JR)</h3>
                     </div>
-                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer"
+                        onclick="showDetail('ekstrasistol-junctional')">
                         <div class="w-full h-24 bg-cyan-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-cyan-600 text-2xl">⚡</span>
                         </div>
                         <h3 class="font-semibold text-gray-800 text-sm text-center">b) Ekstrasistol Junctional</h3>
                     </div>
-                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer"
+                        onclick="showDetail('takikardi-junctional')">
                         <div class="w-full h-24 bg-emerald-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-emerald-600 text-2xl">🏃‍♂️</span>
                         </div>
@@ -219,17 +227,17 @@
 
         <!-- Level 4: Supraventrikel -->
         <div id="supraventrikel" class="hidden mt-6">
-
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer"
+                        onclick="showDetail('ekstrasistol-supraventrikel')">
                         <div class="w-full h-24 bg-indigo-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-indigo-600 text-2xl">⚡</span>
                         </div>
-                        <h3 class="font-semibold text-gray-800 text-sm text-center">a) Ekstrasistol Supraventrikel
-                            (Ektrasistol Atrial)</h3>
+                        <h3 class="font-semibold text-gray-800 text-sm text-center">a) Ekstrasistol Supraventrikel</h3>
                     </div>
-                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer"
+                        onclick="showDetail('takikardi-supraventrikel2')">
                         <div class="w-full h-24 bg-violet-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-violet-600 text-2xl">🏃‍♂️</span>
                         </div>
@@ -241,28 +249,31 @@
 
         <!-- Level 4: Ventrikel -->
         <div id="ventrikel" class="hidden mt-6">
-
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer"
+                        onclick="showDetail('irama-idioventrikuler')">
                         <div class="w-full h-24 bg-red-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-red-600 text-2xl">🎵</span>
                         </div>
                         <h3 class="font-semibold text-gray-800 text-sm text-center">a) Irama Idioventrikuler</h3>
                     </div>
-                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer"
+                        onclick="showDetail('ekstrasistol-ventrikuler')">
                         <div class="w-full h-24 bg-rose-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-rose-600 text-2xl">⚡</span>
                         </div>
                         <h3 class="font-semibold text-gray-800 text-sm text-center">b) Ekstrasistol Ventrikuler</h3>
                     </div>
-                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer"
+                        onclick="showDetail('takikardi-ventrikel')">
                         <div class="w-full h-24 bg-pink-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-pink-600 text-2xl">🏃‍♂️</span>
                         </div>
                         <h3 class="font-semibold text-gray-800 text-sm text-center">c) Takikardi Ventrikel</h3>
                     </div>
-                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer"
+                        onclick="showDetail('fibrilasi-ventrikel')">
                         <div class="w-full h-24 bg-red-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-red-600 text-2xl">💥</span>
                         </div>
@@ -309,10 +320,9 @@
 
         <!-- Level 4: SA Blok -->
         <div id="sa-blok" class="hidden mt-6">
-
             <div class="nested-container">
                 <div class="grid grid-cols-1 gap-4">
-                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer" onclick="showDetail('sa-blok')">
                         <div class="w-full h-24 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-blue-600 text-2xl">🚫</span>
                         </div>
@@ -324,29 +334,30 @@
 
         <!-- Level 4: AV Blok -->
         <div id="av-blok" class="hidden mt-6">
-
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer" onclick="showDetail('av-blok-1')">
                         <div class="w-full h-24 bg-yellow-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-yellow-600 text-2xl">1️⃣</span>
                         </div>
                         <h3 class="font-semibold text-gray-800 text-sm text-center">a) Blok AV derajat I</h3>
                     </div>
-                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer"
+                        onclick="showDetail('av-blok-2-mobitz1')">
                         <div class="w-full h-24 bg-orange-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-orange-600 text-2xl">2️⃣</span>
                         </div>
                         <h3 class="font-semibold text-gray-800 text-sm text-center">b) Blok AV derajat 2 mobitz I
                             (Wenckebach)</h3>
                     </div>
-                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer"
+                        onclick="showDetail('av-blok-2-mobitz2')">
                         <div class="w-full h-24 bg-red-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-red-600 text-2xl">2️⃣</span>
                         </div>
                         <h3 class="font-semibold text-gray-800 text-sm text-center">c) Blok AV derajat 2 mobitz II</h3>
                     </div>
-                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer" onclick="showDetail('av-blok-3')">
                         <div class="w-full h-24 bg-gray-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-gray-600 text-2xl">3️⃣</span>
                         </div>
@@ -359,17 +370,16 @@
 
         <!-- Level 4: Interventrikuler -->
         <div id="interventrikuler" class="hidden mt-6">
-
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer" onclick="showDetail('rbbb')">
                         <div class="w-full h-24 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-blue-600 text-2xl">➡️</span>
                         </div>
                         <h3 class="font-semibold text-gray-800 text-sm text-center">a) Right bundle branch block (RBBB)
                         </h3>
                     </div>
-                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer" onclick="showDetail('lbbb')">
                         <div class="w-full h-24 bg-red-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-red-600 text-2xl">⬅️</span>
                         </div>
@@ -380,40 +390,78 @@
             </div>
         </div>
 
-    </div>
-    </div>
+        <div id="detail-section" class="hidden bg-white rounded-xl p-6 shadow-sm cursor-pointer">
+            <div id="detail-content" class="text-gray-700 text-justify"></div>
+        </div>
+
     </div>
 
+    <script src="details.js"></script>
     <script>
+        const navStack = []; // stack riwayat navigasi
+
         function redirectPage(route) {
             window.location.href = route;
         }
 
-        function showLevel(levelId) {
-            // Hide all sections
-            const allSections = document.querySelectorAll('[id]');
-            allSections.forEach(section => {
-                if (section.id !== levelId) {
-                    section.classList.add('hidden');
-                }
-            });
+        function showDetail(key) {
+            // 1. Hide semua level 4 container
+            $("#nodus-sa, #atrium, #nodus-av, #supraventrikel, #ventrikel, #sa-blok, #av-blok, #interventrikuler").addClass("hidden");
 
-            // Show the requested level
+            // 2. Isi konten detail
+            $("#detail-content").html(details[key] || "<p>Konten belum tersedia</p>");
+            $("#detail-content").removeClass("hidden")[0];
+
+            // 3. Tampilkan detail
+            $("#detail-section").removeClass("hidden")[0].scrollIntoView({ behavior: "smooth" });
+        }
+
+        function showLevel(levelId) {
+            // Cari yang sedang tampil sekarang
+            const currentVisible = document.querySelector('[id]:not(.hidden)');
+            if (currentVisible && currentVisible.id !== levelId) {
+                navStack.push(currentVisible.id); // simpan ke stack
+                currentVisible.classList.add('hidden');
+            }
+
+            // Tampilkan level baru
             document.getElementById(levelId).classList.remove('hidden');
 
-            // Scroll to top
+            // Atur tombol kembali
+            updateBackButton();
+
+            // Scroll ke atas
             window.scrollTo(0, 0);
         }
 
-        function goBack(levelId) {
-            showLevel(levelId);
+        function goBack() {
+            if (navStack.length > 0) {
+                const lastId = navStack.pop(); // ambil level sebelumnya
+                document.querySelectorAll('[id]').forEach(sec => sec.classList.add('hidden'));
+                document.getElementById(lastId).classList.remove('hidden');
+                updateBackButton();
+            } else {
+                history.back(); // kalau stack kosong balik normal
+            }
+        }
+
+        function updateBackButton() {
+            const btn = document.querySelector('button[onclick]');
+            if (navStack.length > 0) {
+                btn.setAttribute('onclick', 'goBack()');
+            } else {
+                btn.setAttribute('onclick', 'history.back()');
+            }
         }
 
         // Initialize - show only main level
         document.addEventListener('DOMContentLoaded', function () {
-            showLevel('main-level');
+            document.querySelectorAll('[id]').forEach(sec => sec.classList.add('hidden'));
+            document.getElementById('main-level').classList.remove('hidden');
+            updateBackButton();
         });
     </script>
+
 </body>
 
 </html>

@@ -24,7 +24,7 @@
 
         <div id="ekg-normal-page" class="min-h-screen bg-slate-100">
             <div class="px-4 py-3 flex items-center">
-                <button onclick="history.back();"
+                <button onclick="history.back();" id="btnBack"
                     class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm flex items-center">
                     ← Kembali
                 </button>
@@ -151,6 +151,9 @@
                         document.getElementById('grid-section').classList.add('hidden');
                         document.getElementById('detail-content').innerHTML = details[key];
                         document.getElementById('detail-section').classList.remove('hidden');
+                        const btn = document.getElementById('btnBack');
+                        btn.removeAttribute('onclick');
+                        btn.setAttribute('onclick', 'location.reload()');
                         window.scrollTo({ top: 0, behavior: 'smooth' });
                     }
 
