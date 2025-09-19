@@ -28,7 +28,7 @@
         <h1 class="text-3xl font-bold text-center text-gray-800 mb-8" id="mainTitle" >Aritmia</h1>
 
         <!-- Main Container -->
-        <div id="main-level" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div id="main-level" class="grid grid-cols-1 md:grid-cols-2 gap-4 section-level">
             <!-- 1. Pengantar Aritmia -->
             <div onclick="redirectPage('pengantar.html')" class="bg-white rounded-xl p-4 shadow-sm">
                 <div class="w-full h-24 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
@@ -48,7 +48,7 @@
         </div>
 
         <!-- Level 2: Penyebab Aritmia -->
-        <div id="penyebab-aritmia" title="Penyebab Aritmia" class="hidden mt-6">
+        <div id="penyebab-aritmia" title="Penyebab Aritmia" class="hidden mt-6 section-level">
 
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -74,7 +74,7 @@
         </div>
 
         <!-- Level 3: Gangguan Pembentukan Impuls -->
-        <div id="gangguan-pembentukan" title="Gangguan Pembentukan Impuls" class="hidden mt-6">
+        <div id="gangguan-pembentukan" title="Gangguan Pembentukan Impuls" class="hidden mt-6 section-level">
 
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -127,7 +127,7 @@
         </div>
 
         <!-- Level 4: Nodus SA -->
-        <div id="nodus-sa" title="Nodus SA" class="hidden mt-6">
+        <div id="nodus-sa" title="Nodus SA" class="hidden mt-6 section-level">
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer"
@@ -161,7 +161,7 @@
         </div>
 
         <!-- Level 4: Atrium -->
-        <div id="atrium" title="Atrium" class="hidden mt-6">
+        <div id="atrium" title="Atrium" class="hidden mt-6 section-level">
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer"
@@ -197,7 +197,7 @@
         </div>
 
         <!-- Level 4: Nodus AV -->
-        <div id="nodus-av" title="Nodus AV" class="hidden mt-6">
+        <div id="nodus-av" title="Nodus AV" class="hidden mt-6 section-level">
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer"
@@ -226,7 +226,7 @@
         </div>
 
         <!-- Level 4: Supraventrikel -->
-        <div id="supraventrikel" title="Supraventrikel" class="hidden mt-6">
+        <div id="supraventrikel" title="Supraventrikel" class="hidden mt-6 section-level">
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer"
@@ -248,7 +248,7 @@
         </div>
 
         <!-- Level 4: Ventrikel -->
-        <div id="ventrikel" title="Ventrikel" class="hidden mt-6">
+        <div id="ventrikel" title="Ventrikel" class="hidden mt-6 section-level">
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer"
@@ -284,7 +284,7 @@
         </div>
 
         <!-- Level 3: Gangguan Hantaran Impuls -->
-        <div id="gangguan-hantaran" title="Gangguan Hantaran Impuls" class="hidden mt-6">
+        <div id="gangguan-hantaran" title="Gangguan Hantaran Impuls" class="hidden mt-6 section-level">
 
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -319,7 +319,7 @@
         </div>
 
         <!-- Level 4: SA Blok -->
-        <div id="sa-blok" title="SA Blok" class="hidden mt-6">
+        <div id="sa-blok" title="SA Blok" class="hidden mt-6 section-level">
             <div class="nested-container">
                 <div class="grid grid-cols-1 gap-4">
                     <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer" onclick="showDetail('sa-blok')">
@@ -333,7 +333,7 @@
         </div>
 
         <!-- Level 4: AV Blok -->
-        <div id="av-blok" title="AV Blok" class="hidden mt-6">
+        <div id="av-blok" title="AV Blok" class="hidden mt-6 section-level">
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer" onclick="showDetail('av-blok-1')">
@@ -369,7 +369,7 @@
         </div>
 
         <!-- Level 4: Interventrikuler -->
-        <div id="interventrikuler" title="Interventrikuler" class="hidden mt-6">
+        <div id="interventrikuler" title="Interventrikuler" class="hidden mt-6 section-level">
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer" onclick="showDetail('rbbb')">
@@ -390,7 +390,7 @@
             </div>
         </div>
 
-        <div id="detail-section" class="hidden bg-white rounded-xl p-6 shadow-sm cursor-pointer">
+        <div id="detail-section" class="section-level hidden bg-white rounded-xl p-6 shadow-sm cursor-pointer">
             <div id="detail-content" class="text-gray-700 text-justify"></div>
         </div>
 
@@ -414,11 +414,12 @@
 
             // 3. Tampilkan detail
             $("#detail-section").removeClass("hidden")[0].scrollIntoView({ behavior: "smooth" });
+            showLevel('detail-section')
         }
 
         function showLevel(levelId) {
             // Cari yang sedang tampil sekarang
-            const currentVisible = document.querySelector('[id]:not(.hidden)');
+            const currentVisible = document.querySelector('.section-level:not(.hidden)');
             if (currentVisible && currentVisible.id !== levelId) {
                 navStack.push(currentVisible.id); // simpan ke stack
                 currentVisible.classList.add('hidden');
@@ -427,7 +428,7 @@
             // Tampilkan level baru
             document.getElementById(levelId).classList.remove('hidden');
             let title = $('#' + levelId).attr('title');
-            $("#mainTitle").html(title);
+            $("#mainTitle").html(title).removeClass('hidden');
 
             // Atur tombol kembali
             updateBackButton();
@@ -439,7 +440,7 @@
         function goBack() {
             if (navStack.length > 0) {
                 const lastId = navStack.pop(); // ambil level sebelumnya
-                document.querySelectorAll('[id]').forEach(sec => sec.classList.add('hidden'));
+                document.querySelectorAll('.section-level').forEach(sec => sec.classList.add('hidden'));
                 document.getElementById(lastId).classList.remove('hidden');
                 updateBackButton();
             } else {
@@ -458,8 +459,9 @@
 
         // Initialize - show only main level
         document.addEventListener('DOMContentLoaded', function () {
-            document.querySelectorAll('[id]').forEach(sec => sec.classList.add('hidden'));
+            document.querySelectorAll('.section-level').forEach(sec => sec.classList.add('hidden'));
             document.getElementById('main-level').classList.remove('hidden');
+            $("#mainTitle").removeClass('hidden');
             updateBackButton();
         });
     </script>

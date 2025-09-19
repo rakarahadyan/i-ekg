@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kuis EKG</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- // import font awesome 5 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 
 <body class="bg-slate-100 min-h-screen flex flex-col items-center">
@@ -36,12 +38,21 @@
     <div class="w-full max-w-md bg-white rounded-2xl shadow-lg p-4 m-6">
         <div id="quiz-container"></div>
 
+        <!-- Petunjuk -->
+        <div class="mt-4" id="petunjukDiv">
+            <span id="hintBtn" type="button" isOpen="false" onclick="openHintBox()" class="text-sm text-gray-400">
+                Petunjuk <i class="fas fa-chevron-up"></i>
+            </span>
+            <div id="hintBox" class="hidden mt-2 p-3 border border-2 text-sm"></div>
+        </div>
+
         <!-- Tombol -->
         <div class="flex justify-between mt-6">
             <button id="prevBtn"
                 class="bg-gray-300 text-gray-700 px-4 py-2 rounded-lg disabled:opacity-50">Back</button>
             <button id="nextBtn" class="bg-blue-500 text-white px-4 py-2 rounded-lg">Next</button>
         </div>
+
 
         <!-- Hasil -->
         <div id="result" class="hidden text-center mt-6">
@@ -53,18 +64,29 @@
         </div>
     </div>
 
-    <script src="questions.js"></script>
+    <script src="soal_kuis.js"></script>
     <script>
         let currentQuestion = 0;
         let userAnswers = [];
 
         const quizContainer = document.getElementById("quiz-container");
+        const petunjuk = document.getElementById("petunjukDiv");
         const prevBtn = document.getElementById("prevBtn");
         const nextBtn = document.getElementById("nextBtn");
         const progressText = document.getElementById("progressText");
         const progressBar = document.getElementById("progressBar");
         const resultDiv = document.getElementById("result");
         const scoreText = document.getElementById("scoreText");
+
+        // 🔹 Acak & ambil 20 soal saja
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+        questions = shuffle(questions).slice(0, 20);
 
         // 🔹 Load progress dari localStorage (jika ada)
         const savedProgress = JSON.parse(localStorage.getItem("quizProgress"));
@@ -115,6 +137,29 @@
                 const selectedEl = document.querySelector(`.option[data-index="${selected}"]`);
                 checkAnswer(selectedEl, index, true);
             }
+
+            // 🔹 update tombol petunjuk
+            const hintBtn = document.getElementById("hintBtn");
+            const hintBox = document.getElementById("hintBox");
+            hintBtn.classList.remove("hidden");
+            hintBox.classList.add("hidden"); // reset
+            document.getElementById("hintBtn").setAttribute('isOpen', '');
+            document.getElementById("hintBox").classList.add("hidden");
+            document.getElementById("hintBtn").innerHTML = `Petunjuk <i class="fas fa-chevron-up"></i>`;
+            hintBox.textContent = q.hints;
+        }
+
+        function openHintBox() {
+            let status = document.getElementById("hintBtn").getAttribute('isOpen');
+            if (!status) {
+                document.getElementById("hintBtn").setAttribute('isOpen', 'true');
+                document.getElementById("hintBox").classList.remove("hidden");
+                document.getElementById("hintBtn").innerHTML = `Petunjuk <i class="fas fa-chevron-down"></i>`;
+            } else {
+                document.getElementById("hintBtn").setAttribute('isOpen', '');
+                document.getElementById("hintBox").classList.add("hidden");
+                document.getElementById("hintBtn").innerHTML = `Petunjuk <i class="fas fa-chevron-up"></i>`;
+            }
         }
 
         function checkAnswer(el, index, isRestore = false) {
@@ -160,10 +205,11 @@
 
             resultDiv.classList.remove("hidden");
             quizContainer.classList.add("hidden");
+            petunjuk.classList.remove("hidden");
             prevBtn.classList.add("hidden");
             nextBtn.classList.add("hidden");
 
-            scoreText.textContent = `Skor Anda: ${score} dari ${questions.length}`;
+            scoreText.textContent = `Anda bisa melihat skor di profile`;
 
             // 🔹 Simpan hasil akhir
             localStorage.setItem("quizResult", JSON.stringify({
