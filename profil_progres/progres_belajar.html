@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progres Belajar EKG</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-100 min-h-screen flex justify-center p-6">
+
+    <!-- Page Container -->
+    <div id="app" class="max-w-sm mx-auto bg-white min-h-screen relative overflow-hidden">
+
+        <div id="ekg-normal-page" class="min-h-screen bg-slate-100">
+            <!-- Header -->
+            <div class="px-4 py-3 flex items-center">
+                <button onclick="history.back();"
+                    class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm flex items-center">
+                    ← Kembali
+                </button>
+            </div>
+
+            <div class="p-4">
+
+                <div class="text-center mb-6">
+                    <h1 class="text-2xl font-bold text-gray-800">Progres belajar (modul yang selesai)</span>
+                    </h1>
+                    <p class="text-gray-600"></p>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden cursor-pointer p-4">
+                    <div id="progressTimeline" class="relative border-l-4 border-blue-300 ml-6">
+                        <!-- Isi akan di-render dengan JS -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // daftar menu modul
+        const menus = [
+            { id: "dasar_ekg/index", title: "Dasar Dasar EKG" },
+            { id: "interpretasi_EKG/index", title: "Interpretasi Gambaran EKG" },
+            { id: "aritmia/index", title: "Aritmia" },
+            { id: "latihan/index", title: "Latihan" },
+            { id: "simulasi/index", title: "Simulasi" },
+            { id: "profil_progres/index", title: "Profil Progres" }
+        ];
+
+        // ambil progres dari localStorage
+        let progress = JSON.parse(localStorage.getItem("menuProgress")) || {};
+
+        function renderTimeline() {
+            const container = document.getElementById("progressTimeline");
+            container.innerHTML = "";
+
+            menus.forEach((menu, i) => {
+                const isDone = progress[menu.id];
+
+                container.innerHTML += `
+          <div class="mb-10 ml-4">
+            <!-- Bulatan -->
+            <div class="absolute w-6 h-6 rounded-full -left-3.5 border-4 border-white 
+              ${isDone ? 'bg-green-500' : 'bg-gray-300'}"></div>
+            
+            <!-- Judul -->
+            <h3 class="text-lg font-semibold ${isDone ? 'text-green-600' : 'text-gray-800'}">
+              ${i + 1}. ${menu.title}
+            </h3>
+            <p class="text-sm ${isDone ? 'text-green-600' : 'text-gray-500'}">
+              ${isDone ? "✅ Selesai" : "⏳ Belum dibuka"}
+            </p>
+          </div>
+        `;
+            });
+
+            // progress summary
+            let doneCount = menus.filter(m => progress[m.id]).length;
+            container.innerHTML += `
+        <div class="ml-4 mt-4 border-none border-0">
+          <div class="w-full bg-gray-200 rounded-full h-3">
+            <div class="bg-blue-500 h-3 rounded-full" style="width:${(doneCount / menus.length) * 100}%"></div>
+          </div>
+          <p class="text-xs text-gray-600 mt-1">${doneCount} dari ${menus.length} modul selesai</p>
+        </div>
+      `;
+        }
+
+        renderTimeline();
+    </script>
+</body>
+
+</html>

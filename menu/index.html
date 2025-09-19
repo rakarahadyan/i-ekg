@@ -15,71 +15,16 @@
 
 <body class="h-full bg-slate-100 font-sans">
 
-    <!-- Page Container -->
     <div id="app" class="max-w-sm mx-auto bg-white min-h-screen relative overflow-hidden">
 
-        <!-- Menu Page -->
         <div id="menu-page" class="min-h-screen bg-slate-100 p-4">
-            <!-- Header -->
             <div class="text-center mb-6 pt-4">
                 <div class="text-2xl font-bold text-gray-800 mb-2">📊 Menu <span class="text-blue-500">EKG</span></div>
                 <p class="text-gray-600">Pilih materi untuk mulai belajar</p>
             </div>
-
-            <!-- Menu Grid -->
-            <div class="grid grid-cols-2 gap-4">
-                <!-- Dasar Dasar EKG -->
-                <div onclick="redirectPage('dasar_ekg/index')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
-                    <div class="w-full h-24 bg-blue-100 ekg-grid rounded-lg mb-3 flex items-center justify-center">
-                        <span class="text-blue-600 text-2xl">📖</span>
-                    </div>
-                    <h3 class="font-semibold text-gray-800 text-sm text-center">Dasar Dasar EKG</h3>
-                </div>
-
-                <!-- Interpretasi Gambaran EKG -->
-                <div onclick="redirectPage('interpretasi_EKG/index')"
-                    class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
-                    <div class="w-full h-24 bg-blue-100 ekg-grid rounded-lg mb-3 flex items-center justify-center">
-                        <span class="text-blue-600 text-2xl">🔍</span>
-                    </div>
-                    <h3 class="font-semibold text-gray-800 text-sm text-center">Interpretasi Gambaran EKG</h3>
-                </div>
-
-                <!-- Aritmia -->
-                <div onclick="redirectPage('aritmia/index')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
-                    <div class="w-full h-24 bg-blue-100 ekg-grid rounded-lg mb-3 flex items-center justify-center">
-                        <span class="text-blue-600 text-2xl">❤️</span>
-                    </div>
-                    <h3 class="font-semibold text-gray-800 text-sm text-center">Aritmia</h3>
-                </div>
-
-                <!-- Latihan -->
-                <div onclick="redirectPage('latihan/index')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
-                    <div class="w-full h-24 bg-blue-100 ekg-grid rounded-lg mb-3 flex items-center justify-center">
-                        <span class="text-blue-600 text-2xl">📝</span>
-                    </div>
-                    <h3 class="font-semibold text-gray-800 text-sm text-center">Latihan</h3>
-                </div>
-
-                <!-- Simulasi -->
-                <div onclick="redirectPage('simulasi/index')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
-                    <div class="w-full h-24 bg-blue-100 ekg-grid rounded-lg mb-3 flex items-center justify-center">
-                        <span class="text-blue-600 text-2xl">🖥️</span>
-                    </div>
-                    <h3 class="font-semibold text-gray-800 text-sm text-center">Simulasi</h3>
-                </div>
-
-                <!-- Profil Progres -->
-                <div onclick="redirectPage('profil_progres/index')"
-                    class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
-                    <div class="w-full h-24 bg-blue-100 ekg-grid rounded-lg mb-3 flex items-center justify-center">
-                        <span class="text-blue-600 text-2xl">👤</span>
-                    </div>
-                    <h3 class="font-semibold text-gray-800 text-sm text-center">Profil Progres</h3>
-                </div>
+            <div class="grid grid-cols-2 gap-4" id="menuGrid">
+                <!-- Card dibuat dinamis via JS -->
             </div>
-
-            <!-- Logout Button -->
             <div class="mt-8 flex justify-center">
                 <button onclick="showPage('login-page')"
                     class="bg-red-500 text-white px-8 py-3 rounded-full font-medium">Log out</button>
@@ -94,6 +39,57 @@
             window.location.href = "../" + route + ".html";
         }
     </script>
+    <script>
+        const menus = [
+            { id: "dasar_ekg/index", title: "Dasar Dasar EKG", icon: "📖" },
+            { id: "interpretasi_EKG/index", title: "Interpretasi Gambaran EKG", icon: "🔍" },
+            { id: "aritmia/index", title: "Aritmia", icon: "❤️" },
+            { id: "latihan/index", title: "Latihan", icon: "📝" },
+            { id: "simulasi/index", title: "Simulasi", icon: "🖥️" },
+            { id: "profil_progres/index", title: "Profil Progres", icon: "👤" },
+        ];
+
+        // Ambil progress dari localStorage
+        let progress = JSON.parse(localStorage.getItem("menuProgress")) || {};
+
+        function renderMenus() {
+            const grid = document.getElementById("menuGrid");
+            grid.innerHTML = "";
+
+            menus.forEach((menu, index) => {
+                const isDone = progress[menu.id];
+                grid.innerHTML += `
+      <div onclick="openMenu('${menu.id}')" 
+           class="relative bg-white rounded-xl p-4 shadow-sm cursor-pointer transition transform hover:scale-105 ${isDone ? 'border-2 border-green-500' : ''}">
+        
+        <!-- Nomor urutan -->
+        <div class="absolute top-2 left-2 bg-blue-500 text-white text-xs px-2 py-1 rounded-full shadow">
+          ${index + 1}
+        </div>
+        
+        <div class="w-full h-24 ${isDone ? 'bg-green-100' : 'bg-blue-100'} ekg-grid rounded-lg mb-3 flex items-center justify-center">
+          <span class="text-2xl">${menu.icon}</span>
+        </div>
+        
+        <h3 class="font-semibold text-gray-800 text-sm text-center">${menu.title}</h3>
+      </div>
+    `;
+            });
+        }
+
+        function openMenu(route) {
+            // tandai sudah diklik
+            progress[route] = true;
+            localStorage.setItem("menuProgress", JSON.stringify(progress));
+
+            // redirect
+            window.location.href = "../" + route + ".html";
+        }
+
+        // render saat halaman load
+        renderMenus();
+    </script>
+
 </body>
 
 </html>

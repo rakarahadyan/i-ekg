@@ -32,33 +32,21 @@
                     <h1 class="text-2xl font-bold text-gray-800">Simulasi</h1>
                 </div>
 
-                <div class="grid grid-cols-1 gap-4">
+                <div class="grid grid-cols-1 gap-4" onclick="redirectPage('animasi_sistem_konduksi_jantung')" >
                     <div class="bg-white rounded-xl p-4 shadow-sm">
                         <div class="w-full h-20 bg-pink-100 rounded-lg mb-3 ekg-grid"></div>
                         <h3 class="font-semibold text-gray-800 text-center">Animasi sistem konduksi jantung</h3>
-                    </div>
-
-                    <div class="bg-white rounded-xl p-4 shadow-sm">
-                        <div class="w-full h-20 bg-pink-100 rounded-lg mb-3 ekg-grid"></div>
-                        <h3 class="font-semibold text-gray-800 text-center">Interaksi : memilih lead, melihat hasil
-                            EKG-nya</h3>
-                    </div>
-
-                    <div class="bg-white rounded-xl p-4 shadow-sm">
-                        <div class="w-full h-20 bg-pink-100 rounded-lg mb-3 ekg-grid"></div>
-                        <h3 class="font-semibold text-gray-800 text-center">Bandingkan EKG dalam berbagai kondisi
-                            (istirahat, stres ringan)</h3>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-        <script>
-function redirectPage(route) {
+    <script>
+        function redirectPage(route) {
             window.location.href = route + ".html";
         }
-</script>
+    </script>
 </body>
 
 </html>
