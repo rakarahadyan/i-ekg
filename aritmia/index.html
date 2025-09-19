@@ -25,7 +25,7 @@
                 ← Kembali
             </button>
         </div>
-        <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">Aritmia</h1>
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-8" id="mainTitle" >Aritmia</h1>
 
         <!-- Main Container -->
         <div id="main-level" class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -48,7 +48,7 @@
         </div>
 
         <!-- Level 2: Penyebab Aritmia -->
-        <div id="penyebab-aritmia" class="hidden mt-6">
+        <div id="penyebab-aritmia" title="Penyebab Aritmia" class="hidden mt-6">
 
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -74,7 +74,7 @@
         </div>
 
         <!-- Level 3: Gangguan Pembentukan Impuls -->
-        <div id="gangguan-pembentukan" class="hidden mt-6">
+        <div id="gangguan-pembentukan" title="Gangguan Pembentukan Impuls" class="hidden mt-6">
 
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -127,7 +127,7 @@
         </div>
 
         <!-- Level 4: Nodus SA -->
-        <div id="nodus-sa" class="hidden mt-6">
+        <div id="nodus-sa" title="Nodus SA" class="hidden mt-6">
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer"
@@ -161,7 +161,7 @@
         </div>
 
         <!-- Level 4: Atrium -->
-        <div id="atrium" class="hidden mt-6">
+        <div id="atrium" title="Atrium" class="hidden mt-6">
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer"
@@ -197,7 +197,7 @@
         </div>
 
         <!-- Level 4: Nodus AV -->
-        <div id="nodus-av" class="hidden mt-6">
+        <div id="nodus-av" title="Nodus AV" class="hidden mt-6">
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer"
@@ -226,7 +226,7 @@
         </div>
 
         <!-- Level 4: Supraventrikel -->
-        <div id="supraventrikel" class="hidden mt-6">
+        <div id="supraventrikel" title="Supraventrikel" class="hidden mt-6">
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer"
@@ -248,7 +248,7 @@
         </div>
 
         <!-- Level 4: Ventrikel -->
-        <div id="ventrikel" class="hidden mt-6">
+        <div id="ventrikel" title="Ventrikel" class="hidden mt-6">
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer"
@@ -284,7 +284,7 @@
         </div>
 
         <!-- Level 3: Gangguan Hantaran Impuls -->
-        <div id="gangguan-hantaran" class="hidden mt-6">
+        <div id="gangguan-hantaran" title="Gangguan Hantaran Impuls" class="hidden mt-6">
 
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -319,7 +319,7 @@
         </div>
 
         <!-- Level 4: SA Blok -->
-        <div id="sa-blok" class="hidden mt-6">
+        <div id="sa-blok" title="SA Blok" class="hidden mt-6">
             <div class="nested-container">
                 <div class="grid grid-cols-1 gap-4">
                     <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer" onclick="showDetail('sa-blok')">
@@ -333,7 +333,7 @@
         </div>
 
         <!-- Level 4: AV Blok -->
-        <div id="av-blok" class="hidden mt-6">
+        <div id="av-blok" title="AV Blok" class="hidden mt-6">
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer" onclick="showDetail('av-blok-1')">
@@ -369,7 +369,7 @@
         </div>
 
         <!-- Level 4: Interventrikuler -->
-        <div id="interventrikuler" class="hidden mt-6">
+        <div id="interventrikuler" title="Interventrikuler" class="hidden mt-6">
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer" onclick="showDetail('rbbb')">
@@ -426,6 +426,8 @@
 
             // Tampilkan level baru
             document.getElementById(levelId).classList.remove('hidden');
+            let title = $('#' + levelId).attr('title');
+            $("#mainTitle").html(title);
 
             // Atur tombol kembali
             updateBackButton();

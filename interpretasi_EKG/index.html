@@ -78,22 +78,6 @@
                         </div>
                         <h3 class="font-semibold text-gray-800 text-sm text-center">5. Kompleks QRS</h3>
                     </div>
-
-                    <!-- 6. Segmen ST -->
-                    <div onclick="showDetail('segmen-st')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
-                        <div class="w-full h-24 bg-gray-100 rounded-lg mb-3 flex items-center justify-center">
-                            <span class="text-gray-600 text-2xl">6️⃣</span>
-                        </div>
-                        <h3 class="font-semibold text-gray-800 text-sm text-center">6. Segmen ST</h3>
-                    </div>
-
-                    <!-- 7. Gelombang T -->
-                    <div onclick="showDetail('gelombang-t')" class="bg-white rounded-xl p-4 shadow-sm cursor-pointer">
-                        <div class="w-full h-24 bg-black/10 rounded-lg mb-3 flex items-center justify-center">
-                            <span class="text-black text-2xl">7️⃣</span>
-                        </div>
-                        <h3 class="font-semibold text-gray-800 text-sm text-center">7. Gelombang T</h3>
-                    </div>
                 </div>
 
                 <!-- Detail Section -->
@@ -111,39 +95,45 @@
         `,
                         "heart-rate": `
             <h3 class="text-lg font-semibold mb-2">2️⃣ Heart Rate</h3>
-            <p>Hitung heart rate setelah menentukan irama. Untuk irama reguler gunakan aturan 300: bagi 300 dengan jumlah kotak besar antara dua R. Untuk ireguler, hitung jumlah QRS dalam 6 detik (30 kotak besar) lalu kalikan 10.</p>
-            <p>Normal: 60–100 bpm. <60 = bradikardia, >100 = takikardia.</p>
-            <p>Metode lain diperlukan untuk blok AV atau fibrilasi atrium. Pada pacemaker, hitung berdasarkan spike pacing.</p>
+            Menentukan frekuensi jantung<br>
+            A.  300 =  ( jml kotak besar dlm 60 detik )<br>
+                        Jml kotak besar antara R – R<br>
+            B. 1500 =  (jml kotak kecil dlm 60 detik )<br>
+                        Jml kotak kecil antara R – R<br>
+            C. Ambil EKG strip sepanjang 6 detik, hitung jumlah QRS dan  kalikan 10.<br>
+            CATATAN  : RUMUS A/B UNTUK EKG YANG TERATUR.  <br>
+                            RUMUS C UNTUK YANG TIDAK TERATUR.
+
         `,
                         "gelombang-p": `
             <h3 class="text-lg font-semibold mb-2">3️⃣ Gelombang P</h3>
-            <p>Gelombang P = depolarisasi atrium. Normal: positif di lead II, negatif di aVR, durasi ≤0,12 detik, tinggi ≤2,5 mm.</p>
-            <p>P mitrale (melebar) → hipertrofi atrium kiri. P pulmonale (tinggi >2,5 mm) → hipertrofi atrium kanan. P inverted → irama junctional.</p>
-            <p>Tidak ada P → fibrilasi atrium. Gelombang P abnormal diikuti QRS lebar → ekstrasistol atrial.</p>
+            Tentukan apakah gelombang P normal <br>
+            Pastikan setiap gelombang P diikuti oleh satu kompleks QRS.<br>
+            <img src="../assets/gel_p.png" alt="EKG" class="w-full h-auto rounded-lg mb-4">
+            GELOMBANG P<br>
+            a. Lebar kurang dari 0,12 detik<br>
+            b. Tinggi kurang dari 0,3 mv<br>
+            c. Selalu Positif di lead II<br>
+            d. Selalu negative di lead AVR<br>
         `,
                         "interval-pr": `
             <h3 class="text-lg font-semibold mb-2">4️⃣ Interval PR</h3>
-            <p>Normal: 0,12–0,20 detik. Jika <0,12 → pre-excitation (WPW). Jika >0,20 → blok AV derajat 1.</p>
-            <p>Mobitz I: PR makin panjang lalu QRS hilang. Mobitz II: PR tetap, QRS hilang tiba-tiba. Blok total: tidak ada hubungan P-QRS.</p>
-            <p>Panjang PR bisa dipengaruhi obat (beta-blocker, digoksin), vagal tone, atau penyakit (miokarditis).</p>
-        `,
-                        "qrs": `
+            Tentukan interval PR normal atau tidak?<br>
+            <img src="../assets/inter_pr.png" alt="EKG" class="w-full h-auto rounded-lg mb-4">
+            P – R Interval :<br>
+            Diukur dari awal gelombang P <br>
+            sampai  awal kompleks QRS<br>
+            Normal : 0,12 – 0,20 detik<br>
+            `,
+            "qrs": `
             <h3 class="text-lg font-semibold mb-2">5️⃣ Kompleks QRS</h3>
-            <p>Durasi normal ≤0,12 detik. Jika lebar → delay konduksi intraventrikular (LBBB, RBBB) atau ritme ventrikular.</p>
-            <p>Morfologi: LBBB → broad R di V6, RBBB → rsR’ di V1. Q patologis (>0,04 detik, >25% R) → infark lama.</p>
-            <p>Amplitudo tinggi → hipertrofi ventrikel kiri. Amplitudo rendah → efusi perikard/obesitas.</p>
-        `,
-                        "segmen-st": `
-            <h3 class="text-lg font-semibold mb-2">6️⃣ Segmen ST</h3>
-            <p>Segmen ST normal isoelektrik. Elevasi ≥1 mm di ≥2 lead berdekatan → STEMI. Depresi → iskemia.</p>
-            <p>Bentuk convex → khas infark. Bentuk concave → sering perikarditis.</p>
-            <p>Hiperkalemia bisa bikin elevasi ST semu, digitalis → depresi ST khas.</p>
-        `,
-                        "gelombang-t": `
-            <h3 class="text-lg font-semibold mb-2">7️⃣ Gelombang T</h3>
-            <p>Gelombang T = repolarisasi ventrikel. Normal: bulat, tegak di I, II, V3–V6, terbalik di aVR.</p>
-            <p>Amplitudo: ≥0,5 mm (I, II, III), ≤10 mm (precordial).</p>
-            <p>Bentuk abnormal → bisa tanda iskemia, elektrolit abnormal, atau efek obat.</p>
+            Tentukan gelombang QRS normal atau tidak ?<br>
+            <img src="../assets/gel_qrs.png" alt="EKG" class="w-full h-auto rounded-lg mb-4">
+            Kompleks QRS :<br>
+            Normal : lebar tidak melebihi 0,12” <br>
+            Tinggi tergantung lead<br>
+            Kompleks QRS terdiri dari gel. Q,  <br>
+            gel. R dan gel. S
         `
                     };
 
