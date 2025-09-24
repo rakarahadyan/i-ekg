@@ -25,7 +25,7 @@
                 ← Kembali
             </button>
         </div>
-        <h1 class="text-3xl font-bold text-center text-gray-800 mb-8" id="mainTitle" >Aritmia</h1>
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-8" id="mainTitle">Aritmia</h1>
 
         <!-- Main Container -->
         <div id="main-level" class="grid grid-cols-1 md:grid-cols-2 gap-4 section-level">
@@ -79,7 +79,7 @@
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     <!-- 1) Nodus SA -->
-                    <div onclick="showLevel('nodus-sa')"
+                    <div onclick="showLevel('pembentukan-nodus-sa')"
                         class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
                         <div class="w-full h-24 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-blue-600 text-2xl">🔵</span>
@@ -88,7 +88,7 @@
                     </div>
 
                     <!-- 2) Atrium -->
-                    <div onclick="showLevel('atrium')"
+                    <div onclick="showLevel('pembentukan-atrium')"
                         class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
                         <div class="w-full h-24 bg-purple-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-purple-600 text-2xl">💜</span>
@@ -97,7 +97,7 @@
                     </div>
 
                     <!-- 3) Nodus AV -->
-                    <div onclick="showLevel('nodus-av')"
+                    <div onclick="showLevel('pembentukan-nodus-av')"
                         class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
                         <div class="w-full h-24 bg-teal-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-teal-600 text-2xl">🟢</span>
@@ -106,7 +106,7 @@
                     </div>
 
                     <!-- 2) Supraventrikel -->
-                    <div onclick="showLevel('supraventrikel')"
+                    <div onclick="showLevel('pembentukan-supraventrikel')"
                         class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
                         <div class="w-full h-24 bg-indigo-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-indigo-600 text-2xl">🔷</span>
@@ -115,7 +115,7 @@
                     </div>
 
                     <!-- 3) Ventrikel -->
-                    <div onclick="showLevel('ventrikel')"
+                    <div onclick="showLevel('pembentukan-ventrikel')"
                         class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
                         <div class="w-full h-24 bg-red-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-red-600 text-2xl">❤️</span>
@@ -127,7 +127,7 @@
         </div>
 
         <!-- Level 4: Nodus SA -->
-        <div id="nodus-sa" title="Nodus SA" class="hidden mt-6 section-level">
+        <div id="pembentukan-nodus-sa" title="Nodus SA" class="hidden mt-6 section-level">
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer"
@@ -161,7 +161,7 @@
         </div>
 
         <!-- Level 4: Atrium -->
-        <div id="atrium" title="Atrium" class="hidden mt-6 section-level">
+        <div id="pembentukan-atrium" title="Atrium" class="hidden mt-6 section-level">
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer"
@@ -172,7 +172,7 @@
                         <h3 class="font-semibold text-gray-800 text-sm text-center">a) Ekstrasistol atrial</h3>
                     </div>
                     <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer"
-                        onclick="showDetail('takikardi-supraventrikel')">
+                        onclick="showDetail('takikardi-supraventrikel-svt')">
                         <div class="w-full h-24 bg-pink-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-pink-600 text-2xl">🏃‍♂️</span>
                         </div>
@@ -197,7 +197,7 @@
         </div>
 
         <!-- Level 4: Nodus AV -->
-        <div id="nodus-av" title="Nodus AV" class="hidden mt-6 section-level">
+        <div id="pembentukan-nodus-av" title="Nodus AV" class="hidden mt-6 section-level">
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer"
@@ -226,7 +226,7 @@
         </div>
 
         <!-- Level 4: Supraventrikel -->
-        <div id="supraventrikel" title="Supraventrikel" class="hidden mt-6 section-level">
+        <div id="pembentukan-supraventrikel" title="Supraventrikel" class="hidden mt-6 section-level">
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer"
@@ -237,7 +237,7 @@
                         <h3 class="font-semibold text-gray-800 text-sm text-center">a) Ekstrasistol Supraventrikel</h3>
                     </div>
                     <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer"
-                        onclick="showDetail('takikardi-supraventrikel2')">
+                        onclick="showDetail('takikardi-supraventrikel-paroksismal')">
                         <div class="w-full h-24 bg-violet-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-violet-600 text-2xl">🏃‍♂️</span>
                         </div>
@@ -248,7 +248,7 @@
         </div>
 
         <!-- Level 4: Ventrikel -->
-        <div id="ventrikel" title="Ventrikel" class="hidden mt-6 section-level">
+        <div id="pembentukan-ventrikel" title="Ventrikel" class="hidden mt-6 section-level">
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer"
@@ -289,7 +289,7 @@
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <!-- 1) Nodus SA -->
-                    <div onclick="showLevel('sa-blok')"
+                    <div onclick="showLevel('hantaran-nodus-sa')"
                         class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
                         <div class="w-full h-24 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-blue-600 text-2xl">🔵</span>
@@ -298,7 +298,7 @@
                     </div>
 
                     <!-- 2) Nodus AV -->
-                    <div onclick="showLevel('av-blok')"
+                    <div onclick="showLevel('hantaran-nodus-av')"
                         class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
                         <div class="w-full h-24 bg-teal-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-teal-600 text-2xl">🟢</span>
@@ -307,7 +307,7 @@
                     </div>
 
                     <!-- 3) Interventrikuler -->
-                    <div onclick="showLevel('interventrikuler')"
+                    <div onclick="showLevel('hantaran-interventrikuler')"
                         class="bg-white rounded-xl p-4 shadow-sm cursor-pointer card-hover">
                         <div class="w-full h-24 bg-orange-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-orange-600 text-2xl">🔶</span>
@@ -319,10 +319,10 @@
         </div>
 
         <!-- Level 4: SA Blok -->
-        <div id="sa-blok" title="SA Blok" class="hidden mt-6 section-level">
+        <div id="hantaran-nodus-sa" title="Nodus SA" class="hidden mt-6 section-level">
             <div class="nested-container">
                 <div class="grid grid-cols-1 gap-4">
-                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer" onclick="showDetail('sa-blok')">
+                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer" onclick="showDetail('blok-sinoatrial-sa-blok')">
                         <div class="w-full h-24 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-blue-600 text-2xl">🚫</span>
                         </div>
@@ -333,17 +333,17 @@
         </div>
 
         <!-- Level 4: AV Blok -->
-        <div id="av-blok" title="AV Blok" class="hidden mt-6 section-level">
+        <div id="hantaran-nodus-av" title="Nodus AV" class="hidden mt-6 section-level">
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer" onclick="showDetail('av-blok-1')">
+                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer" onclick="showDetail('blok-av-derajat-I')">
                         <div class="w-full h-24 bg-yellow-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-yellow-600 text-2xl">1️⃣</span>
                         </div>
                         <h3 class="font-semibold text-gray-800 text-sm text-center">a) Blok AV derajat I</h3>
                     </div>
                     <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer"
-                        onclick="showDetail('av-blok-2-mobitz1')">
+                        onclick="showDetail('blok-av-derajat-2-mobitz-I-wenckebach')">
                         <div class="w-full h-24 bg-orange-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-orange-600 text-2xl">2️⃣</span>
                         </div>
@@ -351,13 +351,13 @@
                             (Wenckebach)</h3>
                     </div>
                     <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer"
-                        onclick="showDetail('av-blok-2-mobitz2')">
+                        onclick="showDetail('blok-av-derajat-2-mobitz-II')">
                         <div class="w-full h-24 bg-red-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-red-600 text-2xl">2️⃣</span>
                         </div>
                         <h3 class="font-semibold text-gray-800 text-sm text-center">c) Blok AV derajat 2 mobitz II</h3>
                     </div>
-                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer" onclick="showDetail('av-blok-3')">
+                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer" onclick="showDetail('blok-av-derajat-III-total-av-blok')">
                         <div class="w-full h-24 bg-gray-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-gray-600 text-2xl">3️⃣</span>
                         </div>
@@ -369,17 +369,17 @@
         </div>
 
         <!-- Level 4: Interventrikuler -->
-        <div id="interventrikuler" title="Interventrikuler" class="hidden mt-6 section-level">
+        <div id="hantaran-interventrikuler" title="Interventrikuler" class="hidden mt-6 section-level">
             <div class="nested-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer" onclick="showDetail('rbbb')">
+                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer" onclick="showDetail('right-bundle-branch-block')">
                         <div class="w-full h-24 bg-blue-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-blue-600 text-2xl">➡️</span>
                         </div>
                         <h3 class="font-semibold text-gray-800 text-sm text-center">a) Right bundle branch block (RBBB)
                         </h3>
                     </div>
-                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer" onclick="showDetail('lbbb')">
+                    <div class="bg-white rounded-xl p-4 shadow-sm cursor-pointer" onclick="showDetail('left-bundle-branch-block')">
                         <div class="w-full h-24 bg-red-100 rounded-lg mb-3 flex items-center justify-center">
                             <span class="text-red-600 text-2xl">⬅️</span>
                         </div>
@@ -390,7 +390,7 @@
             </div>
         </div>
 
-        <div id="detail-section" class="section-level hidden bg-white rounded-xl p-6 shadow-sm cursor-pointer">
+        <div id="detail-section" title="" class="section-level hidden bg-white rounded-xl p-6 shadow-sm cursor-pointer">
             <div id="detail-content" class="text-gray-700 text-justify"></div>
         </div>
 
@@ -404,17 +404,31 @@
             window.location.href = route;
         }
 
+        function toTitleCase(key) {
+            return key
+                .replace(/-/g, ' ') // ganti tanda - jadi spasi
+                .split(' ')
+                .map(word => {
+                    // Kalau word adalah angka Romawi, biarkan seperti aslinya (uppercase)
+                    if (/^(I|II|III|IV|V|VI|VII|VIII|IX|X)$/i.test(word)) {
+                        return word.toUpperCase();
+                    }
+                    // Kalau bukan, buat Title Case
+                    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+                })
+                .join(' ');
+        }
+
         function showDetail(key) {
-            // 1. Hide semua level 4 container
-            $("#nodus-sa, #atrium, #nodus-av, #supraventrikel, #ventrikel, #sa-blok, #av-blok, #interventrikuler").addClass("hidden");
-
-            // 2. Isi konten detail
+            // Isi konten detail
             $("#detail-content").html(details[key] || "<p>Konten belum tersedia</p>");
-            $("#detail-content").removeClass("hidden")[0];
+            $("#detail-content").removeClass("hidden");
 
-            // 3. Tampilkan detail
-            $("#detail-section").removeClass("hidden")[0].scrollIntoView({ behavior: "smooth" });
-            showLevel('detail-section')
+            let title = toTitleCase(key);
+            $("#detail-section").attr("title", title);
+
+            // Tampilkan detail-section sebagai level 5
+            showLevel('detail-section');
         }
 
         function showLevel(levelId) {
@@ -440,11 +454,27 @@
         function goBack() {
             if (navStack.length > 0) {
                 const lastId = navStack.pop(); // ambil level sebelumnya
+
+                // Sembunyikan semua level
                 document.querySelectorAll('.section-level').forEach(sec => sec.classList.add('hidden'));
-                document.getElementById(lastId).classList.remove('hidden');
+
+                // Tampilkan level sebelumnya
+                const prevSec = document.getElementById(lastId);
+                prevSec.classList.remove('hidden');
+
+                // Update judul sesuai title atribut di section sebelumnya
+                let title = $('#' + lastId).attr('title') || "Aritmia";
+                $("#mainTitle").html(title).removeClass('hidden');
+
                 updateBackButton();
             } else {
-                history.back(); // kalau stack kosong balik normal
+                // Kalau stack kosong, balik ke main-level
+                document.querySelectorAll('.section-level').forEach(sec => sec.classList.add('hidden'));
+                document.getElementById('main-level').classList.remove('hidden');
+
+                // Reset title ke default
+                $("#mainTitle").html("Aritmia").removeClass('hidden');
+                updateBackButton();
             }
         }
 
@@ -461,10 +491,11 @@
         document.addEventListener('DOMContentLoaded', function () {
             document.querySelectorAll('.section-level').forEach(sec => sec.classList.add('hidden'));
             document.getElementById('main-level').classList.remove('hidden');
-            $("#mainTitle").removeClass('hidden');
+            $("#mainTitle").html("Aritmia").removeClass('hidden');
             updateBackButton();
         });
     </script>
+
 
 </body>
 

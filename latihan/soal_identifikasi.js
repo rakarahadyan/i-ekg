@@ -108,28 +108,28 @@ let questions = [
     "image": "<img src=\"../assets/sa-blok.png\" alt=\"SA Blok\" class=\"w-full h-auto rounded-lg my-4\">"
   },
   {
-    "id": "av-blok-1",
+    "id": "av-blok-I",
     "answer": "Blok AV Derajat I",
     "hint": "• Irama            : Teratur<br>• Frekuensi (HR)   : 60 - 100 kali/menit<br>• Gelombang P      : Normal, selalu diikuti QRS<br>• Interval PR      : >0,20 detik (memanjang)<br>• Gelombang QRS    : Normal<br>",
-    "image": "<img src=\"../assets/av-blok-1.png\" alt=\"AV Blok Derajat I\" class=\"w-full h-auto rounded-lg my-4\">"
+    "image": "<img src=\"../assets/av-blok-I.png\" alt=\"AV Blok Derajat I\" class=\"w-full h-auto rounded-lg my-4\">"
   },
   {
-    "id": "av-blok-2-mobitz1",
+    "id": "av-blok-mobitz-I",
     "answer": "Blok AV Derajat II Mobitz I (Wenckebach)",
     "hint": "• Irama            : Tidak teratur<br>• Frekuensi (HR)   : 60 - 100 kali/menit (kadang <60)<br>• Gelombang P      : Normal, tapi ada yang tidak diikuti QRS<br>• Interval PR      : Makin lama makin panjang → 1 P drop → siklus ulang<br>• Gelombang QRS    : Normal<br>",
-    "image": "<img src=\"../assets/av-blok-2-mobitz1.png\" alt=\"AV Blok Derajat II Mobitz I\" class=\"w-full h-auto rounded-lg my-4\">"
+    "image": "<img src=\"../assets/av-blok-mobitz-I.png\" alt=\"AV Blok Derajat II Mobitz I\" class=\"w-full h-auto rounded-lg my-4\">"
   },
   {
-    "id": "av-blok-2-mobitz2",
+    "id": "av-blok-mobitz-II",
     "answer": "Blok AV Derajat II Mobitz II",
     "hint": "• Irama            : Umumnya tidak teratur<br>• Frekuensi (HR)   : <60 kali/menit (lambat)<br>• Gelombang P      : Normal, sebagian tidak diikuti QRS<br>• Interval PR      : Normal / memanjang konstan lalu blok<br>• Gelombang QRS    : Normal<br>",
-    "image": "<img src=\"../assets/av-blok-2-mobitz2.png\" alt=\"AV Blok Derajat II Mobitz II\" class=\"w-full h-auto rounded-lg my-4\">"
+    "image": "<img src=\"../assets/av-blok-mobitz-II.png\" alt=\"AV Blok Derajat II Mobitz II\" class=\"w-full h-auto rounded-lg my-4\">"
   },
   {
-    "id": "av-blok-3",
+    "id": "av-blok-III",
     "answer": "Blok AV Derajat III (Total AV Blok)",
     "hint": "• Irama            : Teratur<br>• Frekuensi (HR)   : <60 kali/menit<br>• Gelombang P      : Normal, tidak berhubungan dengan QRS<br>• Interval PR      : Bervariasi<br>• Gelombang QRS    : Normal / >0,12 detik<br>",
-    "image": "<img src=\"../assets/av-blok-3.png\" alt=\"AV Blok Derajat III\" class=\"w-full h-auto rounded-lg my-4\">"
+    "image": "<img src=\"../assets/av-blok-III.png\" alt=\"AV Blok Derajat III\" class=\"w-full h-auto rounded-lg my-4\">"
   },
   {
     "id": "rbbb",

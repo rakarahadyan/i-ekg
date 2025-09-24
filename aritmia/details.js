@@ -44,7 +44,7 @@ const details = {
 • Interval PR      : Normal atau memendek<br>
 <img src="../assets/Ekstrasistol Atrial.png" alt="Ekstrasistol Atrial" class="w-full h-auto rounded-lg my-4">
 `,
-    "takikardi-supraventrikel": `
+    "takikardi-supraventrikel-svt": `
 <h3 class="text-lg font-semibold mb-2">🏃‍♂️ Takikardi Supraventrikel (SVT)</h3>
 • Irama            : Teratur<br>
 • Frekuensi (HR)   : 150 - 250 kali/menit<br>
@@ -109,14 +109,14 @@ const details = {
 • Interval PR      : Normal / memendek<br>
 <img src="../assets/Ekstrasistol Supraventrikel.png" alt="Ekstrasistol Supraventrikel" class="w-full h-auto rounded-lg my-4">
 `,
-    "takikardi-supraventrikel2": `
+    "takikardi-supraventrikel-paroksismal": `
 <h3 class="text-lg font-semibold mb-2">🏃‍♂️ Takikardi Supraventrikel (Paroksismal)</h3>
 • Irama            : Teratur<br>
 • Frekuensi (HR)   : 150 - 250 kali/menit<br>
 • Gelombang P      : Sulit dilihat, kadang kecil<br>
 • Interval PR      : Tidak dapat dihitung / memendek<br>
 • Gelombang QRS    : Normal<br>
-<img src="../assets/Takikardi Supraventrikel2.png" alt="Takikardi Supraventrikel Paroksismal" class="w-full h-auto rounded-lg my-4">
+<img src="../assets/Takikardi Supraventrikel2.jpg" alt="Takikardi Supraventrikel Paroksismal" class="w-full h-auto rounded-lg my-4">
 `,
     "irama-idioventrikuler": `
 <h3 class="text-lg font-semibold mb-2">🎵 Irama Idioventrikuler</h3>
@@ -157,7 +157,7 @@ const details = {
 - Fibrilasi Ventrikel Halus (Fine)<br>
 <img src="../assets/Fibrilasi Ventrikel halus.png" alt="VF Halus" class="w-full h-auto rounded-lg my-4">
 `,
-    "sa-blok": `
+    "blok-sinoatrial-sa-blok": `
 <h3 class="text-lg font-semibold mb-2">🚫 Blok Sinoatrial (SA Blok)</h3>
 • Irama            : Teratur, kecuali pada bagian yang hilang<br>
 • Frekuensi (HR)   : <60 kali/menit<br>
@@ -167,43 +167,43 @@ const details = {
 • Catatan          : Ada episode hilang satu/lebih P-QRS-T → kelipatan R–R<br>
 <img src="../assets/sa-blok.png" alt="SA Blok" class="w-full h-auto rounded-lg my-4">
 `,
-    "av-blok-1": `
+    "blok-av-derajat-I": `
 <h3 class="text-lg font-semibold mb-2">1️⃣ Blok AV Derajat I</h3>
 • Irama            : Teratur<br>
 • Frekuensi (HR)   : 60 - 100 kali/menit<br>
 • Gelombang P      : Normal, selalu diikuti QRS<br>
 • Interval PR      : >0,20 detik (memanjang)<br>
 • Gelombang QRS    : Normal<br>
-<img src="../assets/av-blok-1.png" alt="AV Blok Derajat I" class="w-full h-auto rounded-lg my-4">
+<img src="../assets/av-blok-I.png" alt="AV Blok Derajat I" class="w-full h-auto rounded-lg my-4">
 `,
-    "av-blok-2-mobitz1": `
+    "blok-av-derajat-2-mobitz-I-wenckebach": `
 <h3 class="text-lg font-semibold mb-2">2️⃣ Blok AV Derajat II Mobitz I (Wenckebach)</h3>
 • Irama            : Tidak teratur<br>
 • Frekuensi (HR)   : 60 - 100 kali/menit (kadang <60)<br>
 • Gelombang P      : Normal, tapi ada yang tidak diikuti QRS<br>
 • Interval PR      : Makin lama makin panjang → 1 P drop → siklus ulang<br>
 • Gelombang QRS    : Normal<br>
-<img src="../assets/av-blok-2-mobitz1.png" alt="AV Blok Derajat II Mobitz I" class="w-full h-auto rounded-lg my-4">
+<img src="../assets/av-blok-mobitz-I.png" alt="AV Blok Derajat II Mobitz I" class="w-full h-auto rounded-lg my-4">
 `,
-    "av-blok-2-mobitz2": `
+    "blok-av-derajat-2-mobitz-II": `
 <h3 class="text-lg font-semibold mb-2">2️⃣ Blok AV Derajat II Mobitz II</h3>
 • Irama            : Umumnya tidak teratur<br>
 • Frekuensi (HR)   : <60 kali/menit (lambat)<br>
 • Gelombang P      : Normal, sebagian tidak diikuti QRS<br>
 • Interval PR      : Normal / memanjang konstan lalu blok<br>
 • Gelombang QRS    : Normal<br>
-<img src="../assets/av-blok-2-mobitz2.png" alt="AV Blok Derajat II Mobitz II" class="w-full h-auto rounded-lg my-4">
+<img src="../assets/av-blok-mobitz-II.png" alt="AV Blok Derajat II Mobitz II" class="w-full h-auto rounded-lg my-4">
 `,
-    "av-blok-3": `
+    "blok-av-derajat-III-total-av-blok": `
 <h3 class="text-lg font-semibold mb-2">3️⃣ Blok AV Derajat III (Total AV Blok)</h3>
 • Irama            : Teratur<br>
 • Frekuensi (HR)   : <60 kali/menit<br>
 • Gelombang P      : Normal, tidak berhubungan dengan QRS<br>
 • Interval PR      : Bervariasi<br>
 • Gelombang QRS    : Normal / >0,12 detik<br>
-<img src="../assets/av-blok-3.png" alt="AV Blok Derajat III" class="w-full h-auto rounded-lg my-4">
+<img src="../assets/av-blok-III.png" alt="AV Blok Derajat III" class="w-full h-auto rounded-lg my-4">
 `,
-    "rbbb": `
+    "right-bundle-branch-block": `
 <h3 class="text-lg font-semibold mb-2">➡️ Right Bundle Branch Block (RBBB)</h3>
 • Irama            : Teratur<br>
 • Frekuensi (HR)   : 60 - 100 kali/menit<br>
@@ -213,7 +213,7 @@ const details = {
 • Catatan          : Pola rsR’ (M shape) di V1-V2, S lebar di V6<br>
 <img src="../assets/rbbb.png" alt="RBBB" class="w-full h-auto rounded-lg my-4">
 `,
-    "lbbb": `
+    "left-bundle-branch-block": `
 <h3 class="text-lg font-semibold mb-2">⬅️ Left Bundle Branch Block (LBBB)</h3>
 • Irama            : Teratur<br>
 • Frekuensi (HR)   : 60 - 100 kali/menit<br>
