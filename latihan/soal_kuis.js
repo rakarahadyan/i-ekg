@@ -485,6 +485,7 @@ let questions = [
     question: "Jenis irama pada gambar EKG di bawah ini adalah?",
     options: ["Teratur", "Tidak Teratur/Irregular", "Regular", "Sinus"],
     answer: 1,
+    image: "question37.png",
     hints: "Perhatikan jarak R-R pada gambar. Jika bervariasi = tidak teratur.",
     explanations: [
       "Berdasarkan konteks soal, irama pada gambar menunjukkan ketidakteraturan interval R-R.",
@@ -498,6 +499,7 @@ let questions = [
     question: "Jenis irama pada gambar EKG di bawah ini adalah?",
     options: ["Tidak Teratur", "Irregular", "Teratur/Regular", "Takikardi"],
     answer: 2,
+    image: "question38.png",
     hints: "Perhatikan jarak R-R pada gambar. Jika konsisten = teratur.",
     explanations: [
       "Berdasarkan konteks, gambar menunjukkan interval R-R yang konsisten, bukan tidak teratur.",
@@ -511,6 +513,7 @@ let questions = [
     question: "Berapa jumlah HR pada gambar EKG di bawah ini?",
     options: ["93 kali/menit", "83 kali/menit", "73 kali/menit", "63 kali/menit"],
     answer: 1,
+    image: "question39.png",
     hints: "Gunakan rumus HR = 1500/jumlah kotak kecil R-R atau hitung interval R-R pada gambar yang diberikan.",
     explanations: [
       "93 bpm terlalu cepat berdasarkan interval R-R yang terlihat pada gambar.",
@@ -524,6 +527,7 @@ let questions = [
     question: "Berapa jumlah HR pada gambar EKG di bawah ini?",
     options: ["90 kali/menit", "80 kali/menit", "70 kali/menit", "60 kali/menit"],
     answer: 3,
+    image: "question40.png",
     hints: "Gunakan rumus HR = 1500/jumlah kotak kecil R-R atau hitung interval R-R pada gambar yang diberikan.",
     explanations: [
       "90 bpm terlalu cepat berdasarkan interval R-R yang terlihat pada gambar.",

@@ -106,6 +106,7 @@
             const q = questions[index];
             quizContainer.innerHTML = `
             <h2 class="text-lg font-semibold mb-4">${index + 1}. ${q.question}</h2>
+            ${q.image ? `<img src="../assets/${q.image}" alt="Gambar Soal" class="w-full h-auto rounded-lg mb-4">` : ''}
             <div class="space-y-3">
             ${q.options.map((opt, i) => `
                 <div class="option border rounded-lg px-4 py-3 cursor-pointer hover:bg-gray-100" data-index="${i}">

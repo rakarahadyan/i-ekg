@@ -131,16 +131,16 @@ let questions = [
     "hint": "• Irama            : Teratur<br>• Frekuensi (HR)   : <60 kali/menit<br>• Gelombang P      : Normal, tidak berhubungan dengan QRS<br>• Interval PR      : Bervariasi<br>• Gelombang QRS    : Normal / >0,12 detik<br>",
     "image": "<img src=\"../assets/av-blok-III.png\" alt=\"AV Blok Derajat III\" class=\"w-full h-auto rounded-lg my-4\">"
   },
-  {
-    "id": "rbbb",
-    "answer": "Right Bundle Branch Block (RBBB)",
-    "hint": "• Irama            : Teratur<br>• Frekuensi (HR)   : 60 - 100 kali/menit<br>• Gelombang P      : Normal, selalu diikuti QRS<br>• Interval PR      : Normal<br>• Gelombang QRS    : >0,12 detik<br>• Catatan          : Pola rsR' (M shape) di V1-V2, S lebar di V6<br>",
-    "image": "<img src=\"../assets/rbbb.png\" alt=\"RBBB\" class=\"w-full h-auto rounded-lg my-4\">"
-  },
-  {
-    "id": "lbbb",
-    "answer": "Left Bundle Branch Block (LBBB)",
-    "hint": "• Irama            : Teratur<br>• Frekuensi (HR)   : 60 - 100 kali/menit<br>• Gelombang P      : Normal<br>• Interval PR      : Normal<br>• Gelombang QRS    : >0,12 detik (lebar)<br>• Catatan          : Pola rsR' (M shape) di V5-V6, QS di V1, perubahan ST-T<br>",
-    "image": "<img src=\"../assets/lbbb.png\" alt=\"LBBB\" class=\"w-full h-auto rounded-lg my-4\">"
-  }
 ];
+// {
+//   "id": "rbbb",
+//   "answer": "Right Bundle Branch Block (RBBB)",
+//   "hint": "• Irama            : Teratur<br>• Frekuensi (HR)   : 60 - 100 kali/menit<br>• Gelombang P      : Normal, selalu diikuti QRS<br>• Interval PR      : Normal<br>• Gelombang QRS    : >0,12 detik<br>• Catatan          : Pola rsR' (M shape) di V1-V2, S lebar di V6<br>",
+//   "image": "<img src=\"../assets/rbbb.png\" alt=\"RBBB\" class=\"w-full h-auto rounded-lg my-4\">"
+// },
+// {
+//   "id": "lbbb",
+//   "answer": "Left Bundle Branch Block (LBBB)",
+//   "hint": "• Irama            : Teratur<br>• Frekuensi (HR)   : 60 - 100 kali/menit<br>• Gelombang P      : Normal<br>• Interval PR      : Normal<br>• Gelombang QRS    : >0,12 detik (lebar)<br>• Catatan          : Pola rsR' (M shape) di V5-V6, QS di V1, perubahan ST-T<br>",
+//   "image": "<img src=\"../assets/lbbb.png\" alt=\"LBBB\" class=\"w-full h-auto rounded-lg my-4\">"
+// }
