@@ -72,17 +72,21 @@
 
             // ambil hasil kuis EKG (quizResult)
             const quizResult = JSON.parse(localStorage.getItem("quizResult"));
-            document.getElementById("ekg-result").classList.remove("hidden");
-            document.getElementById("ekg-score").textContent =
-                `Skor Anda: ${quizResult.score} dari 20`;
-            hasResult = true;
+            if (quizResult) {
+                document.getElementById("ekg-result").classList.remove("hidden");
+                document.getElementById("ekg-score").textContent =
+                    `Skor Anda: ${quizResult.score} dari 20`;
+                hasResult = true;
+            }
 
             // ambil hasil latihan identifikasi (identifikasiResult)
             const identifikasiResult = JSON.parse(localStorage.getItem("identifikasiResult"));
-            document.getElementById("identifikasi-result").classList.remove("hidden");
-            document.getElementById("identifikasi-score").textContent =
-                `Skor Anda: ${identifikasiResult.score} dari 10`;
-            hasResult = true;
+            if (identifikasiResult) {
+                document.getElementById("identifikasi-result").classList.remove("hidden");
+                document.getElementById("identifikasi-score").textContent =
+                    `Skor Anda: ${identifikasiResult.score} dari 10`;
+                hasResult = true;
+            }
 
             // kalau belum ada hasil
             if (!hasResult) {
