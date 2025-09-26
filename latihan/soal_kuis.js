@@ -499,7 +499,7 @@ let questions = [
     question: "Jenis irama pada gambar EKG di bawah ini adalah?",
     options: ["Tidak Teratur", "Irregular", "Teratur/Regular", "Takikardi"],
     answer: 2,
-    image: "question38.png",
+    image: "question38.jpg",
     hints: "Perhatikan jarak R-R pada gambar. Jika konsisten = teratur.",
     explanations: [
       "Berdasarkan konteks, gambar menunjukkan interval R-R yang konsisten, bukan tidak teratur.",
